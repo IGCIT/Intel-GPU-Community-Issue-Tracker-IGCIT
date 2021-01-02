@@ -7,25 +7,25 @@ assignees: ''
 
 ---
 
-### Game
+#### Game _[Required]_
 ---
 
 
 
 
-#### CPU
+#### CPU _[Required]_
 ---
 
 
 
 
-#### GPU Driver Version
+#### GPU Driver Version _[Required]_
 ---
 
 
 
 
-#### Rendering API
+#### Rendering API _[Required]_
 ---
 
 **API** _[DirectX, OpenGL, Vulkan]_:
@@ -36,29 +36,29 @@ assignees: ''
 
 
 
-#### Windows Build Number
+#### Windows Build Number _[Required]_
 ---
 
 
 
 
-#### Description
+#### Description _[Required]_
 ---
 
 
 
 
-#### Screenshots
+#### Screenshots _[Optional]_
 ---
 
 
 
 
-#### Steps To Reproduce
+#### Steps To Reproduce _[Optional]_
 ---
 
 
 
 
-#### Notes
+#### Notes _[Optional]_
 ---
