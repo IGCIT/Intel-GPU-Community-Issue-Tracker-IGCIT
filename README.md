@@ -29,7 +29,7 @@ The following information are needed to help Intel to identify and fix the issue
 
 This is a small utility to easily get your _**Windows build**_, _**CPU name**_ and _**GPU driver**_ version.
 
-Download latest release [here]().
+Download latest release [here](https://github.com/IGCIT/Intel-GPU-Community-Issue-Tracker-IGCIT/releases/latest).
 
 ## How to get Windows build number
 
