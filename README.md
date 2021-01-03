@@ -23,6 +23,21 @@ The following information are needed to help Intel to identify and fix the issue
 * Screenshot (_Where possible_)
 * Steps to reproduce
 
+Once you have collected all the required information, open a new issue describing your problem:
+
+**You have a GitHub account _[Mehtod 1]_**
+
+ Open a new issue [here](https://github.com/IGCIT/Intel-GPU-Community-Issue-Tracker-IGCIT/issues).
+ 
+ **You don't have a GitHub account _[Mehtod 2]_**
+ 
+ Submit a new issue [here](https://gitreports.com/issue/IGCIT/Intel-GPU-Community-Issue-Tracker-IGCIT).
+ 
+ _You do **not** need a GitHub account or any other account for this._
+ 
+ _Just remember to follow IGCIT template that we provide in that page._
+
+
 # Help
 
 ## IGCIT Helper
@@ -192,4 +207,5 @@ Windows screenshot shortcut will now run _Lightshot_.
 
 ## Credits
 
-A big thanks to _**BenjaminLSR**_ for reporting issues to Intel!
+* A big thanks to _**BenjaminLSR**_ for reporting issues to Intel!
+* Zach Schneider: Git Reports developer.
