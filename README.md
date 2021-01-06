@@ -10,6 +10,9 @@ We collect issues for **Windows only**, everything else, like emulators or Linux
 
 You can report Mesa issues [here](https://gitlab.freedesktop.org/mesa/mesa).
 
+### IGCIT Wiki
+You can find links to latest _Intel driver_ and _release notes_ [here](https://github.com/IGCIT/Intel-GPU-Community-Issue-Tracker-IGCIT/wiki).
+
 ## How to report a bug
 
 The following information are needed to help Intel to identify and fix the issue more quickly:
