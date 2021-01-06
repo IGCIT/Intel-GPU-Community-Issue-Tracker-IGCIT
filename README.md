@@ -6,7 +6,8 @@
 
 All the issues here will be reported directly to Intel.
 
-We collect issues for **Windows only**, everything else, like emulators or Linux must be reported to the respective developers.
+We collect issues for **Windows only**, everything else, like Linux must be reported to the respective developers.
+We also collect issues from **emulator developers**, if you find a bug in Intel **Windows drivers**, you can report it here.
 
 You can report Mesa issues [here](https://gitlab.freedesktop.org/mesa/mesa).
 
@@ -17,14 +18,30 @@ You can find links to latest _Intel driver_ and _release notes_ [here](https://g
 
 The following information are needed to help Intel to identify and fix the issue more quickly:
 
-* Windows build
-* Drivers build
+**If you want to report a bug in a Windows game**:
+
+* Affected game
 * CPU (_example: i7-1065G7_)
+* Drivers build
 * Rendering API (_DirectX, OpenGL, Vulkan_)
 * Rendering API version (_example: DirectX 12_)
-* Issue (_Crash, Performance, Freeze, Glitches_)
-* Screenshot (_Where possible_)
+* Windows build
+* Description
 * Steps to reproduce
+* Screenshot (_optional_)
+
+**If you are a emulator developer**:
+
+* Emulator name
+* CPU or GPU (_example: i7-1065G7_)
+* Drivers build
+* Rendering API (_DirectX, OpenGL, Vulkan_)
+* Rendering API version (_example: DirectX 12_)
+* Description
+* Steps to reproduce
+* Screenshot (_optional_)
+* Sample code / affected code (_optional_)
+* Executable to reproduce the bug (_optional_)
 
 Once you have collected all the required information, open a new issue describing your problem:
 
