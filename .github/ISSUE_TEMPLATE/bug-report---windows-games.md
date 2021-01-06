@@ -48,13 +48,13 @@ assignees: ''
 
 
 ---
-#### Screenshots _[Optional]_
+#### Steps To Reproduce _[Required]_
 
 
 
 
 ---
-#### Steps To Reproduce _[Optional]_
+#### Screenshots _[Optional]_
 
 
 

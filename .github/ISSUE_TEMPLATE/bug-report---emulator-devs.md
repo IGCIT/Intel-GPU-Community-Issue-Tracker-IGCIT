@@ -42,6 +42,12 @@ assignees: ''
 
 
 ---
+#### Steps To Reproduce _[Required]_
+
+
+
+
+---
 #### Screenshots _[Optional]_
 
 
@@ -55,12 +61,6 @@ assignees: ''
 
 ---
 #### Executable to reproduce the bug _[Optional]_
-
-
-
-
----
-#### Steps To Reproduce _[Optional]_
 
 
 
