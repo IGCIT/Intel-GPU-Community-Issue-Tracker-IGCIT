@@ -28,11 +28,11 @@ The following information are needed to help Intel to identify and fix the issue
 
 Once you have collected all the required information, open a new issue describing your problem:
 
-**You have a GitHub account _[Mehtod 1]_**
+**You have a GitHub account _[Method 1]_**
 
  Open a new issue [here](https://github.com/IGCIT/Intel-GPU-Community-Issue-Tracker-IGCIT/issues).
  
- **You don't have a GitHub account _[Mehtod 2]_**
+ **You don't have a GitHub account _[Method 2]_**
  
  Submit a new issue [here](https://gitreports.com/issue/IGCIT/Intel-GPU-Community-Issue-Tracker-IGCIT).
  
