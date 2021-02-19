@@ -66,6 +66,16 @@ This is a small utility to easily get your _**Windows build**_, _**CPU name**_ a
 
 Download latest release [here](https://github.com/IGCIT/Intel-GPU-Community-Issue-Tracker-IGCIT/releases/latest).
 
+## IGCIT Driver Switch
+
+A tool to switch your _**Intel GPU driver**_ on the fly, based on Ciphray switch_driver.bat.
+
+Its aim is to help to identify regressions quickly and easily.
+
+See more in [IGCIT Wiki](https://github.com/IGCIT/Intel-GPU-Community-Issue-Tracker-IGCIT/wiki)
+
+Download latest release [here](https://github.com/IGCIT/Intel-GPU-Community-Issue-Tracker-IGCIT/releases/latest).
+
 ## How to get Windows build number
 
 * Right click _**Windows start button**_
@@ -229,3 +239,4 @@ Windows screenshot shortcut will now run _Lightshot_.
 
 * A big thanks to _**BenjaminLSR**_ for reporting issues to Intel!
 * Zach Schneider: Git Reports developer.
+* Ciphray: switch_driver.bat code.
