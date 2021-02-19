@@ -57,21 +57,26 @@ namespace IGCIT_Helper {
         }
 
         private String GetGPUDriverVersion() {
-            String regVideoPath = "HKEY_LOCAL_MACHINE\\HARDWARE\\DEVICEMAP\\VIDEO";
-            String regDeviceKeyBase = "\\Device\\Video";
-            String ret = "Unknown";
-            int i = 0;
+            string ret = "Unknown";
 
             try {
-                while (true) {
-                    Object rkey = Registry.GetValue(regVideoPath, regDeviceKeyBase + (i++).ToString(), RegistryValueKind.String);
-                    Object gpu, drvVer;
-                    String regGPUPath;
+                RegistryKey regGpus = Registry.LocalMachine.OpenSubKey(@"HARDWARE\DEVICEMAP\VIDEO");
 
-                    if (rkey == null)
-                        break;
+                if (regGpus == null)
+                    return ret;
 
-                    regGPUPath = GetRegistryPath(rkey.ToString()).Replace("\\", "\\");
+                foreach (string k in regGpus.GetValueNames()) {
+                    if (!k.Contains("Video"))
+                        continue;
+
+                    object gpuPath = regGpus.GetValue(k);
+                    object gpu, drvVer;
+                    string regGPUPath;
+
+                    if (gpuPath == null)
+                        continue;
+
+                    regGPUPath = GetRegistryPath(gpuPath.ToString()).Replace("\\", "\\");
 
                     gpu = Registry.GetValue(regGPUPath, "DriverDesc", RegistryValueKind.String);
                     if (gpu == null || gpu.ToString().IndexOf("intel", StringComparison.OrdinalIgnoreCase) < 0)
@@ -84,8 +89,9 @@ namespace IGCIT_Helper {
                     ret = drvVer.ToString();
                     break;
                 }
+
             } catch (Exception e) {
-                MessageBox.Show(this, "Unabel to get GPU driver version.\n\n" + e.Message, "GetGPUDriverVersion() Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(this, "Unable to get GPU driver version.\n\n" + e.Message, "GetGPUDriverVersion() Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             return ret;
@@ -96,6 +102,10 @@ namespace IGCIT_Helper {
             winbuild.Text = GetWindowsBuildVersion();
             cpuname.Text = GetProcessorName();
             gpudrvver.Text = GetGPUDriverVersion();
+        }
+
+        private void openIGCITRepoToolStripMenuItem_Click(object sender, EventArgs e) {
+            System.Diagnostics.Process.Start("https://github.com/IGCIT/Intel-GPU-Community-Issue-Tracker-IGCIT");
         }
     }
 }
