@@ -24,6 +24,7 @@ assignees: ''
 **API** _[DirectX, OpenGL, Vulkan]_:
 **API Version** _(example DirectX 12)_:
 
+
 ---
 #### Windows Build Number _[Required]_
 
@@ -31,8 +32,13 @@ assignees: ''
 ---
 #### Description _[Required]_
 
+
 ---
 #### Steps To Reproduce _[Required]_
+
+
+---
+#### Game graphics settings (screenshot or text) _[Optional]_ _[Recommended]_
 
 
 ---
@@ -58,4 +64,4 @@ See IGCIT Wiki for more help!
 
 
 ---
-#### Notes _[Optional]_
+#### Additional notes _[Optional]_
