@@ -6,6 +6,7 @@ labels: ''
 assignees: ''
 
 ---
+
 #### Game _[Required]_
 
 
@@ -39,5 +40,22 @@ assignees: ''
 
 
 ---
-#### Notes _[Optional]_
+#### Save game _(if possible, could help solve the issue faster)_ _[Optional]_
 
+
+---
+#### Game custom logs (if available) _[Optional]_ _[Recommended]_
+<!--
+Some games generate their own logs when running.
+If this is the case you can usually find them in one of these locations:
+
+* Documents folder
+* "Saved Games" folder
+* %appdata%/local folder
+
+See IGCIT Wiki for more help!
+-->
+
+
+---
+#### Notes _[Optional]_
