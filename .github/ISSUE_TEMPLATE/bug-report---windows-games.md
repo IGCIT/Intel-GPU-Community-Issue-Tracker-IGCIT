@@ -1,9 +1,9 @@
 ---
 name: Bug Report - Windows Games
-about: Report glitches, crashes or any other issue in your Windows games
+about: Report glitches, crashes or any other issue in your Windows games.
 title: ''
 labels: ''
-assignees: ''
+assignees: 'leoben2'
 
 ---
 
