@@ -9,15 +9,20 @@ assignees: 'leoben2'
 #### Checklist [README]
 <!--
 Please take a moment to review this checklist before completing the form.
+- [ ] Unchecked
+- [X] Checked
 -->
 - [ ] Device is not undervolted nor overclocked.
 - [ ] Device is using the [latest drivers](https://downloadcenter.intel.com/download/30381/Graphiques-Intel-Pilotes-DCH-Windows-10).
 - [ ] Game is not cracked, modded and use the latest patch.
 
-#### Game [Required]
+---
+#### Game / Application [Required]
 
-#### CPU [Required]
+---
+#### Processor / Processor Number [Required]
 
+---
 #### GPU Driver Version [Required]
 - [ ] 27.20.100.9466 (*latest*)
 - [ ] 27.20.100.9316
@@ -25,6 +30,7 @@ Please take a moment to review this checklist before completing the form.
 - [ ] 27.20.100.9168
 - [ ] 27.20.100.9128
 
+---
 #### Rendering API [Required]
 - [ ] Vulkan
 - [ ] OpenGL
@@ -48,6 +54,13 @@ Make sure you describe the issue and steps to reproduce.
 1. 
 2. 
 3. 
+
+---
+#### Device / Platform [Optional][Recommended]
+<!--
+Share your device / platform name. It could be there is a known issue with it that would help circle the issue.
+-->
+
 
 ---
 #### Game Settings [Optional][Recommended]
