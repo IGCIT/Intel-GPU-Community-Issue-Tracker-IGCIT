@@ -24,32 +24,36 @@ IGCIT Wiki contains how-tos, links to latest drivers and release notes, and more
 
 ## How to report a bug
 
-The following information are needed to help Intel to identify and fix the issue more quickly:
+To open a new issue, some information are required.
 
-**If you want to report a bug in a Windows game**:
+Use [IGCIT Helper](https://github.com/IGCIT/Intel-GPU-Community-Issue-Tracker-IGCIT/releases) to extract all the device details required by _IGCIT_. (see [IGCIT Wiki](https://github.com/IGCIT/Intel-GPU-Community-Issue-Tracker-IGCIT/wiki/IGCIT-Helper)
 
-* Affected game
-* CPU (_example: i7-1065G7_)
-* Drivers build
-* Rendering API (_DirectX, OpenGL, Vulkan_)
-* Rendering API version (_example: DirectX 12_)
-* Windows build
-* Description
-* Steps to reproduce
-* Screenshot (_optional_)
+**To open an issue about a Windows game / application**:
 
-**If you are a emulator developer**:
+* Game / Application _[Required]_
+* Processor _[Required] (example: i7-1065G7)_
+* GPU driver version _[Required]_
+* Rendering API _[Required] (example DirectX12, Vulkan, etc..)_
+* Windows build number _[Required]_
+* Description _[Required]_
+* Steps to reproduce _[Required]_
+* Device name _[Optional][Recommended]_
+* Game settings _[Optional][Recommended]_
+* Savegame _[Optional]_
+* Screenshot _[Optional] (see [IGCIT Wiki](https://github.com/IGCIT/Intel-GPU-Community-Issue-Tracker-IGCIT/wiki/How-to-take-in-game-screenshots))_
+* Game custom logs _[Optional] (see [IGCIT Wiki](https://github.com/IGCIT/Intel-GPU-Community-Issue-Tracker-IGCIT/wiki/Where-to-find-game-custom-logs))_
+
+**To open an issue about your emulator [_Emulator Developers Only_]**:
 
 * Emulator name
-* CPU or GPU (_example: i7-1065G7_)
-* Drivers build
-* Rendering API (_DirectX, OpenGL, Vulkan_)
-* Rendering API version (_example: DirectX 12_)
+* Processor (_example: i7-1065G7_)
+* GPU driver version
+* Rendering API
 * Description
 * Steps to reproduce
-* Screenshot (_optional_)
-* Sample code / affected code (_optional_)
-* Executable to reproduce the bug (_optional_)
+* Screenshot _[Optional]_
+* Sample code / affected code _[Optional]_
+* Executable to reproduce the bug _[Optional]_
 
 Once you have collected all the required information, open a new issue describing your problem:
 
@@ -71,7 +75,7 @@ Once you have collected all the required information, open a new issue describin
 
 ### IGCIT Helper
 
-This is a small utility to easily get your _**Windows build**_, _**CPU name**_ and _**GPU driver build**_ version.
+This is a small utility to easily extract all the required information about your device.
 
 Download latest release [here](https://github.com/IGCIT/Intel-GPU-Community-Issue-Tracker-IGCIT/releases/latest).
 
