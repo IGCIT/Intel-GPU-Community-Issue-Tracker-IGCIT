@@ -3,8 +3,15 @@ name: Bug Report - Windows Games
 about: Report glitches, crashes or any other issue in your Windows games.
 title: ''
 labels: 'Info: Needs Replication'
-assignees: 'leoben2'
+assignees: leoben2
+
 ---
+
+<!--
+It is HIGHLY recommended to use IGCIT Helper to extract your device details so that we can get exact information and help you better and faster.
+
+See: https://github.com/IGCIT/Intel-GPU-Community-Issue-Tracker-IGCIT/wiki/IGCIT-Helper
+-->
 
 #### Checklist [README]
 <!--
