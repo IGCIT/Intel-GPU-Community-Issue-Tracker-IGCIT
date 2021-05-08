@@ -1,11 +1,18 @@
 ﻿using System;
+using System.Drawing;
+using System.Drawing.Imaging;
+using System.Management;
 using System.Windows.Forms;
 using Microsoft.Win32;
 
 namespace IGCIT_Helper {
     public partial class Form1 : Form {
+        ToolTip _cpTooltip;
+
         public Form1() {
             InitializeComponent();
+            
+            _cpTooltip = new ToolTip();
         }
 
         private String GetRegistryPath(in String path) {
@@ -98,14 +105,81 @@ namespace IGCIT_Helper {
         }
 
         private void Form1_Load(object sender, EventArgs e) {
+            ManagementClass cs = new ManagementClass("Win32_ComputerSystem");
+            ManagementClass os = new ManagementClass("Win32_OperatingSystem");
+
             this.ActiveControl = label2; // unfocus the textbox!
             winbuild.Text = GetWindowsBuildVersion();
             cpuname.Text = GetProcessorName();
             gpudrvver.Text = GetGPUDriverVersion();
+
+            foreach (ManagementObject mo in cs.GetInstances()) {
+                dmodelT.Text = mo["Model"].ToString();
+                dmanufT.Text = mo["Manufacturer"].ToString();
+            }
+
+            foreach (ManagementObject mo in os.GetInstances())
+                ramT.Text = String.Format("{0:0.#} GB", (ulong)mo["TotalVisibleMemorySize"] / 1024 / 1024f);
         }
 
-        private void openIGCITRepoToolStripMenuItem_Click(object sender, EventArgs e) {
+        private void saveScreenshot() {
+            string path = string.Format("IGCITHelper_deviceInfo-{0}.png", DateTime.Now.Ticks);
+            Bitmap img = new Bitmap(Width, Height);
+
+            try {
+                DrawToBitmap(img, new Rectangle(0, 0, Width, Height));
+                img.Save(path, ImageFormat.Png);
+                MessageBox.Show(this, "Saved: " + path, "Success", MessageBoxButtons.OK);
+
+            } catch (Exception e) {
+                MessageBox.Show(this, e.Message, "Error", MessageBoxButtons.OK);
+            }
+        }
+
+        private void showCopyTooltip() {
+            _cpTooltip.Show("Copied", this, Cursor.Position.X - this.Location.X - 20, Cursor.Position.Y - this.Location.Y - 20, 800);
+        }
+
+        private void cpmodel_Click(object sender, EventArgs e) {
+            Clipboard.SetText(dmodelT.Text);
+            showCopyTooltip();
+        }
+
+        private void cpmanuf_Click(object sender, EventArgs e) {
+            Clipboard.SetText(dmanufT.Text);
+            showCopyTooltip();
+        }
+
+        private void cpmem_Click(object sender, EventArgs e) {
+            Clipboard.SetText(ramT.Text);
+            showCopyTooltip();
+        }
+
+        private void cpgpud_Click(object sender, EventArgs e) {
+            Clipboard.SetText(gpudrvver.Text);
+            showCopyTooltip();
+        }
+
+        private void cpproc_Click(object sender, EventArgs e) {
+            Clipboard.SetText(cpuname.Text);
+            showCopyTooltip();
+        }
+
+        private void cpwinb_Click(object sender, EventArgs e) {
+            Clipboard.SetText(winbuild.Text);
+            showCopyTooltip();
+        }
+
+        private void goToRepositoryToolStripMenuItem_Click(object sender, EventArgs e) {
             System.Diagnostics.Process.Start("https://github.com/IGCIT/Intel-GPU-Community-Issue-Tracker-IGCIT");
+        }
+
+        private void goToWikiToolStripMenuItem_Click(object sender, EventArgs e) {
+            System.Diagnostics.Process.Start("https://github.com/IGCIT/Intel-GPU-Community-Issue-Tracker-IGCIT/wiki");
+        }
+
+        private void asPNGToolStripMenuItem_Click(object sender, EventArgs e) {
+            saveScreenshot();
         }
     }
 }
