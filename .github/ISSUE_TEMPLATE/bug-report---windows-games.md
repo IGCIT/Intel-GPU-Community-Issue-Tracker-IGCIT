@@ -48,6 +48,7 @@ Please take a moment to review this checklist before completing the form.
 
 ---
 #### Windows Build Number [Required]
+- [ ] Windows 10 21H1 (*May 2021 Update*)
 - [ ] Windows 10 20H2 (*October 2020 Update*)
 - [ ] Windows 10 20H1 (*May 2020 Update*)
 - [ ] Windows 10 19H2 (*November 2019 Update*)
