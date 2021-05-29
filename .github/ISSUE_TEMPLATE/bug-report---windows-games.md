@@ -27,11 +27,22 @@ Please take a moment to review this checklist before completing the form.
 #### Game / Application [Required]
 
 ---
+#### Game Platform [Required]
+- [ ] Steam
+- [ ] Origin
+- [ ] Microsoft Store
+- [ ] GOG Galaxy
+- [ ] Ubisoft Connect
+- [ ] Battle.net
+- [ ] Other
+
+---
 #### Processor / Processor Number [Required]
 
 ---
 #### GPU Driver Version [Required]
-- [ ] 27.20.100.9466 (*latest*)
+- [ ] 27.20.100.9616 (*latest*)
+- [ ] 27.20.100.9466
 - [ ] 27.20.100.9316
 - [ ] 27.20.100.9313
 - [ ] 27.20.100.9168
@@ -66,7 +77,7 @@ Make sure you describe the issue and steps to reproduce.
 ---
 #### Device / Platform [Optional][Recommended]
 <!--
-Share your device / platform name. It could be there is a known issue with it that would help circle the issue.
+Share your device / platform name. It could be there is a specific constructor issue.
 -->
 
 
