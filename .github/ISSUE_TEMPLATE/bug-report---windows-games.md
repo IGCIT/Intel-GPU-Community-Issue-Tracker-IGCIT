@@ -34,6 +34,8 @@ Please take a moment to review this checklist before completing the form.
 - [ ] GOG Galaxy
 - [ ] Ubisoft Connect
 - [ ] Battle.net
+- [ ] Epic Games
+- [ ] Bethesda.net
 - [ ] Other
 
 ---
