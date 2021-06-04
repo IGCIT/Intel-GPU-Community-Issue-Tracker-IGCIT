@@ -7,11 +7,13 @@ using Microsoft.Win32;
 
 namespace IGCIT_Helper {
     public partial class Form1 : Form {
+        RegistryKey _localMachine;
         ToolTip _cpTooltip;
 
         public Form1() {
             InitializeComponent();
-            
+
+            _localMachine = Registry.LocalMachine;
             _cpTooltip = new ToolTip();
         }
 
@@ -28,20 +30,20 @@ namespace IGCIT_Helper {
                     ret += "\\SYSTEM";
                 else
                     ret += "\\" + pathAr[i]; // wrong?
-            }            
+            }
 
             return ret;
         }
 
         private String GetWindowsBuildVersion() {
-            Object buildN = null;
-            Object version = null;
+            object buildN = null;
+            object version = null;
 
             try {
-                String regWinBuildPath = "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion";
-                
-                buildN = Registry.GetValue(regWinBuildPath, "CurrentBuildNumber", RegistryValueKind.String);
-                version = Registry.GetValue(regWinBuildPath, "DisplayVersion", RegistryValueKind.String);
+                RegistryKey registryWinBuildKey = _localMachine.OpenSubKey(@"SOFTWARE\Microsoft\Windows NT\CurrentVersion");
+
+                buildN = registryWinBuildKey.GetValue(@"CurrentBuildNumber");
+                version = registryWinBuildKey.GetValue(@"DisplayVersion");
 
             } catch (Exception e) {
                 MessageBox.Show(this, "Unable to get Windows build number.\n\n" + e.Message, "GetWindowsBuildVersion() Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -51,10 +53,10 @@ namespace IGCIT_Helper {
         }
 
         private String GetProcessorName() {
-            Object cpu = null;
+            object cpu = null;
 
             try {
-                cpu = Registry.GetValue("HKEY_LOCAL_MACHINE\\HARDWARE\\DESCRIPTION\\System\\CentralProcessor\\0", "ProcessorNameString", RegistryValueKind.String);
+                cpu = _localMachine.OpenSubKey(@"HARDWARE\DESCRIPTION\System\CentralProcessor\0").GetValue("ProcessorNameString");
 
             } catch (Exception e) {
                 MessageBox.Show(this, "Unable to get Processor name.\n\n" + e.Message, "GetProcessorName() Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -67,7 +69,7 @@ namespace IGCIT_Helper {
             string ret = "Unknown";
 
             try {
-                RegistryKey regGpus = Registry.LocalMachine.OpenSubKey(@"HARDWARE\DEVICEMAP\VIDEO");
+                RegistryKey regGpus = _localMachine.OpenSubKey(@"HARDWARE\DEVICEMAP\VIDEO");
 
                 if (regGpus == null)
                     return ret;
@@ -85,11 +87,11 @@ namespace IGCIT_Helper {
 
                     regGPUPath = GetRegistryPath(gpuPath.ToString()).Replace("\\", "\\");
 
-                    gpu = Registry.GetValue(regGPUPath, "DriverDesc", RegistryValueKind.String);
+                    gpu = Registry.GetValue(regGPUPath, "DriverDesc", null);
                     if (gpu == null || gpu.ToString().IndexOf("intel", StringComparison.OrdinalIgnoreCase) < 0)
                         continue;
 
-                    drvVer = Registry.GetValue(regGPUPath, "DriverVersion", RegistryValueKind.String);
+                    drvVer = Registry.GetValue(regGPUPath, "DriverVersion", null);
                     if (drvVer == null)
                         break;
 
