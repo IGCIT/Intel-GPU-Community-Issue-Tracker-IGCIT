@@ -94,6 +94,13 @@ Share game settings and screenshots if needed.
 
 
 ---
+#### Windows mini dump (*small memory dump*) (*if available*) [Optional][Recommended]
+<!--
+For more help about mini dumps see:
+https://github.com/IGCIT/Intel-GPU-Community-Issue-Tracker-IGCIT/wiki/How-to-enable-small-memory-dumps-(crash-dumps)
+-->
+
+---
 #### Game custom logs (*if available*) [Optional][Recommended]
 <!--
 Some games generate their own logs when running.
