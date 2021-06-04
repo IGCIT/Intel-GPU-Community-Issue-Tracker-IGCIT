@@ -39,6 +39,8 @@ namespace IGCIT_Helper {
             this.goToWikiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportDeviceInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.asPNGToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.windowsMiniDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ramT = new System.Windows.Forms.TextBox();
             this.ramL = new System.Windows.Forms.Label();
             this.dmanufL = new System.Windows.Forms.Label();
@@ -103,7 +105,7 @@ namespace IGCIT_Helper {
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(414, 21);
             this.label3.TabIndex = 7;
-            this.label3.Text = "IGCIT Helper ver 1.2, Author: IGCIT";
+            this.label3.Text = "IGCIT Helper ver 1.3, Author: IGCIT";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // winbuild
@@ -140,7 +142,8 @@ namespace IGCIT_Helper {
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1,
-            this.exportDeviceInfoToolStripMenuItem});
+            this.exportDeviceInfoToolStripMenuItem,
+            this.toolsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(414, 24);
@@ -181,9 +184,24 @@ namespace IGCIT_Helper {
             // asPNGToolStripMenuItem
             // 
             this.asPNGToolStripMenuItem.Name = "asPNGToolStripMenuItem";
-            this.asPNGToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.asPNGToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.asPNGToolStripMenuItem.Text = "Take screenshot";
             this.asPNGToolStripMenuItem.Click += new System.EventHandler(this.asPNGToolStripMenuItem_Click);
+            // 
+            // toolsToolStripMenuItem
+            // 
+            this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.windowsMiniDToolStripMenuItem});
+            this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
+            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
+            this.toolsToolStripMenuItem.Text = "Tools";
+            // 
+            // windowsMiniDToolStripMenuItem
+            // 
+            this.windowsMiniDToolStripMenuItem.Name = "windowsMiniDToolStripMenuItem";
+            this.windowsMiniDToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
+            this.windowsMiniDToolStripMenuItem.Text = "Enable Small Memory Dumps";
+            this.windowsMiniDToolStripMenuItem.Click += new System.EventHandler(this.windowsMiniDToolStripMenuItem_Click);
             // 
             // ramT
             // 
@@ -384,6 +402,7 @@ namespace IGCIT_Helper {
             this.Name = "Form1";
             this.Text = "IGCIT Helper";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.Shown += new System.EventHandler(this.Form1_Shown);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -420,6 +439,8 @@ namespace IGCIT_Helper {
         private System.Windows.Forms.ToolStripMenuItem goToRepositoryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem goToWikiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem asPNGToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem windowsMiniDToolStripMenuItem;
     }
 }
 
