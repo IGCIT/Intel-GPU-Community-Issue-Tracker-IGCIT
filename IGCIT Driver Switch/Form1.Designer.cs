@@ -35,11 +35,17 @@ namespace IGCIT_Driver_Switch {
             this.restoreBtn = new System.Windows.Forms.Button();
             this.loadBtn = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.openIGCITRepoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.downloadIntelDriversToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.rescanDriversFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.openIGCITRepoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.downloadIntelDriversToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.spinnerImg = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.spinnerImg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,7 +53,7 @@ namespace IGCIT_Driver_Switch {
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 116);
+            this.label1.Location = new System.Drawing.Point(13, 116);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(128, 17);
             this.label1.TabIndex = 0;
@@ -57,9 +63,9 @@ namespace IGCIT_Driver_Switch {
             // 
             this.driversList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.driversList.FormattingEnabled = true;
-            this.driversList.Location = new System.Drawing.Point(146, 116);
+            this.driversList.Location = new System.Drawing.Point(143, 115);
             this.driversList.Name = "driversList";
-            this.driversList.Size = new System.Drawing.Size(177, 21);
+            this.driversList.Size = new System.Drawing.Size(180, 21);
             this.driversList.TabIndex = 1;
             this.driversList.SelectedIndexChanged += new System.EventHandler(this.driversList_SelectedIndexChanged);
             // 
@@ -71,7 +77,7 @@ namespace IGCIT_Driver_Switch {
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(335, 26);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Author IGCIT - v1.0 [based on Ciphray switch_driver.bat]";
+            this.label2.Text = "Author IGCIT - v2.0 [based on Ciphray switch_driver.bat]";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // logBox
@@ -140,27 +146,70 @@ namespace IGCIT_Driver_Switch {
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.openIGCITRepoToolStripMenuItem,
-            this.downloadIntelDriversToolStripMenuItem});
+            this.toolStripMenuItem1,
+            this.toolStripMenuItem3,
+            this.toolStripMenuItem2});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(335, 24);
             this.menuStrip1.TabIndex = 10;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // openIGCITRepoToolStripMenuItem
+            // toolStripMenuItem1
             // 
-            this.openIGCITRepoToolStripMenuItem.Name = "openIGCITRepoToolStripMenuItem";
-            this.openIGCITRepoToolStripMenuItem.Size = new System.Drawing.Size(106, 20);
-            this.openIGCITRepoToolStripMenuItem.Text = "Open IGCIT repo";
-            this.openIGCITRepoToolStripMenuItem.Click += new System.EventHandler(this.openIGCITRepoToolStripMenuItem_Click);
+            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.rescanDriversFolderToolStripMenuItem});
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(61, 20);
+            this.toolStripMenuItem1.Text = "Options";
             // 
-            // downloadIntelDriversToolStripMenuItem
+            // rescanDriversFolderToolStripMenuItem
             // 
-            this.downloadIntelDriversToolStripMenuItem.Name = "downloadIntelDriversToolStripMenuItem";
-            this.downloadIntelDriversToolStripMenuItem.Size = new System.Drawing.Size(137, 20);
-            this.downloadIntelDriversToolStripMenuItem.Text = "Download Intel drivers";
-            this.downloadIntelDriversToolStripMenuItem.Click += new System.EventHandler(this.downloadIntelDriversToolStripMenuItem_Click);
+            this.rescanDriversFolderToolStripMenuItem.Name = "rescanDriversFolderToolStripMenuItem";
+            this.rescanDriversFolderToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.rescanDriversFolderToolStripMenuItem.Text = "Rescan drivers folder";
+            this.rescanDriversFolderToolStripMenuItem.Click += new System.EventHandler(this.rescanDriversFolderToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.openIGCITRepoToolStripMenuItem1,
+            this.downloadIntelDriversToolStripMenuItem1});
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(130, 20);
+            this.toolStripMenuItem3.Text = "Links and downloads";
+            // 
+            // openIGCITRepoToolStripMenuItem1
+            // 
+            this.openIGCITRepoToolStripMenuItem1.Name = "openIGCITRepoToolStripMenuItem1";
+            this.openIGCITRepoToolStripMenuItem1.Size = new System.Drawing.Size(192, 22);
+            this.openIGCITRepoToolStripMenuItem1.Text = "Open IGCIT repo";
+            this.openIGCITRepoToolStripMenuItem1.Click += new System.EventHandler(this.openIGCITRepoToolStripMenuItem1_Click);
+            // 
+            // downloadIntelDriversToolStripMenuItem1
+            // 
+            this.downloadIntelDriversToolStripMenuItem1.Name = "downloadIntelDriversToolStripMenuItem1";
+            this.downloadIntelDriversToolStripMenuItem1.Size = new System.Drawing.Size(192, 22);
+            this.downloadIntelDriversToolStripMenuItem1.Text = "Download Intel drivers";
+            this.downloadIntelDriversToolStripMenuItem1.Click += new System.EventHandler(this.downloadIntelDriversToolStripMenuItem1_Click);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(44, 20);
+            this.toolStripMenuItem2.Text = "Help";
+            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
+            // 
+            // spinnerImg
+            // 
+            this.spinnerImg.Image = ((System.Drawing.Image)(resources.GetObject("spinnerImg.Image")));
+            this.spinnerImg.Location = new System.Drawing.Point(151, 381);
+            this.spinnerImg.Name = "spinnerImg";
+            this.spinnerImg.Size = new System.Drawing.Size(36, 35);
+            this.spinnerImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.spinnerImg.TabIndex = 12;
+            this.spinnerImg.TabStop = false;
+            this.spinnerImg.Visible = false;
             // 
             // pictureBox1
             // 
@@ -176,6 +225,7 @@ namespace IGCIT_Driver_Switch {
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(335, 456);
+            this.Controls.Add(this.spinnerImg);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.loadBtn);
             this.Controls.Add(this.restoreBtn);
@@ -188,12 +238,18 @@ namespace IGCIT_Driver_Switch {
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(351, 495);
+            this.MinimumSize = new System.Drawing.Size(351, 495);
             this.Name = "appform";
             this.Text = "IGCIT Driver Switch";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.appform_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.Shown += new System.EventHandler(this.Form1_Shown);
             this.panel1.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.spinnerImg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -212,9 +268,14 @@ namespace IGCIT_Driver_Switch {
         private System.Windows.Forms.Button restoreBtn;
         private System.Windows.Forms.Button loadBtn;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem openIGCITRepoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem downloadIntelDriversToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox spinnerImg;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem rescanDriversFolderToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem openIGCITRepoToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem downloadIntelDriversToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
     }
 }
 
