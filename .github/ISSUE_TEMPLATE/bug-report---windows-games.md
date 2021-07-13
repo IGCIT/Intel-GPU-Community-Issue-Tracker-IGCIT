@@ -67,6 +67,7 @@ Please take a moment to review this checklist before completing the form.
 - [ ] Windows 10 20H1 (*May 2020 Update*)
 - [ ] Windows 10 19H2 (*November 2019 Update*)
 - [ ] Windows 10 19H1 (*May 2019 Update*)
+- [ ] Other (*Please specify your build number*)
 
 ---
 #### Description and steps to reproduce [Required]
