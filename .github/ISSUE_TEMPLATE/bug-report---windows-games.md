@@ -43,7 +43,8 @@ Please take a moment to review this checklist before completing the form.
 
 ---
 #### GPU Driver Version [Required]
-- [ ] 30.0.100.9667 (*latest*)
+- [ ] 30.0.100.9684 (*latest*)
+- [ ] 30.0.100.9667
 - [ ] 27.20.100.9616
 - [ ] 27.20.100.9466
 - [ ] 27.20.100.9316
@@ -62,6 +63,7 @@ Please take a moment to review this checklist before completing the form.
 
 ---
 #### Windows Build Number [Required]
+- [ ] Windows 11 (*Insider Preview*)
 - [ ] Windows 10 21H1 (*May 2021 Update*)
 - [ ] Windows 10 20H2 (*October 2020 Update*)
 - [ ] Windows 10 20H1 (*May 2020 Update*)
