@@ -3,7 +3,7 @@ name: Bug Report - Windows Games
 about: Report glitches, crashes or any other issue in your Windows games.
 title: ''
 labels: 'Info: Needs Replication'
-assignees: leoben2
+assignees: Bryce-7995
 
 ---
 
