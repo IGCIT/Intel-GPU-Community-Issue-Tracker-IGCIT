@@ -43,7 +43,8 @@ Please take a moment to review this checklist before completing the form.
 
 ---
 #### GPU Driver Version [Required]
-- [ ] 30.0.100.9805 (*latest*)
+- [ ] 30.0.100.9862 (*latest*)
+- [ ] 30.0.100.9805
 - [ ] 30.0.100.9684
 - [ ] 30.0.100.9667
 - [ ] 27.20.100.9616
