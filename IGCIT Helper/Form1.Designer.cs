@@ -29,7 +29,7 @@ namespace IGCIT_Helper {
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.footerMain = new System.Windows.Forms.Label();
             this.winbuild = new System.Windows.Forms.TextBox();
             this.cpuname = new System.Windows.Forms.TextBox();
             this.gpudrvver = new System.Windows.Forms.TextBox();
@@ -41,6 +41,7 @@ namespace IGCIT_Helper {
             this.asPNGToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.windowsMiniDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editTDRDelayValuesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ramT = new System.Windows.Forms.TextBox();
             this.ramL = new System.Windows.Forms.Label();
             this.dmanufL = new System.Windows.Forms.Label();
@@ -97,16 +98,16 @@ namespace IGCIT_Helper {
             this.label6.TabIndex = 5;
             this.label6.Text = "GPU Driver:";
             // 
-            // label3
+            // footerMain
             // 
-            this.label3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(0, 271);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(414, 21);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "IGCIT Helper ver 1.3, Author: IGCIT";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.footerMain.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.footerMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.footerMain.Location = new System.Drawing.Point(0, 271);
+            this.footerMain.Name = "footerMain";
+            this.footerMain.Size = new System.Drawing.Size(414, 21);
+            this.footerMain.TabIndex = 7;
+            this.footerMain.Text = "IGCIT Helper ver 1.4, Author: IGCIT";
+            this.footerMain.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // winbuild
             // 
@@ -191,7 +192,8 @@ namespace IGCIT_Helper {
             // toolsToolStripMenuItem
             // 
             this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.windowsMiniDToolStripMenuItem});
+            this.windowsMiniDToolStripMenuItem,
+            this.editTDRDelayValuesToolStripMenuItem});
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
             this.toolsToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
             this.toolsToolStripMenuItem.Text = "Tools";
@@ -202,6 +204,13 @@ namespace IGCIT_Helper {
             this.windowsMiniDToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
             this.windowsMiniDToolStripMenuItem.Text = "Enable Small Memory Dumps";
             this.windowsMiniDToolStripMenuItem.Click += new System.EventHandler(this.windowsMiniDToolStripMenuItem_Click);
+            // 
+            // editTDRDelayValuesToolStripMenuItem
+            // 
+            this.editTDRDelayValuesToolStripMenuItem.Name = "editTDRDelayValuesToolStripMenuItem";
+            this.editTDRDelayValuesToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
+            this.editTDRDelayValuesToolStripMenuItem.Text = "Edit TDR delay values";
+            this.editTDRDelayValuesToolStripMenuItem.Click += new System.EventHandler(this.editTDRDelayValuesToolStripMenuItem_Click);
             // 
             // ramT
             // 
@@ -389,7 +398,7 @@ namespace IGCIT_Helper {
             this.Controls.Add(this.gpudrvver);
             this.Controls.Add(this.cpuname);
             this.Controls.Add(this.winbuild);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.footerMain);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
@@ -416,7 +425,7 @@ namespace IGCIT_Helper {
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label footerMain;
         private System.Windows.Forms.TextBox winbuild;
         private System.Windows.Forms.TextBox cpuname;
         private System.Windows.Forms.TextBox gpudrvver;
@@ -441,6 +450,7 @@ namespace IGCIT_Helper {
         private System.Windows.Forms.ToolStripMenuItem asPNGToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem windowsMiniDToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editTDRDelayValuesToolStripMenuItem;
     }
 }
 

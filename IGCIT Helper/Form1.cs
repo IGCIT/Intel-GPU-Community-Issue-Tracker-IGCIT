@@ -3,7 +3,6 @@ using System;
 using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Imaging;
-using System.Linq;
 using System.Management;
 using System.Windows.Forms;
 
@@ -11,22 +10,25 @@ namespace IGCIT_Helper {
     public partial class Form1 : Form {
         RegistryKey _localMachine;
         ToolTip _cpTooltip;
+        bool isAdmin;
 
         public Form1() {
             InitializeComponent();
 
             _localMachine = Registry.LocalMachine;
             _cpTooltip = new ToolTip();
+            isAdmin = false;
         }
 
         private void Form1_Load(object sender, EventArgs e) {
             ManagementClass cs = new ManagementClass("Win32_ComputerSystem");
             ManagementClass os = new ManagementClass("Win32_OperatingSystem");
-
+            
             ActiveControl = label2; // unfocus the textbox!
             winbuild.Text = GetWindowsBuildVersion();
             cpuname.Text = GetProcessorName();
             gpudrvver.Text = GetGPUDriverVersion();
+            footerMain.Text = CommonData.FooterTx;
 
             foreach (ManagementObject mo in cs.GetInstances()) {
                 dmodelT.Text = mo["Model"].ToString();
@@ -43,26 +45,15 @@ namespace IGCIT_Helper {
             if (args.Length <= 1)
                 return;
 
-            if (args[1].Equals("eminidump"))
+            isAdmin = true;
+
+            if (args[1].Equals("eminidump")) {
                 enableMiniDump();
-        }
 
-        private String GetRegistryPath(in String path) {
-            String[] pathAr = path.Split('\\');
-            String ret = "";
-
-            for (int i = 0, l = pathAr.Length; i < l; ++i) {
-                if (pathAr[i] == "" || String.Equals(pathAr[i], "registry", StringComparison.OrdinalIgnoreCase))
-                    continue;
-                else if (String.Equals(pathAr[i], "machine", StringComparison.OrdinalIgnoreCase))
-                    ret += "HKEY_LOCAL_MACHINE";
-                else if (String.Equals(pathAr[i], "system", StringComparison.OrdinalIgnoreCase))
-                    ret += "\\SYSTEM";
-                else
-                    ret += "\\" + pathAr[i]; // wrong?
+            } else if (args[1].Equals("tdrSett")) {
+                ShowTdrDelayForm();
             }
 
-            return ret;
         }
 
         private String GetWindowsBuildVersion() {
@@ -115,7 +106,7 @@ namespace IGCIT_Helper {
                     if (gpuPath == null)
                         continue;
 
-                    regGPUPath = GetRegistryPath(gpuPath.ToString()).Replace("\\", "\\");
+                    regGPUPath = Utils.GetRegistryPath(gpuPath.ToString()).Replace("\\", "\\");
 
                     gpu = Registry.GetValue(regGPUPath, "DriverDesc", null);
                     if (gpu == null || gpu.ToString().IndexOf("intel", StringComparison.OrdinalIgnoreCase) < 0)
@@ -204,14 +195,7 @@ namespace IGCIT_Helper {
                     return;
                 }
 
-                ret = MessageBox.Show(this, "A reboot is required for the changes to take effect\n\nDo you want to reboot now?", "Enable small memory dump", MessageBoxButtons.YesNo);
-                if (ret == DialogResult.Yes) {
-                    ManagementClass w32os = new ManagementClass("Win32_OperatingSystem");
-
-                    w32os.Scope.Options.EnablePrivileges = true;
-                    w32os.GetInstances().OfType<ManagementObject>().First().InvokeMethod("Win32Shutdown", new object[] { 0x2, 0 }); // 2 = reboot
-                    Application.Exit();
-                }
+                Utils.AskReboot(this, "Enable small memory dump");
 
             } catch (Exception ex) {
                 MessageBox.Show(this, ex.Message, "Error", MessageBoxButtons.OK);
@@ -255,6 +239,15 @@ namespace IGCIT_Helper {
             } catch (Exception e) {
                 MessageBox.Show(this, e.Message, "Error", MessageBoxButtons.OK);
             }
+        }
+
+        private void ShowTdrDelayForm() {
+            Form tdrDl = new tdrdelayForm()
+            {
+                StartPosition = FormStartPosition.CenterParent
+            };
+
+            tdrDl.ShowDialog(this);
         }
 
         private void showCopyTooltip() {
@@ -304,7 +297,17 @@ namespace IGCIT_Helper {
         }
 
         private void windowsMiniDToolStripMenuItem_Click(object sender, EventArgs e) {
-            runsAsAdmin("eminidump");
+            if (!isAdmin)
+                runsAsAdmin("eminidump");
+            else
+                enableMiniDump();
+        }
+
+        private void editTDRDelayValuesToolStripMenuItem_Click(object sender, EventArgs e) {
+            if (!isAdmin)
+                runsAsAdmin("tdrSett");
+            else
+                ShowTdrDelayForm();
         }
     }
 }
