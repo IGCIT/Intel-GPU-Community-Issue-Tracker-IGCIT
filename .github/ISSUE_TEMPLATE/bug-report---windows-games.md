@@ -20,7 +20,7 @@ Please take a moment to review this checklist before completing the form.
 - [X] Checked
 -->
 - [ ] Device is not undervolted nor overclocked.
-- [ ] Device is using the [latest drivers](https://downloadcenter.intel.com/download/30381/Graphiques-Intel-Pilotes-DCH-Windows-10).
+- [ ] Device is using the [latest drivers](https://github.com/IGCIT/Intel-GPU-Community-Issue-Tracker-IGCIT/wiki/Intel-driver-updates-and-changelogs).
 - [ ] Game is not cracked, modded and use the latest patch.
 
 ---
@@ -67,6 +67,7 @@ Please take a moment to review this checklist before completing the form.
 ---
 #### Windows Build Number [Required]
 - [ ] Windows 11 (*Insider Preview*)
+- [ ] Windows 10 21H2 (*Insider Preview*)
 - [ ] Windows 10 21H1 (*May 2021 Update*)
 - [ ] Windows 10 20H2 (*October 2020 Update*)
 - [ ] Windows 10 20H1 (*May 2020 Update*)
