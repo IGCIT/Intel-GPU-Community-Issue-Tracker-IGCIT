@@ -16,63 +16,63 @@ See: https://github.com/IGCIT/Intel-GPU-Community-Issue-Tracker-IGCIT/wiki/IGCIT
 #### Checklist [README]
 <!--
 Please take a moment to review this checklist before completing the form.
-- [] Unchecked
+- [ ] Unchecked
 - [X] Checked
 -->
-- [] Device is not undervolted nor overclocked.
-- [] Device is using the [latest drivers](https://downloadcenter.intel.com/download/30381/Graphiques-Intel-Pilotes-DCH-Windows-10).
-- [] Game is not cracked, modded and use the latest patch.
+- [ ] Device is not undervolted nor overclocked.
+- [ ] Device is using the [latest drivers](https://downloadcenter.intel.com/download/30381/Graphiques-Intel-Pilotes-DCH-Windows-10).
+- [ ] Game is not cracked, modded and use the latest patch.
 
 ---
 #### Game / Application [Required]
 
 ---
 #### Game Platform [Required]
-- [] Steam
-- [] Origin
-- [] Microsoft Store
-- [] GOG Galaxy
-- [] Ubisoft Connect
-- [] Battle.net
-- [] Epic Games
-- [] Bethesda.net
-- [] Other
+- [ ] Steam
+- [ ] Origin
+- [ ] Microsoft Store
+- [ ] GOG Galaxy
+- [ ] Ubisoft Connect
+- [ ] Battle.net
+- [ ] Epic Games
+- [ ] Bethesda.net
+- [ ] Other
 
 ---
 #### Processor / Processor Number [Required]
 
 ---
 #### GPU Driver Version [Required]
-- [] 30.0.100.9864 (*latest*)
-- [] 30.0.100.9862
-- [] 30.0.100.9805
-- [] 30.0.100.9684
-- [] 30.0.100.9667
-- [] 27.20.100.9616
-- [] 27.20.100.9466
-- [] 27.20.100.9316
-- [] 27.20.100.9313
-- [] 27.20.100.9168
-- [] 27.20.100.9128
+- [ ] 30.0.100.9864 (*latest*)
+- [ ] 30.0.100.9862
+- [ ] 30.0.100.9805
+- [ ] 30.0.100.9684
+- [ ] 30.0.100.9667
+- [ ] 27.20.100.9616
+- [ ] 27.20.100.9466
+- [ ] 27.20.100.9316
+- [ ] 27.20.100.9313
+- [ ] 27.20.100.9168
+- [ ] 27.20.100.9128
 
 ---
 #### Rendering API [Required]
-- [] Vulkan
-- [] OpenGL
-- [] DirectX12
-- [] DirectX11
-- [] DirectX10
-- [] DirectX9
+- [ ] Vulkan
+- [ ] OpenGL
+- [ ] DirectX12
+- [ ] DirectX11
+- [ ] DirectX10
+- [ ] DirectX9
 
 ---
 #### Windows Build Number [Required]
-- [] Windows 11 (*Insider Preview*)
-- [] Windows 10 21H1 (*May 2021 Update*)
-- [] Windows 10 20H2 (*October 2020 Update*)
-- [] Windows 10 20H1 (*May 2020 Update*)
-- [] Windows 10 19H2 (*November 2019 Update*)
-- [] Windows 10 19H1 (*May 2019 Update*)
-- [] Other (*Please specify your build number*)
+- [ ] Windows 11 (*Insider Preview*)
+- [ ] Windows 10 21H1 (*May 2021 Update*)
+- [ ] Windows 10 20H2 (*October 2020 Update*)
+- [ ] Windows 10 20H1 (*May 2020 Update*)
+- [ ] Windows 10 19H2 (*November 2019 Update*)
+- [ ] Windows 10 19H1 (*May 2019 Update*)
+- [ ] Other (*Please specify your build number*)
 
 ---
 #### Description and steps to reproduce [Required]
