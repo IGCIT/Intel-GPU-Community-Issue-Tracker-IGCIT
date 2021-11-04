@@ -126,7 +126,14 @@ body:
   - type: textarea
     attributes:
       label: Description and steps to reproduce [Required]
-      description: "Make sure you describe the issue and steps to reproduce."
+      description: |
+        Make sure you describe the issue and steps to reproduce.
+        
+        In addition, if possible, please attach a video showing the following:
+        
+        * The start of the game from Windows
+        * Your game settings
+        * The issue you encountered
       placeholder: "Tip: You can attach images or files by clicking this area to highlight it and then dragging files in."
     validations:
       required: true
