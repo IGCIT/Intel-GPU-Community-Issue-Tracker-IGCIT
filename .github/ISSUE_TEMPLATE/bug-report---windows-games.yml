@@ -134,7 +134,7 @@ body:
         * The start of the game from Windows
         * Your game settings
         * The issue you encountered
-      placeholder: "Tip: You can attach images or files by clicking this area to highlight it and then dragging files in."
+      placeholder: "Tip: You can attach images, .mp4 videos, or files, by clicking this area to highlight it and then dragging files in."
     validations:
       required: true
   - type: markdown
