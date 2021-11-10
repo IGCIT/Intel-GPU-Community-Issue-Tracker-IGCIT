@@ -49,6 +49,8 @@ body:
         - label: Battle.net
         - label: Epic Games
         - label: Bethesda.net
+        - label: Rockstar Games Launcher
+        - label: EA app
         - label: Other (please specify)
   - type: input
     attributes:
