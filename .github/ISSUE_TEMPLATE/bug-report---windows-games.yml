@@ -71,7 +71,8 @@ body:
     attributes:
       label: GPU Driver Version [Required]
       options:
-        - label: '30.0.101.1069 (*latest*)'
+        - label: '30.0.101.1121 (*latest*)'
+        - label: '30.0.101.1069'
         - label: '30.0.100.9955'
         - label: '30.0.100.9894'
         - label: '30.0.100.9864'
@@ -110,7 +111,7 @@ body:
       label: Windows Build Number [Required]
       options:
         - label: Windows 11
-        - label: Windows 10 21H2 (*Insider Preview*)
+        - label: Windows 10 21H2 (*November 2021 Update*)
         - label: Windows 10 21H1 (*May 2021 Update*)
         - label: Windows 10 20H2 (*October 2020 Update*)
         - label: Windows 10 20H1 (*May 2020 Update*)
