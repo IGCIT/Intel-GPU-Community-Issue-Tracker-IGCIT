@@ -1,0 +1,147 @@
+name: Bug Report - Windows Applications
+description: Report issues in your non-game applications, or Windows itself, with Intel Graphics drivers.
+labels: 'Info: Needs Replication'
+assignees: 'Bryce-7995'
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **It is HIGHLY recommended to use IGCIT Helper to extract your device details so that we can get exact information and help you better and faster.**
+
+        **See**: [IGCIT Helper - IGCIT WIKI](https://github.com/IGCIT/Intel-GPU-Community-Issue-Tracker-IGCIT/wiki/IGCIT-Helper)
+         
+        **Once submitted, you can edit some of its fields, like checkboxes, directly, ie you don't need to use the Edit button**
+  - type: markdown
+    attributes:
+      value: '---'
+  - type: checkboxes
+    attributes:
+      label: Checklist [README]
+      description: "Please take a moment to review this checklist before completing the form."
+      options:
+        - label: Device is not undervolted nor overclocked
+          required: true
+        - label: Device is using the [latest drivers](https://github.com/IGCIT/Intel-GPU-Community-Issue-Tracker-IGCIT/wiki/Intel-driver-updates-and-changelogs)
+          required: true
+        - label: Application is not cracked, modded and use the latest patch
+          required: true
+  - type: markdown
+    attributes:
+      value: '---'
+  - type: input
+    attributes:
+      label:  Application [Required]
+      description: "Full name of the application"
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: '---'
+  - type: input
+    attributes:
+      label: Processor / Processor Number [Required]
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: '---'
+  - type: checkboxes
+    attributes:
+      label: GPU Driver Version [Required]
+      options:
+        - label: '30.0.101.1121 (*latest*)'
+        - label: '30.0.101.1069'
+        - label: '30.0.100.9955'
+        - label: '30.0.100.9894'
+        - label: '30.0.100.9864'
+        - label: '30.0.100.9862'
+        - label: '30.0.100.9805'
+        - label: '30.0.100.9684'
+        - label: '30.0.100.9667'
+        - label: '27.20.100.9616'
+        - label: '27.20.100.9466'
+        - label: '27.20.100.9316'
+        - label: '27.20.100.9313'
+        - label: '27.20.100.9168'
+        - label: '27.20.100.9128'
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: '---'
+  - type: checkboxes
+    attributes:
+      label: Rendering API [Required]
+      options:
+        - label: Vulkan
+        - label: OpenGL
+        - label: DirectX12
+        - label: DirectX11
+        - label: DirectX10
+        - label: DirectX9
+        - label: Not applicable
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: '---'
+  - type: checkboxes
+    attributes:
+      label: Windows Build Number [Required]
+      options:
+        - label: Windows 11
+        - label: Windows 10 21H2 (*November 2021 Update*)
+        - label: Windows 10 21H1 (*May 2021 Update*)
+        - label: Windows 10 20H2 (*October 2020 Update*)
+        - label: Windows 10 20H1 (*May 2020 Update*)
+        - label: Windows 10 19H2 (*November 2019 Update*)
+        - label: Windows 10 19H1 (*May 2019 Update*)
+        - label: Other (Please specify)
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Other Windows build number
+      description: "Specify your Windows build number if not present on the list"
+  - type: markdown
+    attributes:
+      value: '---'
+  - type: textarea
+    attributes:
+      label: Description and steps to reproduce [Required]
+      description: |
+        Make sure you describe the issue and steps to reproduce.
+        
+        In addition, if possible, please attach a video showing the issue.
+      placeholder: "Tip: You can attach images, .mp4 videos, or files, by clicking this area to highlight it and then dragging files in."
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: '---'
+  - type: input
+    attributes:
+      label: Device / Platform
+      description: "Share your device / platform name. It could be there is a specific constructor issue. [Recommended]"
+  - type: markdown
+    attributes:
+      value: '---'
+  - type: textarea
+    attributes:
+      label: Windows mini dump (small memory dump)
+      description: "if available, could help solve the issue faster. For more help about mini dumps see: [How to enable mini dumps - IGCIT Wiki](https://github.com/IGCIT/Intel-GPU-Community-Issue-Tracker-IGCIT/wiki/How-to-enable-small-memory-dumps-(crash-dumps)). [Optional]"
+      placeholder: |
+        Tip: You can attach files by clicking this area to highlight it and then dragging files in.
+
+        Attach your compressed (*.zip*) dump here.
+  - type: markdown
+    attributes:
+      value: '---'
+  - type: textarea
+    attributes:
+      label: Application / Windows logs
+      description: "if available, could help solve the issue faster. [Optional]"
+      placeholder: |
+        Tip: You can attach files by clicking this area to highlight it and then dragging files in.
+
+        Attach your compressed (*.zip*) logs here.
