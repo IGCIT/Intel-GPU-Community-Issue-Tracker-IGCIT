@@ -173,7 +173,7 @@ body:
   - type: textarea
     attributes:
       label: Windows mini dump (small memory dump)
-      description: "if available, could help solve the issue faster. For more help about mini dumps see: [How to enable mini dumps - IGCIT Wiki](https://github.com/IGCIT/Intel-GPU-Community-Issue-Tracker-IGCIT/wiki/How-to-enable-small-memory-dumps-(crash-dumps)). [Optional]"
+      description: "if available, could help solve the issue faster. For more help see: [How to enable mini dumps - IGCIT Wiki](https://github.com/IGCIT/Intel-GPU-Community-Issue-Tracker-IGCIT/wiki/How-to-enable-small-memory-dumps-(crash-dumps)). [Optional]"
       placeholder: |
         Tip: You can attach files by clicking this area to highlight it and then dragging files in.
 
@@ -184,7 +184,7 @@ body:
   - type: textarea
     attributes:
       label: Game custom logs
-      description: "if available, could help solve the issue faster. For more help about mini dumps see [Where to find game custom logs - IGCIT Wiki](https://github.com/IGCIT/Intel-GPU-Community-Issue-Tracker-IGCIT/wiki/Where-to-find-game-custom-logs) [Optional]"
+      description: "if available, could help solve the issue faster. For more help see: [Where to find game custom logs - IGCIT Wiki](https://github.com/IGCIT/Intel-GPU-Community-Issue-Tracker-IGCIT/wiki/Where-to-find-game-custom-logs) [Optional]"
       placeholder: |
         Tip: You can attach files by clicking this area to highlight it and then dragging files in.
 
