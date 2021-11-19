@@ -6,11 +6,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        **It is HIGHLY recommended to use IGCIT Helper to extract your device details so that we can get exact information and help you better and faster.**
-
-        **See**: [IGCIT Helper - IGCIT WIKI](https://github.com/IGCIT/Intel-GPU-Community-Issue-Tracker-IGCIT/wiki/IGCIT-Helper)
-         
-        **Once submitted, you can edit some of its fields, like checkboxes, directly, ie you don't need to use the Edit button**
+        **Note: Once submitted, you can edit some of its fields, like checkboxes, directly, ie you don't need to use the Edit button**
   - type: markdown
     attributes:
       value: '---'
@@ -108,9 +104,22 @@ body:
       value: '---'
   - type: textarea
     attributes:
+      label: Intel System Support Utility report
+      description: |
+        Please generate and attach the output of Intel® System Support Utility here.
+
+        See: [How to generate Intel System Support Utility report - IGCIT Wiki](https://github.com/IGCIT/Intel-GPU-Community-Issue-Tracker-IGCIT/wiki/How-to-generate-Intel-System-Support-Utility-report)
+      placeholder: "Tip: You can attach images, .mp4 videos, or files, by clicking this area to highlight it and then dragging files in."
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: '---'
+  - type: textarea
+    attributes:
       label: Description and steps to reproduce [Required]
       description: |
-        Make sure you describe the issue and steps to reproduce.
+        Make sure you describe the issue and steps to reproduce accurately.
         
         In addition, if possible, please attach a video showing the issue.
       placeholder: "Tip: You can attach images, .mp4 videos, or files, by clicking this area to highlight it and then dragging files in."
@@ -128,12 +137,14 @@ body:
       value: '---'
   - type: textarea
     attributes:
-      label: Windows mini dump (small memory dump)
-      description: "if available, could help solve the issue faster. For more help about mini dumps see: [How to enable mini dumps - IGCIT Wiki](https://github.com/IGCIT/Intel-GPU-Community-Issue-Tracker-IGCIT/wiki/How-to-enable-small-memory-dumps-(crash-dumps)). [Optional]"
+      label: Crash dumps [Required]               
+      description: "For more help see: [How to obtain crash dumps - IGCIT Wiki](https://github.com/IGCIT/Intel-GPU-Community-Issue-Tracker-IGCIT/wiki/How-to-obtain-crash-dumps)"
       placeholder: |
         Tip: You can attach files by clicking this area to highlight it and then dragging files in.
 
         Attach your compressed (*.zip*) dump here.
+      validations:
+        required: true
   - type: markdown
     attributes:
       value: '---'

@@ -6,13 +6,14 @@
 
 All the issues here will be reported directly to Intel.
 
+Please, do **not** ping Intel employees in your issues.
+
 We collect issues for **Windows only**, everything else, like Linux, must be reported to the respective developers.
 We also collect issues from **emulator developers**, if you find a bug in Intel **Windows drivers**, you can report it here.
 
 You can report Mesa issues [here](https://gitlab.freedesktop.org/mesa/mesa).
 
 ---
-
 
 ## IGCIT Wiki
 
@@ -24,28 +25,11 @@ IGCIT Wiki contains how-tos, links to latest drivers and release notes, and more
 
 ## How to report a bug
 
-To open a new issue, some information are required.
+To get access to our issue forms, please follow these steps in this exact order:
 
-Use [IGCIT Helper](https://github.com/IGCIT/Intel-GPU-Community-Issue-Tracker-IGCIT/releases) to extract all the device details required by _IGCIT_. (see [IGCIT Wiki](https://github.com/IGCIT/Intel-GPU-Community-Issue-Tracker-IGCIT/wiki/IGCIT-Helper))
-
-Once you have collected all the required information, open a new issue describing your problem [here](https://github.com/IGCIT/Intel-GPU-Community-Issue-Tracker-IGCIT/issues).
-
-**To open an issue about a Windows game / application**:
-
-* Game / Application _[Required]_
-* Game platform _[Required] (example: steam, origin)_
-* Processor _[Required] (example: i7-1065G7)_
-* GPU driver version _[Required]_
-* Rendering API _[Required]_
-* Windows build number _[Required]_
-* Description _[Required]_
-* Steps to reproduce _[Required]_
-* Device / Platform _[Optional][Recommended]_
-* Game settings _[Optional][Recommended]_
-* Savegame _[Optional]_
-* Screenshot _[Optional] (see [IGCIT Wiki](https://github.com/IGCIT/Intel-GPU-Community-Issue-Tracker-IGCIT/wiki/How-to-take-in-game-screenshots))_
-* Windows mini dump (small memory dump) _(see [IGCIT Wiki](https://github.com/IGCIT/Intel-GPU-Community-Issue-Tracker-IGCIT/wiki/How-to-enable-small-memory-dumps-(crash-dumps)))_
-* Game custom logs _[Optional] (see [IGCIT Wiki](https://github.com/IGCIT/Intel-GPU-Community-Issue-Tracker-IGCIT/wiki/Where-to-find-game-custom-logs))_
+ * Login to GitHub, or create a new account and login.
+ * Go to **Issues** and click **New issue**
+ * You should now see the list of _IGCIT_ issue forms
 
 ---
 
