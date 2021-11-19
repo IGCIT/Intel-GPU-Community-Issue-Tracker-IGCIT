@@ -143,8 +143,8 @@ body:
         Tip: You can attach files by clicking this area to highlight it and then dragging files in.
 
         Attach your compressed (*.zip*) dump here.
-      validations:
-        required: true
+    validations:
+      required: true
   - type: markdown
     attributes:
       value: '---'
