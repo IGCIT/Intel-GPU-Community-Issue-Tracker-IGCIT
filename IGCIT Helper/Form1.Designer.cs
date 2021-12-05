@@ -37,10 +37,13 @@ namespace IGCIT_Helper {
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.goToRepositoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.goToWikiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exportDeviceInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.asPNGToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.windowsMiniDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.enableToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.extractDumpFilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fixWATCHDOGDumpsGenerationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clearWindowsDumpFoldersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.restoreWindowsDefaultsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editTDRDelayValuesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ramT = new System.Windows.Forms.TextBox();
             this.ramL = new System.Windows.Forms.Label();
@@ -55,6 +58,7 @@ namespace IGCIT_Helper {
             this.cpgpud = new System.Windows.Forms.Button();
             this.cpproc = new System.Windows.Forms.Button();
             this.cpwinb = new System.Windows.Forms.Button();
+            this.anonymizeSSUReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -143,7 +147,6 @@ namespace IGCIT_Helper {
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1,
-            this.exportDeviceInfoToolStripMenuItem,
             this.toolsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -174,41 +177,67 @@ namespace IGCIT_Helper {
             this.goToWikiToolStripMenuItem.Text = "Go to wiki";
             this.goToWikiToolStripMenuItem.Click += new System.EventHandler(this.goToWikiToolStripMenuItem_Click);
             // 
-            // exportDeviceInfoToolStripMenuItem
-            // 
-            this.exportDeviceInfoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.asPNGToolStripMenuItem});
-            this.exportDeviceInfoToolStripMenuItem.Name = "exportDeviceInfoToolStripMenuItem";
-            this.exportDeviceInfoToolStripMenuItem.Size = new System.Drawing.Size(119, 20);
-            this.exportDeviceInfoToolStripMenuItem.Text = "Export information";
-            // 
-            // asPNGToolStripMenuItem
-            // 
-            this.asPNGToolStripMenuItem.Name = "asPNGToolStripMenuItem";
-            this.asPNGToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
-            this.asPNGToolStripMenuItem.Text = "Take screenshot";
-            this.asPNGToolStripMenuItem.Click += new System.EventHandler(this.asPNGToolStripMenuItem_Click);
-            // 
             // toolsToolStripMenuItem
             // 
             this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.windowsMiniDToolStripMenuItem,
-            this.editTDRDelayValuesToolStripMenuItem});
+            this.editTDRDelayValuesToolStripMenuItem,
+            this.anonymizeSSUReportToolStripMenuItem});
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
             this.toolsToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
             this.toolsToolStripMenuItem.Text = "Tools";
             // 
             // windowsMiniDToolStripMenuItem
             // 
+            this.windowsMiniDToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.enableToolStripMenuItem,
+            this.extractDumpFilesToolStripMenuItem,
+            this.fixWATCHDOGDumpsGenerationToolStripMenuItem,
+            this.clearWindowsDumpFoldersToolStripMenuItem,
+            this.restoreWindowsDefaultsToolStripMenuItem});
             this.windowsMiniDToolStripMenuItem.Name = "windowsMiniDToolStripMenuItem";
-            this.windowsMiniDToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
-            this.windowsMiniDToolStripMenuItem.Text = "Enable Small Memory Dumps";
-            this.windowsMiniDToolStripMenuItem.Click += new System.EventHandler(this.windowsMiniDToolStripMenuItem_Click);
+            this.windowsMiniDToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.windowsMiniDToolStripMenuItem.Text = "Crash Dumps";
+            // 
+            // enableToolStripMenuItem
+            // 
+            this.enableToolStripMenuItem.Name = "enableToolStripMenuItem";
+            this.enableToolStripMenuItem.Size = new System.Drawing.Size(245, 22);
+            this.enableToolStripMenuItem.Text = "Enable";
+            this.enableToolStripMenuItem.Click += new System.EventHandler(this.enableToolStripMenuItem_Click);
+            // 
+            // extractDumpFilesToolStripMenuItem
+            // 
+            this.extractDumpFilesToolStripMenuItem.Name = "extractDumpFilesToolStripMenuItem";
+            this.extractDumpFilesToolStripMenuItem.Size = new System.Drawing.Size(245, 22);
+            this.extractDumpFilesToolStripMenuItem.Text = "Extract dump files";
+            this.extractDumpFilesToolStripMenuItem.Click += new System.EventHandler(this.extractDumpFilesToolStripMenuItem_Click);
+            // 
+            // fixWATCHDOGDumpsGenerationToolStripMenuItem
+            // 
+            this.fixWATCHDOGDumpsGenerationToolStripMenuItem.Name = "fixWATCHDOGDumpsGenerationToolStripMenuItem";
+            this.fixWATCHDOGDumpsGenerationToolStripMenuItem.Size = new System.Drawing.Size(245, 22);
+            this.fixWATCHDOGDumpsGenerationToolStripMenuItem.Text = "Fix watchdog dumps generation";
+            this.fixWATCHDOGDumpsGenerationToolStripMenuItem.Click += new System.EventHandler(this.fixWATCHDOGDumpsGenerationToolStripMenuItem_Click);
+            // 
+            // clearWindowsDumpFoldersToolStripMenuItem
+            // 
+            this.clearWindowsDumpFoldersToolStripMenuItem.Name = "clearWindowsDumpFoldersToolStripMenuItem";
+            this.clearWindowsDumpFoldersToolStripMenuItem.Size = new System.Drawing.Size(245, 22);
+            this.clearWindowsDumpFoldersToolStripMenuItem.Text = "Clear Windows dump folders";
+            this.clearWindowsDumpFoldersToolStripMenuItem.Click += new System.EventHandler(this.clearWindowsDumpFoldersToolStripMenuItem_Click);
+            // 
+            // restoreWindowsDefaultsToolStripMenuItem
+            // 
+            this.restoreWindowsDefaultsToolStripMenuItem.Name = "restoreWindowsDefaultsToolStripMenuItem";
+            this.restoreWindowsDefaultsToolStripMenuItem.Size = new System.Drawing.Size(245, 22);
+            this.restoreWindowsDefaultsToolStripMenuItem.Text = "Restore Windows defaults";
+            this.restoreWindowsDefaultsToolStripMenuItem.Click += new System.EventHandler(this.restoreWindowsDefaultsToolStripMenuItem_Click);
             // 
             // editTDRDelayValuesToolStripMenuItem
             // 
             this.editTDRDelayValuesToolStripMenuItem.Name = "editTDRDelayValuesToolStripMenuItem";
-            this.editTDRDelayValuesToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
+            this.editTDRDelayValuesToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.editTDRDelayValuesToolStripMenuItem.Text = "Edit TDR delay values";
             this.editTDRDelayValuesToolStripMenuItem.Click += new System.EventHandler(this.editTDRDelayValuesToolStripMenuItem_Click);
             // 
@@ -377,6 +406,13 @@ namespace IGCIT_Helper {
             this.cpwinb.UseVisualStyleBackColor = false;
             this.cpwinb.Click += new System.EventHandler(this.cpwinb_Click);
             // 
+            // anonymizeSSUReportToolStripMenuItem
+            // 
+            this.anonymizeSSUReportToolStripMenuItem.Name = "anonymizeSSUReportToolStripMenuItem";
+            this.anonymizeSSUReportToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.anonymizeSSUReportToolStripMenuItem.Text = "Anonymize SSU report";
+            this.anonymizeSSUReportToolStripMenuItem.Click += new System.EventHandler(this.anonymizeSSUReportToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -410,6 +446,7 @@ namespace IGCIT_Helper {
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "IGCIT Helper";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Shown += new System.EventHandler(this.Form1_Shown);
             this.menuStrip1.ResumeLayout(false);
@@ -443,14 +480,18 @@ namespace IGCIT_Helper {
         private System.Windows.Forms.Button cpgpud;
         private System.Windows.Forms.Button cpproc;
         private System.Windows.Forms.Button cpwinb;
-        private System.Windows.Forms.ToolStripMenuItem exportDeviceInfoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem goToRepositoryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem goToWikiToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem asPNGToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem windowsMiniDToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editTDRDelayValuesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem enableToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fixWATCHDOGDumpsGenerationToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem restoreWindowsDefaultsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem extractDumpFilesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem clearWindowsDumpFoldersToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem anonymizeSSUReportToolStripMenuItem;
     }
 }
 

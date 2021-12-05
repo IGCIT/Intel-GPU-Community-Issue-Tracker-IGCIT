@@ -5,12 +5,14 @@ using System.Windows.Forms;
 
 namespace IGCIT_Helper {
     public partial class tdrdelayForm : Form {
-        RegistryKey _localMachine;
+        private readonly RegistryKey _localMachine;
+        private readonly Utils _util;
 
         public tdrdelayForm() {
             InitializeComponent();
 
             _localMachine = Registry.LocalMachine;
+            _util = Utils.Instance;
         }
 
         private void tdrdelayForm_Load(object sender, EventArgs e) {
@@ -51,7 +53,7 @@ namespace IGCIT_Helper {
                 tdrInpt.Value = 2;
                 tdrDdiInpt.Value = 5;
 
-                Utils.AskReboot(this);
+                _util.AskReboot(this);
                 Close();
 
             } catch (Exception ex) {
@@ -70,7 +72,7 @@ namespace IGCIT_Helper {
 
                 gfxDriverReg.SetValue("TdrDelay", tdrInpt.Value, RegistryValueKind.DWord);
                 gfxDriverReg.SetValue("TdrDdiDelay", tdrDdiInpt.Value, RegistryValueKind.DWord);
-                Utils.AskReboot(this);
+                _util.AskReboot(this);
                 Close();
 
             } catch (Exception ex) {
