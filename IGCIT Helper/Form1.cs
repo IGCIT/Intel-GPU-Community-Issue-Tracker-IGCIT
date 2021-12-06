@@ -359,9 +359,6 @@ namespace IGCIT_Helper {
                         _util.DirectoryCopy(dinfo.FullName, $@"{outDir}\{dinfo.Name}", false);
                 }
 
-                if (File.Exists($@"{sysRoot}\MEMORY.DMP"))
-                    File.Copy($@"{sysRoot}\MEMORY.DMP", $@"{outDir}\memory.dmp");
-
                 outDInfo = new DirectoryInfo(outDir);
                 if (outDInfo.GetFiles().Length == 0 && outDInfo.GetDirectories().Length == 0)
                     return "No crash dumps have been found on this system.";
