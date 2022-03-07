@@ -34,6 +34,12 @@
 
 ---
 
+#### IGCIT Driver Switch v3.0.0
+* Add full support for new driver installer
+* Fix application freeze in some cases
+* Fix restore point creation on latest Windows builds
+* Add advanced options
+
 #### IGCIT Driver Switch v2.0.0
 * Add loading icon (let the user know the application is not stuck when doing something that requires a few minutes)
 * New application menu
