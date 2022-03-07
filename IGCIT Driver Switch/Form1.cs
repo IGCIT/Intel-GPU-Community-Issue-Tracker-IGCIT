@@ -13,13 +13,30 @@ using System.Threading;
 
 namespace IGCIT_Driver_Switch {
     public partial class appform : Form {
+        private struct DriverInstallerData {
+            public string zipPath;
+            public string version;
+            public string exeName;
+            public string downgradeArgs;
+            public bool hasCleanInstall;
+            public bool hasNoSignCheck;
+            public bool hasForceIntegrated;
+            public bool hasForceDiscrete;
+            public bool hasForceUnified;
+            public bool hasForceOneCore;
+            public bool hasForceLegacy;
+            public bool hasSkipExtras;
+        }
+
         private const string _driversPath = "intel_drivers";
         private const string _tmpFolder = "igcit_drv_tmp";
+        private string _driverInstallLogPath;
         private Dictionary<string, CancellationTokenSource> _cancTokSources;
         private TaskCompletionSource<bool> _startProcessTask;
         private appform _switchDriverForm;
-        private List<string> _driverZipPaths;
+        private List<DriverInstallerData> _driverInstallersList;
         private RegistryKey _localMachine;
+        RegistryKey _localMachine64;
         private uint _prevRestorePFreq;
         private int _prevComboboxIdx;
         private string _deviceID;
@@ -28,14 +45,16 @@ namespace IGCIT_Driver_Switch {
         private static extern bool Wow64DisableWow64FsRedirection(ref IntPtr ptr);
 
         [DllImport("kernel32.dll", SetLastError = true)]
-        private static extern bool Wow64RevertWow64FsRedirection(IntPtr ptr);
+        private static extern bool Wow64RevertWow64FsRedirection(IntPtr ptr); 
 
         public appform() {
             InitializeComponent();
 
             _switchDriverForm = this;
-            _driverZipPaths = new List<string>();
+            _driverInstallersList = new List<DriverInstallerData>();
+            _driverInstallLogPath =  $@"{Directory.GetCurrentDirectory()}\drvInstallLog.txt";
             _localMachine = Registry.LocalMachine;
+            _localMachine64 = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry64);
             _prevRestorePFreq = 1440; // default windows
             _prevComboboxIdx = -1;
 
@@ -48,12 +67,10 @@ namespace IGCIT_Driver_Switch {
             };
         }
 
-        private void Form1_Load(object sender, EventArgs e) {
-            MessageBox.Show(this, "PLEASE MAKE SURE NO UNDERVOLT, OR SIMILAR CHANGES, ARE CURRENTLY APPLIED TO THE SYSTEM!\n\nUSE THIS AT YOUR OWN RISK!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-        }
-
         private async void Form1_Shown(object sender, EventArgs e) {
             LockUI();
+
+            WriteLog("UNDERVOLT, OR OTHER TWEAKS, MAY CAUSE INSTABILITY!\nUSE THIS AT YOUR OWN RISK!\n", Color.DarkRed);
 
             _deviceID = await GetDeviceID();
             if (_deviceID == "") {
@@ -64,7 +81,9 @@ namespace IGCIT_Driver_Switch {
             }
 
             WriteLog($"I: Found device:\n{_deviceID}\n", Color.DarkViolet);
-            UpdateDriversListUI(await LoadDriversList());
+
+            await PopulateDriversList();
+            UpdateDriversListUI();
 
             curDverL.Text = await GetGPUDriverVersion();
 
@@ -117,7 +136,57 @@ namespace IGCIT_Driver_Switch {
             return id;
         }
 
-        private Task<List<string>> LoadDriversList() {
+        private string GetDriverInstallerExe(string driverZip) {
+            try {
+                ZipArchive z = ZipFile.OpenRead(driverZip);
+
+                foreach (ZipArchiveEntry ze in z.Entries) {
+                    string entryName = ze.FullName;
+
+                    if (entryName.Equals("Installer.exe"))
+                        return "Installer";
+                    else if (entryName.Equals("igxpin.exe"))
+                        return "igxpin";
+                }
+            } catch (Exception e) {}
+
+            return "";
+        }
+
+        private DriverInstallerData GetDriverInstallerData(string zipPath, string versionStr) {
+            DriverInstallerData data = new DriverInstallerData {
+                zipPath = zipPath,
+                version = versionStr,
+                exeName = GetDriverInstallerExe(zipPath),
+                hasCleanInstall = false,
+                hasForceIntegrated = false,
+                hasForceDiscrete = false,
+                hasForceUnified = false,
+                hasForceOneCore = false,
+                hasForceLegacy = false,
+                hasNoSignCheck = false,
+                hasSkipExtras = false
+            };
+
+            if (data.exeName.Equals("Installer")) {
+                data.downgradeArgs = "-s -o";
+                data.hasCleanInstall = true;
+                data.hasForceIntegrated = true;
+                data.hasForceDiscrete = true;
+                data.hasForceUnified = true;
+                data.hasForceOneCore = true;
+                data.hasForceLegacy = true;
+                data.hasNoSignCheck= true;
+                data.hasSkipExtras = true;
+
+            } else {
+                data.downgradeArgs = "-s -overwrite";
+            }
+
+            return data;
+        }
+
+        private Task PopulateDriversList() {
             if (_cancTokSources["loadDrv"] == null || _cancTokSources["loadDrv"].Token.IsCancellationRequested)
                 _cancTokSources["loadDrv"] = new CancellationTokenSource();
 
@@ -125,11 +194,9 @@ namespace IGCIT_Driver_Switch {
 
             WriteLog("I: Scanning intel_drivers folder..", Color.Blue);
 
-            return Task<List<string>>.Factory.StartNew(() => {
-                List<string> verList = new List<string>();
-
+            return Task.Factory.StartNew(() => {
                 ctok.ThrowIfCancellationRequested();
-                _driverZipPaths.Clear();
+                _driverInstallersList.Clear();
 
                 try {
                     if (!Directory.Exists(_driversPath))
@@ -155,6 +222,7 @@ namespace IGCIT_Driver_Switch {
                                     continue;
 
                                 StreamReader sr = new StreamReader(ze.Open());
+                                DriverInstallerData drvData;
 
                                 while (!sr.EndOfStream) {
                                     if (ctok.IsCancellationRequested)
@@ -165,8 +233,11 @@ namespace IGCIT_Driver_Switch {
                                     if (!l.Contains("DriverVer="))
                                         continue;
 
-                                    verList.Add(l.Split(',')[1]);
-                                    _driverZipPaths.Add(d);
+                                    drvData = GetDriverInstallerData(d, l.Split(',')[1]);
+                                    if (drvData.exeName.Equals(""))
+                                        continue;
+
+                                    _driverInstallersList.Add(drvData);
                                 }
 
                                 break;
@@ -180,15 +251,13 @@ namespace IGCIT_Driver_Switch {
                         }
                     }
                 } catch (Exception e) {
-                    verList = null;
+                    _driverInstallersList.Clear();
 
                     _switchDriverForm.BeginInvoke((MethodInvoker)delegate () {
                         ShowCatchErrorMessage(e);
                         WriteLog("E: Unable to load drivers from folder!", Color.Red);
                     });
                 }
-
-                return verList;
             }, _cancTokSources["loadDrv"].Token);
         }
 
@@ -267,7 +336,7 @@ namespace IGCIT_Driver_Switch {
                             return true;
                     }
 
-                    string zipPath = Path.GetFullPath(_driverZipPaths[idx]);
+                    string zipPath = Path.GetFullPath(_driverInstallersList[idx].zipPath);
                     string dest = Path.GetFullPath(_tmpFolder);
 
                     _switchDriverForm.BeginInvoke((MethodInvoker)delegate () {
@@ -296,6 +365,71 @@ namespace IGCIT_Driver_Switch {
             }, _cancTokSources["extrDrv"].Token);
         }
 
+        private string GetDowngradeArgsStr(DriverInstallerData drv) {
+            string args = drv.downgradeArgs;
+
+            if (drv.hasCleanInstall && forceCleanChk.Checked)
+                args += " -f";
+
+            if (drv.hasNoSignCheck && noSignCheckChk.Checked)
+                args += " --unsigned";
+
+            if (drv.hasForceIntegrated && forceIntegratedChk.Checked)
+                args += " --integrated";
+
+            if (drv.hasForceDiscrete && forceDiscreteChk.Checked)
+                args += " --discrete";
+
+            if (drv.hasForceUnified && forceUnifiedChk.Checked)
+                args += " --unified";
+
+            if (drv.hasForceOneCore && forceOneCoreChk.Checked)
+                args += " --onecore";
+
+            if (drv.hasForceLegacy && forceLegacyChk.Checked)
+                args += " --legacy";
+
+            if (drv.hasSkipExtras && skipExtrasChk.Checked)
+                args += " --noExtras";
+
+            if (rebootChk.Checked)
+                args += " -b";
+
+            if (writeDLogChk.Checked) {
+                if (drv.exeName.Equals("Installer"))
+                    args += $" --report \"{_driverInstallLogPath}\"";
+                else
+                    args += $" -report \"{_driverInstallLogPath}\"";
+            }
+
+            return args;
+        }
+
+        private void UpdateUIForSelectedDriver(int idx) {
+            forceCleanChk.Enabled = false;
+            noSignCheckChk.Enabled = false;
+            forceIntegratedChk.Enabled = false;
+            forceDiscreteChk.Enabled = false;
+            forceOneCoreChk.Enabled = false;
+            forceUnifiedChk.Enabled = false;
+            forceLegacyChk.Enabled = false;
+            skipExtrasChk.Enabled = false;
+
+            if (idx == 0)
+                return;
+
+            DriverInstallerData drv = _driverInstallersList[idx - 1];
+            
+            forceCleanChk.Enabled = drv.hasCleanInstall;
+            noSignCheckChk.Enabled = drv.hasNoSignCheck;
+            forceIntegratedChk.Enabled = drv.hasForceIntegrated;
+            forceDiscreteChk.Enabled = drv.hasForceDiscrete;
+            forceOneCoreChk.Enabled = drv.hasForceOneCore;
+            forceUnifiedChk.Enabled = drv.hasForceUnified;
+            forceLegacyChk.Enabled = drv.hasForceLegacy;
+            skipExtrasChk.Enabled = drv.hasSkipExtras;
+        }
+
         private void driversList_SelectedIndexChanged(object sender, EventArgs e) {
             ComboBox combo = sender as ComboBox;
 
@@ -303,6 +437,7 @@ namespace IGCIT_Driver_Switch {
                 loadBtn.Enabled = true;
 
             _prevComboboxIdx = combo.SelectedIndex;
+            UpdateUIForSelectedDriver(combo.SelectedIndex);
         }
 
         private async void restoreBtn_Click(object sender, EventArgs e) {
@@ -357,12 +492,13 @@ namespace IGCIT_Driver_Switch {
                 return;
 
             ProcessStartInfo pinfo = new ProcessStartInfo();
+            int drvIdx = driversList.SelectedIndex - 1;
             bool ret;
 
             LockUI();
 
             try {
-                ret = await ExtractSelectedDriver(driversList.SelectedIndex - 1);
+                ret = await ExtractSelectedDriver(drvIdx);
 
                 if (!ret) {
                     WriteLog("E: Unable to load driver!", Color.Red);
@@ -385,7 +521,7 @@ namespace IGCIT_Driver_Switch {
                         WriteLog($"I: CreateRestorePoint result: {res}", Color.Blue);
                         RevertDisableRestorePointCreationLimit();
 
-                        ret = res == 0;
+                        ret = (res == 0);
                     }
 
                     if (!ret) {
@@ -395,17 +531,16 @@ namespace IGCIT_Driver_Switch {
                     }
                 }
 
-                WriteLog("I: loading driver, this may take a few minutes..", Color.Blue);
+                WriteLog("I: loading driver, this may take 5-10 minutes..", Color.Blue);
 
                 pinfo.UseShellExecute = true;
-                pinfo.FileName = "igxpin";
+                pinfo.FileName = _driverInstallersList[drvIdx].exeName;
                 pinfo.WorkingDirectory = Path.GetFullPath(_tmpFolder);
-                pinfo.Arguments = "-s -overwrite";
+                pinfo.Arguments = GetDowngradeArgsStr(_driverInstallersList[drvIdx]);
 
                 ret = await startProcess(pinfo);
                 if (!ret) {
-                    MessageBox.Show(this, "Failed to execute command!", "Load driver error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    WriteLog("E: Unable to load driver!", Color.Red);
+                    WriteLog("E: Load drivers: Failed to execute command!", Color.Red);
 
                 } else {
                     await Task.Delay(3 * 1000);
@@ -420,9 +555,18 @@ namespace IGCIT_Driver_Switch {
             driversList.SelectedIndex = 0;
         }
 
+        private RegistryKey GetSystemRestoreRegKey() {
+            RegistryKey key = _localMachine.OpenSubKey(@"SOFTWARE\Microsoft\Windows NT\CurrentVersion\SystemRestore", true);
+
+            if (key == null) // this has been moved in latest windows builds
+                key = _localMachine64.OpenSubKey(@"SOFTWARE\Microsoft\Windows NT\CurrentVersion\SystemRestore", true);
+
+            return key;
+        }
+
         private bool DisableRestorePointCreationLimit() {
             try {
-                RegistryKey key = _localMachine.OpenSubKey(@"SOFTWARE\Microsoft\Windows NT\CurrentVersion\SystemRestore", true);
+                RegistryKey key = GetSystemRestoreRegKey();
                 object sysRestoreFreq;
 
                 if (key == null) {
@@ -448,7 +592,7 @@ namespace IGCIT_Driver_Switch {
 
         private void RevertDisableRestorePointCreationLimit() {
             try {
-                RegistryKey key = _localMachine.OpenSubKey(@"SOFTWARE\Microsoft\Windows NT\CurrentVersion\SystemRestore", true);
+                RegistryKey key = GetSystemRestoreRegKey();
 
                 if (key == null) {
                     WriteLog("E: RevDisLimit: No SystemRestore key!", Color.Red);
@@ -511,17 +655,20 @@ namespace IGCIT_Driver_Switch {
                 proc.Exited += onProcessExited;
 
                 proc.Start();
-                await Task.WhenAny(_startProcessTask.Task, Task.Delay(300 * 1000));
+                await Task.WhenAny(_startProcessTask.Task, Task.Delay(600 * 1000));
 
                 if (!proc.HasExited) {
                     proc.Kill();
                     return false;
                 }
+
+                return _startProcessTask.Task.Result;
+
             } catch (Exception e) {
                 ShowCatchErrorMessage(e);
             }
-            
-            return _startProcessTask.Task.Result;
+
+            return false;
         }
 
         private async Task<string> startProcessAndGetOutput(ProcessStartInfo pinfo) {
@@ -557,7 +704,7 @@ namespace IGCIT_Driver_Switch {
         private void onProcessExited(object sender, EventArgs args) {
             Process p = sender as Process;
 
-            _startProcessTask.TrySetResult(p.ExitCode == 0);
+            _startProcessTask.TrySetResult(p.ExitCode >= 0);
         }
 
         private void WriteLog(string msg, Color c) {
@@ -570,11 +717,10 @@ namespace IGCIT_Driver_Switch {
             logBox.Update();
         }
 
-        private void UpdateDriversListUI(List<string> drivers) {
-            if (drivers == null) {
-                return;
+        private void UpdateDriversListUI() {
+            UpdateUIForSelectedDriver(0);
 
-            } else if (drivers.Count == 0) {
+            if (_driverInstallersList.Count == 0) {
                 WriteLog("I: No drivers found!", Color.DarkGoldenrod);
                 return;
             }
@@ -582,9 +728,9 @@ namespace IGCIT_Driver_Switch {
             driversList.Items.Clear();
             driversList.Items.Add("");
 
-            foreach (string versionStr in drivers) {
-                WriteLog($"I: Found driver version: {versionStr}", Color.Green);
-                driversList.Items.Add(versionStr);
+            foreach (DriverInstallerData drv in _driverInstallersList) {
+                WriteLog($"I: Found driver version: {drv.version}", Color.Green);
+                driversList.Items.Add(drv.version);
             }
         }
 
@@ -628,7 +774,8 @@ namespace IGCIT_Driver_Switch {
 
         private async void rescanDriversFolderToolStripMenuItem_Click(object sender, EventArgs e) {
             LockUI();
-            UpdateDriversListUI(await LoadDriversList());
+            await PopulateDriversList();
+            UpdateDriversListUI();
             UnlockUI();
         }
 
@@ -641,7 +788,11 @@ namespace IGCIT_Driver_Switch {
         }
 
         private void downloadIntelDriversToolStripMenuItem1_Click(object sender, EventArgs e) {
-            Process.Start("https://downloadcenter.intel.com/product/80939/Graphics");
+            Process.Start("https://intel.com/content/www/us/en/download/19344/intel-graphics-windows-dch-drivers.html");
+        }
+
+        private void downloadIntelBetaDCHDriversToolStripMenuItem_Click(object sender, EventArgs e) {
+            Process.Start("https://intel.com/content/www/us/en/download/19387/intel-graphics-beta-windows-dch-drivers.html");
         }
 
         private void appform_FormClosing(object sender, FormClosingEventArgs e) {

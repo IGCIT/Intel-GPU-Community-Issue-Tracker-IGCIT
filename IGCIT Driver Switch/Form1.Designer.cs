@@ -40,13 +40,27 @@ namespace IGCIT_Driver_Switch {
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.openIGCITRepoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.downloadIntelDriversToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.downloadIntelBetaDCHDriversToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.spinnerImg = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.writeDLogChk = new System.Windows.Forms.CheckBox();
+            this.rebootChk = new System.Windows.Forms.CheckBox();
+            this.skipExtrasChk = new System.Windows.Forms.CheckBox();
+            this.forceLegacyChk = new System.Windows.Forms.CheckBox();
+            this.forceOneCoreChk = new System.Windows.Forms.CheckBox();
+            this.forceUnifiedChk = new System.Windows.Forms.CheckBox();
+            this.forceDiscreteChk = new System.Windows.Forms.CheckBox();
+            this.forceIntegratedChk = new System.Windows.Forms.CheckBox();
+            this.noSignCheckChk = new System.Windows.Forms.CheckBox();
+            this.forceCleanChk = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spinnerImg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -75,9 +89,9 @@ namespace IGCIT_Driver_Switch {
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(0, 430);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(335, 26);
+            this.label2.Size = new System.Drawing.Size(535, 26);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Author IGCIT - v2.0 [based on Ciphray switch_driver.bat]";
+            this.label2.Text = "IGCIT Driver Switch  v3.0";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // logBox
@@ -151,7 +165,7 @@ namespace IGCIT_Driver_Switch {
             this.toolStripMenuItem2});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(335, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(535, 24);
             this.menuStrip1.TabIndex = 10;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -174,7 +188,8 @@ namespace IGCIT_Driver_Switch {
             // 
             this.toolStripMenuItem3.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.openIGCITRepoToolStripMenuItem1,
-            this.downloadIntelDriversToolStripMenuItem1});
+            this.downloadIntelDriversToolStripMenuItem1,
+            this.downloadIntelBetaDCHDriversToolStripMenuItem});
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
             this.toolStripMenuItem3.Size = new System.Drawing.Size(130, 20);
             this.toolStripMenuItem3.Text = "Links and downloads";
@@ -182,16 +197,23 @@ namespace IGCIT_Driver_Switch {
             // openIGCITRepoToolStripMenuItem1
             // 
             this.openIGCITRepoToolStripMenuItem1.Name = "openIGCITRepoToolStripMenuItem1";
-            this.openIGCITRepoToolStripMenuItem1.Size = new System.Drawing.Size(192, 22);
+            this.openIGCITRepoToolStripMenuItem1.Size = new System.Drawing.Size(254, 22);
             this.openIGCITRepoToolStripMenuItem1.Text = "Open IGCIT repo";
             this.openIGCITRepoToolStripMenuItem1.Click += new System.EventHandler(this.openIGCITRepoToolStripMenuItem1_Click);
             // 
             // downloadIntelDriversToolStripMenuItem1
             // 
             this.downloadIntelDriversToolStripMenuItem1.Name = "downloadIntelDriversToolStripMenuItem1";
-            this.downloadIntelDriversToolStripMenuItem1.Size = new System.Drawing.Size(192, 22);
-            this.downloadIntelDriversToolStripMenuItem1.Text = "Download Intel drivers";
+            this.downloadIntelDriversToolStripMenuItem1.Size = new System.Drawing.Size(254, 22);
+            this.downloadIntelDriversToolStripMenuItem1.Text = "Download Intel stable DCH drivers";
             this.downloadIntelDriversToolStripMenuItem1.Click += new System.EventHandler(this.downloadIntelDriversToolStripMenuItem1_Click);
+            // 
+            // downloadIntelBetaDCHDriversToolStripMenuItem
+            // 
+            this.downloadIntelBetaDCHDriversToolStripMenuItem.Name = "downloadIntelBetaDCHDriversToolStripMenuItem";
+            this.downloadIntelBetaDCHDriversToolStripMenuItem.Size = new System.Drawing.Size(254, 22);
+            this.downloadIntelBetaDCHDriversToolStripMenuItem.Text = "Download Intel beta DCH drivers";
+            this.downloadIntelBetaDCHDriversToolStripMenuItem.Click += new System.EventHandler(this.downloadIntelBetaDCHDriversToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
@@ -220,11 +242,151 @@ namespace IGCIT_Driver_Switch {
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.writeDLogChk);
+            this.groupBox1.Controls.Add(this.rebootChk);
+            this.groupBox1.Controls.Add(this.skipExtrasChk);
+            this.groupBox1.Controls.Add(this.forceLegacyChk);
+            this.groupBox1.Controls.Add(this.forceOneCoreChk);
+            this.groupBox1.Controls.Add(this.forceUnifiedChk);
+            this.groupBox1.Controls.Add(this.forceDiscreteChk);
+            this.groupBox1.Controls.Add(this.forceIntegratedChk);
+            this.groupBox1.Controls.Add(this.noSignCheckChk);
+            this.groupBox1.Controls.Add(this.forceCleanChk);
+            this.groupBox1.Location = new System.Drawing.Point(344, 27);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(185, 389);
+            this.groupBox1.TabIndex = 13;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Advanced options";
+            // 
+            // label4
+            // 
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.DarkRed;
+            this.label4.Location = new System.Drawing.Point(6, 333);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(173, 53);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Do not enable any of these options unless you know what you are doing!\r\n";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // writeDLogChk
+            // 
+            this.writeDLogChk.AutoSize = true;
+            this.writeDLogChk.Location = new System.Drawing.Point(6, 249);
+            this.writeDLogChk.Name = "writeDLogChk";
+            this.writeDLogChk.Size = new System.Drawing.Size(149, 30);
+            this.writeDLogChk.TabIndex = 9;
+            this.writeDLogChk.Text = "Save driver installation log\r\n(drvInstallLog.txt)";
+            this.writeDLogChk.UseVisualStyleBackColor = true;
+            // 
+            // rebootChk
+            // 
+            this.rebootChk.AutoSize = true;
+            this.rebootChk.Location = new System.Drawing.Point(6, 225);
+            this.rebootChk.Name = "rebootChk";
+            this.rebootChk.Size = new System.Drawing.Size(172, 17);
+            this.rebootChk.TabIndex = 8;
+            this.rebootChk.Text = "Reboot system after installation";
+            this.rebootChk.UseVisualStyleBackColor = true;
+            // 
+            // skipExtrasChk
+            // 
+            this.skipExtrasChk.AutoSize = true;
+            this.skipExtrasChk.Enabled = false;
+            this.skipExtrasChk.Location = new System.Drawing.Point(6, 201);
+            this.skipExtrasChk.Name = "skipExtrasChk";
+            this.skipExtrasChk.Size = new System.Drawing.Size(156, 17);
+            this.skipExtrasChk.TabIndex = 7;
+            this.skipExtrasChk.Text = "Skip additional components";
+            this.skipExtrasChk.UseVisualStyleBackColor = true;
+            // 
+            // forceLegacyChk
+            // 
+            this.forceLegacyChk.AutoSize = true;
+            this.forceLegacyChk.Enabled = false;
+            this.forceLegacyChk.Location = new System.Drawing.Point(6, 177);
+            this.forceLegacyChk.Name = "forceLegacyChk";
+            this.forceLegacyChk.Size = new System.Drawing.Size(116, 17);
+            this.forceLegacyChk.TabIndex = 6;
+            this.forceLegacyChk.Text = "Force legacy driver";
+            this.forceLegacyChk.UseVisualStyleBackColor = true;
+            // 
+            // forceOneCoreChk
+            // 
+            this.forceOneCoreChk.AutoSize = true;
+            this.forceOneCoreChk.Enabled = false;
+            this.forceOneCoreChk.Location = new System.Drawing.Point(6, 153);
+            this.forceOneCoreChk.Name = "forceOneCoreChk";
+            this.forceOneCoreChk.Size = new System.Drawing.Size(133, 17);
+            this.forceOneCoreChk.TabIndex = 5;
+            this.forceOneCoreChk.Text = "Force OnceCore driver";
+            this.forceOneCoreChk.UseVisualStyleBackColor = true;
+            // 
+            // forceUnifiedChk
+            // 
+            this.forceUnifiedChk.AutoSize = true;
+            this.forceUnifiedChk.Enabled = false;
+            this.forceUnifiedChk.Location = new System.Drawing.Point(6, 129);
+            this.forceUnifiedChk.Name = "forceUnifiedChk";
+            this.forceUnifiedChk.Size = new System.Drawing.Size(116, 17);
+            this.forceUnifiedChk.TabIndex = 4;
+            this.forceUnifiedChk.Text = "Force unified driver";
+            this.forceUnifiedChk.UseVisualStyleBackColor = true;
+            // 
+            // forceDiscreteChk
+            // 
+            this.forceDiscreteChk.AutoSize = true;
+            this.forceDiscreteChk.Enabled = false;
+            this.forceDiscreteChk.Location = new System.Drawing.Point(6, 105);
+            this.forceDiscreteChk.Name = "forceDiscreteChk";
+            this.forceDiscreteChk.Size = new System.Drawing.Size(122, 17);
+            this.forceDiscreteChk.TabIndex = 3;
+            this.forceDiscreteChk.Text = "Force discrete driver";
+            this.forceDiscreteChk.UseVisualStyleBackColor = true;
+            // 
+            // forceIntegratedChk
+            // 
+            this.forceIntegratedChk.AutoSize = true;
+            this.forceIntegratedChk.Enabled = false;
+            this.forceIntegratedChk.Location = new System.Drawing.Point(6, 81);
+            this.forceIntegratedChk.Name = "forceIntegratedChk";
+            this.forceIntegratedChk.Size = new System.Drawing.Size(132, 17);
+            this.forceIntegratedChk.TabIndex = 2;
+            this.forceIntegratedChk.Text = "Force integrated driver";
+            this.forceIntegratedChk.UseVisualStyleBackColor = true;
+            // 
+            // noSignCheckChk
+            // 
+            this.noSignCheckChk.AutoSize = true;
+            this.noSignCheckChk.Enabled = false;
+            this.noSignCheckChk.Location = new System.Drawing.Point(6, 57);
+            this.noSignCheckChk.Name = "noSignCheckChk";
+            this.noSignCheckChk.Size = new System.Drawing.Size(140, 17);
+            this.noSignCheckChk.TabIndex = 1;
+            this.noSignCheckChk.Text = "No signature verification";
+            this.noSignCheckChk.UseVisualStyleBackColor = true;
+            // 
+            // forceCleanChk
+            // 
+            this.forceCleanChk.AutoSize = true;
+            this.forceCleanChk.Enabled = false;
+            this.forceCleanChk.Location = new System.Drawing.Point(6, 34);
+            this.forceCleanChk.Name = "forceCleanChk";
+            this.forceCleanChk.Size = new System.Drawing.Size(111, 17);
+            this.forceCleanChk.TabIndex = 0;
+            this.forceCleanChk.Text = "Force clean install";
+            this.forceCleanChk.UseVisualStyleBackColor = true;
+            // 
             // appform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(335, 456);
+            this.ClientSize = new System.Drawing.Size(535, 456);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.spinnerImg);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.loadBtn);
@@ -239,18 +401,19 @@ namespace IGCIT_Driver_Switch {
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(351, 495);
-            this.MinimumSize = new System.Drawing.Size(351, 495);
+            this.MaximumSize = new System.Drawing.Size(551, 495);
+            this.MinimumSize = new System.Drawing.Size(551, 495);
             this.Name = "appform";
             this.Text = "IGCIT Driver Switch";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.appform_FormClosing);
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.Shown += new System.EventHandler(this.Form1_Shown);
             this.panel1.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spinnerImg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -276,6 +439,19 @@ namespace IGCIT_Driver_Switch {
         private System.Windows.Forms.ToolStripMenuItem openIGCITRepoToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem downloadIntelDriversToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem downloadIntelBetaDCHDriversToolStripMenuItem;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.CheckBox forceCleanChk;
+        private System.Windows.Forms.CheckBox writeDLogChk;
+        private System.Windows.Forms.CheckBox rebootChk;
+        private System.Windows.Forms.CheckBox skipExtrasChk;
+        private System.Windows.Forms.CheckBox forceLegacyChk;
+        private System.Windows.Forms.CheckBox forceOneCoreChk;
+        private System.Windows.Forms.CheckBox forceUnifiedChk;
+        private System.Windows.Forms.CheckBox forceDiscreteChk;
+        private System.Windows.Forms.CheckBox forceIntegratedChk;
+        private System.Windows.Forms.CheckBox noSignCheckChk;
+        private System.Windows.Forms.Label label4;
     }
 }
 
