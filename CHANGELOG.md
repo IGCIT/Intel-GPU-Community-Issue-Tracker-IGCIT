@@ -1,13 +1,47 @@
+#### IGCIT Helper v1.5.1
+* Remove leftover used to test compression
+
+#### IGCIT Helper v1.5.0
+* Remove export option
+* Remove Small memory dumps option
+* Add Crash Dumps menu under Tools
+* Add option to set Intel recommended settings for crash dumps under Crash Dumps
+* Add option to extract and generate an encrypted compress archive of your dumps under Crash Dumps
+* Add option to delete all old dump files from your system under Crash Dumps
+* Add option to restore default crash dumps settings under Crash Dumps
+* Add option to fix WATCHDOG dumps generation under Crash Dumps
+* Add Anonymize SSU report option under Tools
+* Minor code clean up
+
+#### IGCIT Helper v1.4.0
+* Add Edit TDR delay values option under Tools
+* Minor code clean up
+
+#### IGCIT Helper v1.3.0
+* Add a new Tools menu
+* Add Enable Small Memory Dump option under Tools
+
 #### IGCIT Helper v1.2.0
 * Add device name and manufacturer
 * Add memory information
 * Add copy button to all values
 * Add menu option to take screenshot of Helper window
 
-#### IGCIT Driver Switch v1.0.0
-* Initial release
-
 #### IGCIT Helper v1.1.0
 * Fix typo
 * Add link to IGCIT repo
 * More robust code
+
+---
+
+#### IGCIT Driver Switch v2.0.0
+* Add loading icon (let the user know the application is not stuck when doing something that requires a few minutes)
+* New application menu
+* Add option to manually scan intel_drivers folder in Options menu
+* Add Help to application menu (it redirects to Driver Switch Wiki page)
+* Cache the extracted driver version (this avoids unneeded extraction when loading the same driver multiple times)
+* Improve logs
+* Code improvements
+
+#### IGCIT Driver Switch v1.0.0
+* Initial release
