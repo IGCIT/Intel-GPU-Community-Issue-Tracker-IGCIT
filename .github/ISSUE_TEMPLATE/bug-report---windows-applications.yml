@@ -45,7 +45,8 @@ body:
     attributes:
       label: GPU Driver Version [Required]
       options:
-        - label: '30.0.101.1960 (*latest*)'
+        - label: '30.0.101.1994 (*latest*)'
+        - label: '30.0.101.1960'
         - label: '30.0.101.1934'
         - label: '30.0.101.1660'
         - label: '30.0.101.1631'
@@ -58,11 +59,6 @@ body:
         - label: '30.0.100.9894'
         - label: '30.0.100.9864'
         - label: '30.0.100.9862'
-        - label: '30.0.100.9805'
-        - label: '30.0.100.9684'
-        - label: '30.0.100.9667'
-        - label: '27.20.100.9616'
-        - label: '27.20.100.9466'
     validations:
       required: true
   - type: markdown
