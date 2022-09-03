@@ -45,7 +45,8 @@ body:
     attributes:
       label: GPU Driver Version [Required]
       options:
-        - label: '31.0.101.3222 / 31.0.101.2111 (*latest*)'
+        - label: '31.0.101.3413 / 31.0.101.2111 (*latest*)'
+        - label: '31.0.101.3222 / 31.0.101.2111'
         - label: '30.0.101.3113'
         - label: '30.0.101.3109'
         - label: '30.0.101.1994'
