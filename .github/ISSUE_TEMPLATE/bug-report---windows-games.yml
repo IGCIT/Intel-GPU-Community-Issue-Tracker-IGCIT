@@ -1,5 +1,5 @@
 name: Bug Report - Windows Games
-description: Report glitches, crashes or any other issue in your Windows games.
+description: Report glitches, crashes or any other issue in your Windows games with Intel Graphics drivers.
 labels: 'Info: Needs Replication'
 assignees: 'Bryce-7995'
 body:
@@ -79,12 +79,6 @@ body:
         - label: '30.0.101.1631'
         - label: '30.0.101.1404'
         - label: '30.0.101.1340'
-        - label: '30.0.101.1191'
-        - label: '30.0.101.1121'
-        - label: '30.0.101.1069'
-        - label: '30.0.100.9955'
-        - label: '30.0.100.9894'
-        - label: '30.0.100.9864'
     validations:
       required: true
   - type: markdown
@@ -109,13 +103,12 @@ body:
     attributes:
       label: Windows Build Number [Required]
       options:
-        - label: Windows 11
+        - label: Windows 11 22H2
+        - label: Windows 11 21H1 (*October 2021 Update*)
         - label: Windows 10 21H2 (*November 2021 Update*)
         - label: Windows 10 21H1 (*May 2021 Update*)
         - label: Windows 10 20H2 (*October 2020 Update*)
         - label: Windows 10 20H1 (*May 2020 Update*)
-        - label: Windows 10 19H2 (*November 2019 Update*)
-        - label: Windows 10 19H1 (*May 2019 Update*)
         - label: Other (Please specify)
     validations:
       required: true

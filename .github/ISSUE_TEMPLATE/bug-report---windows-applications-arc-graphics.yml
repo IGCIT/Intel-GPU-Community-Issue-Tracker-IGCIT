@@ -1,5 +1,5 @@
 name: Bug Report - Windows Applications
-description: Report issues in your non-game applications, or Windows itself, with Intel Graphics drivers.
+description: Report issues in your non-game applications, or Windows itself, with Intel ARC Graphics drivers.
 labels: 'Info: Needs Replication'
 assignees: 'Bryce-7995'
 body:
@@ -38,6 +38,11 @@ body:
       label: Processor / Processor Number [Required]
     validations:
       required: true
+  - type: input
+    attributes:
+      label: Graphic Card [Required]
+    validations:
+      required: true
   - type: markdown
     attributes:
       value: '---'
@@ -45,19 +50,11 @@ body:
     attributes:
       label: GPU Driver Version [Required]
       options:
-        - label: '31.0.101.3430 / 31.0.101.2111 (*latest*)'
-        - label: '31.0.101.3616 / 31.0.101.2111'
-        - label: '31.0.101.3413 / 31.0.101.2111'
-        - label: '31.0.101.3222 / 31.0.101.2111'
-        - label: '30.0.101.3113'
-        - label: '30.0.101.3109'
-        - label: '30.0.101.1994'
-        - label: '30.0.101.1960'
-        - label: '30.0.101.1934'
-        - label: '30.0.101.1660'
-        - label: '30.0.101.1631'
-        - label: '30.0.101.1404'
-        - label: '30.0.101.1340'
+        - label: '31.0.101.3430 (*latest*)'
+        - label: '31.0.101.3276'
+        - label: '30.0.101.3268'
+        - label: '30.0.101.3259'
+        - label: '30.0.101.1743'
     validations:
       required: true
   - type: markdown
@@ -88,7 +85,6 @@ body:
         - label: Windows 10 21H2 (*November 2021 Update*)
         - label: Windows 10 21H1 (*May 2021 Update*)
         - label: Windows 10 20H2 (*October 2020 Update*)
-        - label: Windows 10 20H1 (*May 2020 Update*)
         - label: Other (Please specify)
     validations:
       required: true
