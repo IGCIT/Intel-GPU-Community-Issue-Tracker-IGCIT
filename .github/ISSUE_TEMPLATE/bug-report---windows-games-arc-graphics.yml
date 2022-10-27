@@ -214,14 +214,12 @@ body:
       value: '---'
   - type: textarea
     attributes:
-      label: Crash dumps [Required]
+      label: Crash dumps [Required, if applicable]
       description: "For more help see: [How to obtain crash dumps - IGCIT Wiki](https://github.com/IGCIT/Intel-GPU-Community-Issue-Tracker-IGCIT/wiki/How-to-obtain-crash-dumps)"
       placeholder: |
         Tip: You can attach files by clicking this area to highlight it and then dragging files in.
 
         Attach your compressed (*.zip*) dump here.
-    validations:
-      required: true
   - type: markdown
     attributes:
       value: '---'

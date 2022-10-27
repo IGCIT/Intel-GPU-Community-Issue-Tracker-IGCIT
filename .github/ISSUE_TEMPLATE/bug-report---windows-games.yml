@@ -66,7 +66,8 @@ body:
     attributes:
       label: GPU Driver Version [Required]
       options:
-        - label: '31.0.101.3729 / 31.0.101.2114 (*latest*)'
+        - label: '31.0.101.3790 / 31.0.101.2114 (*latest*)'
+        - label: '31.0.101.3729 / 31.0.101.2114'
         - label: '31.0.101.3430 / 31.0.101.2111'
         - label: '31.0.101.3616 / 31.0.101.2111'
         - label: '31.0.101.3413 / 31.0.101.2111'
@@ -79,7 +80,6 @@ body:
         - label: '30.0.101.1660'
         - label: '30.0.101.1631'
         - label: '30.0.101.1404'
-        - label: '30.0.101.1340'
     validations:
       required: true
   - type: markdown
@@ -217,14 +217,12 @@ body:
       value: '---'
   - type: textarea
     attributes:
-      label: Crash dumps [Required]
+      label: Crash dumps [Required, if applicable]
       description: "For more help see: [How to obtain crash dumps - IGCIT Wiki](https://github.com/IGCIT/Intel-GPU-Community-Issue-Tracker-IGCIT/wiki/How-to-obtain-crash-dumps)"
       placeholder: |
         Tip: You can attach files by clicking this area to highlight it and then dragging files in.
 
         Attach your compressed (*.zip*) dump here.
-    validations:
-      required: true
   - type: markdown
     attributes:
       value: '---'

@@ -17,6 +17,11 @@ body:
       label: Processor / Processor Number [Required]
     validations:
       required: true
+  - type: input
+    attributes:
+      label: Graphic Card [Required]
+    validations:
+      required: true
   - type: markdown
     attributes:
       value: '---'
@@ -40,13 +45,12 @@ body:
     attributes:
       label: Windows Build Number [Required]
       options:
-        - label: Windows 11
+        - label: Windows 11 22H2
+        - label: Windows 11 21H1 (*October 2021 Update*)
         - label: Windows 10 21H2 (*November 2021 Update*)
         - label: Windows 10 21H1 (*May 2021 Update*)
         - label: Windows 10 20H2 (*October 2020 Update*)
         - label: Windows 10 20H1 (*May 2020 Update*)
-        - label: Windows 10 19H2 (*November 2019 Update*)
-        - label: Windows 10 19H1 (*May 2019 Update*)
         - label: Other (Please specify)
     validations:
       required: true
