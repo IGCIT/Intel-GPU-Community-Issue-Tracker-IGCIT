@@ -57,11 +57,6 @@ body:
         - label: '31.0.101.3793'
         - label: '31.0.101.3491'
         - label: '31.0.101.3490'
-        - label: '31.0.101.3430'
-        - label: '31.0.101.3276'
-        - label: '30.0.101.3268'
-        - label: '30.0.101.3259'
-        - label: '30.0.101.1743'
     validations:
       required: true
   - type: markdown
