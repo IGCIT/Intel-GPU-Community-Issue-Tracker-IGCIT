@@ -104,10 +104,9 @@ body:
       label: Windows Build Number [Required]
       options:
         - label: Windows 11 22H2
-        - label: Windows 11 21H1
+        - label: Windows 11 21H2
         - label: Windows 10 22H2
         - label: Windows 10 21H2
-        - label: Windows 10 21H1
         - label: Other (Please specify)
     validations:
       required: true

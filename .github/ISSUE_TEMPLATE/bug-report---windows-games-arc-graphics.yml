@@ -1,5 +1,5 @@
-name: Bug Report - Windows Games - Intel Arc Graphics
-description: Report glitches, crashes or any other issue in your Windows games with Intel ARC Graphics drivers.
+name: Bug Report - Windows Games - Intel Arc Graphics & Iris Xe
+description: Report glitches, crashes or any other issue in your Windows games with Intel ARC Graphics & Iris Xe drivers.
 labels: 'Info: Needs Replication'
 assignees: 'Bryce-7995'
 body:
@@ -70,7 +70,8 @@ body:
     attributes:
       label: GPU Driver Version [Required]
       options:
-        - label: '31.0.101.3975 (*latest*)'
+        - label: '31.0.101.4032 (*latest*)'
+        - label: '31.0.101.3975'
         - label: '31.0.101.3959'
         - label: '31.0.101.3802'
         - label: '31.0.101.3793'
@@ -106,10 +107,9 @@ body:
       label: Windows Build Number [Required]
       options:
         - label: Windows 11 22H2
-        - label: Windows 11 21H1
+        - label: Windows 11 21H2
         - label: Windows 10 22H2
         - label: Windows 10 21H2
-        - label: Windows 10 21H1
         - label: Other (Please specify)
     validations:
       required: true
