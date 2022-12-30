@@ -1,4 +1,4 @@
-name: Bug Report - Windows Applications - Intel Arc Graphics & Iris Xe
+name: Bug Report - Windows Applications - Intel Arc & Iris Xe Graphics
 description: Report issues in your non-game applications, or Windows itself, with Intel ARC Graphics & Iris Xe drivers.
 labels: 'Info: Needs Replication'
 assignees: 'Bryce-7995'
