@@ -70,7 +70,8 @@ body:
     attributes:
       label: GPU Driver Version [Required]
       options:
-        - label: '31.0.101.4034 (*latest*)'
+        - label: '31.0.101.4090'
+        - label: '31.0.101.4034'
         - label: '31.0.101.4032'
         - label: '31.0.101.3975'
         - label: '31.0.101.3959'
@@ -230,14 +231,3 @@ body:
         Tip: You can attach files by clicking this area to highlight it and then dragging files in.
         
         Attach your compressed (.zip) save here.
-  - type: markdown
-    attributes:
-      value: '---'
-  - type: textarea
-    attributes:
-      label: Game custom logs
-      description: "if available, could help solve the issue faster. For more help see: [Where to find game custom logs - IGCIT Wiki](https://github.com/IGCIT/Intel-GPU-Community-Issue-Tracker-IGCIT/wiki/Where-to-find-game-custom-logs) [Optional]"
-      placeholder: |
-        Tip: You can attach files by clicking this area to highlight it and then dragging files in.
-
-        Attach your compressed (*.zip*) logs here.
