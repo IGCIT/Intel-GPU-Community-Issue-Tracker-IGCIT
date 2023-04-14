@@ -50,6 +50,7 @@ body:
     attributes:
       label: GPU Driver Version [Required]
       options:
+        - label: '31.0.101.4311'
         - label: '31.0.101.4257'
         - label: '31.0.101.4255'
         - label: '31.0.101.4148'
@@ -63,7 +64,6 @@ body:
         - label: '31.0.101.3975'
         - label: '31.0.101.3959'
         - label: '31.0.101.3802'
-        - label: '31.0.101.3793'
     validations:
       required: true
   - type: markdown

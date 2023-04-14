@@ -1,4 +1,4 @@
-name: Bug Report - Windows Applications - Intel Integrated Graphics ( 6th - 10th Gen )
+name: Bug Report - Windows Applications - Intel Integrated Graphics ( 7th - 10th Gen )
 description: Report issues in your non-game applications, or Windows itself, with Intel Graphics drivers.
 labels: 'Info: Needs Replication'
 assignees: 'Bryce-7995'
@@ -45,8 +45,7 @@ body:
     attributes:
       label: GPU Driver Version [Required]
       options:
-        - label: '31.0.101.2115 (*latest*)'
-        - label: '31.0.101.2114'
+        - label: '31.0.101.2121'
     validations:
       required: true
   - type: markdown
