@@ -65,6 +65,7 @@ body:
     attributes:
       label: GPU Driver Version [Required]
       options:
+        - label: '31.0.101.2125'
         - label: '31.0.101.2121'
     validations:
       required: true
