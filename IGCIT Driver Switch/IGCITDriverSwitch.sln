@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33815.320
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "IGCITDriverSwitch", "IGCITDriverSwitch.vcxproj", "{CEA79FD0-623E-4E31-BB89-2C31C4FBCBA0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CEA79FD0-623E-4E31-BB89-2C31C4FBCBA0}.Debug|x64.ActiveCfg = Debug|x64
+		{CEA79FD0-623E-4E31-BB89-2C31C4FBCBA0}.Debug|x64.Build.0 = Debug|x64
+		{CEA79FD0-623E-4E31-BB89-2C31C4FBCBA0}.Release|x64.ActiveCfg = Release|x64
+		{CEA79FD0-623E-4E31-BB89-2C31C4FBCBA0}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2FB69CE5-CE63-496D-9353-E4E9A12BEFDB}
+	EndGlobalSection
+EndGlobal

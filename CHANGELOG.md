@@ -34,6 +34,12 @@
 
 ---
 
+#### IGCIT Driver Switch v4.0.0
+* Add support for new drivers package (exe)
+* Remove old drivers package support (zip and igfxpin)
+* Remove PowerShell requirement
+* Rewrite from scratch with QT and C++
+
 #### IGCIT Driver Switch v3.0.0
 * Add full support for new driver installer
 * Fix application freeze in some cases
