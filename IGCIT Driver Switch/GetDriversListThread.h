@@ -12,7 +12,7 @@ class GetDriversListThread: public QThread {
 	Q_OBJECT
 
 private:
-    const QRegularExpression archiveVerStrRex {"SoftwareComponentId=\\\"([\\d\\.]+)\\\"", QRegularExpression::CaseInsensitiveOption};
+    const QRegularExpression archiveVerStrRex {R"(SoftwareComponentId=\"([\d\.]+)\")", QRegularExpression::CaseInsensitiveOption};
     QString driverDirPath;
 
 public:
@@ -35,11 +35,11 @@ public:
 
         try {
             bit7z::Bit7zLibrary lib {"7za.dll"};
-            
+
             versionList.append("");
 
             for (const QString &fileName : filesList) {
-                QString filePath {QString("%1/%2").arg(driverDirPath).arg(fileName)};
+                QString filePath {QString("%1/%2").arg(driverDirPath, fileName)};
 
                 try {
                     bit7z::BitArchiveReader arc {lib, filePath.toStdString(), bit7z::BitFormat::SevenZip};
@@ -59,7 +59,7 @@ public:
                         extractor.extractMatching(filePath.toStdString(), item.path(), buf);
 
                         bufStr = std::string(buf.begin(), buf.end());
-                        QTextStream ts {QByteArray(bufStr.c_str(), bufStr.length())};
+                        QTextStream ts {QByteArray(bufStr.c_str(),  static_cast<qsizetype>(bufStr.length()))};
 
                         fileCont = ts.readAll();
                         match = archiveVerStrRex.match(fileCont);

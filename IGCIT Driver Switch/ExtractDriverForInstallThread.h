@@ -32,11 +32,11 @@ public:
             );
 
             extractor.setProgressCallback([this, &totalSz](uint64_t processed_size) {
-                    emit progressUpdated(static_cast<int>((100.f * processed_size) / totalSz));
+                    emit progressUpdated(static_cast<int>((100.f * static_cast<float>(processed_size)) / static_cast<float>(totalSz)));
                     return true;
                 }
             );
-            
+
             emit logMessageWritten("Extracting driver..", Qt::blue);
             extractor.extract(exePath.toStdString(), extractPath.toStdString());
 

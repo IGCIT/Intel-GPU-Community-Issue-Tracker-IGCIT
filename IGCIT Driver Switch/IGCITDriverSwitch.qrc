@@ -1,6 +1,5 @@
 <RCC>
     <qresource prefix="/IGCITDriverSwitch">
         <file>IGCIT-logo-dswitch.png</file>
-        <file>IGCIT-logo-dswitch.ico</file>
     </qresource>
 </RCC>
