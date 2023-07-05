@@ -1,3 +1,9 @@
+#### IGCIT Helper v2.0.0
+* Fix crash dumps enable option when some keys are missing
+* Improve SSU anonimyze option, also apply Pokechu22 suggestions
+* List all available/enabled Intel GPUs in the system in Device info
+* Rewrite from scratch with QT and C++
+
 #### IGCIT Helper v1.5.1
 * Remove leftover used to test compression
 
