@@ -42,7 +42,7 @@ This is a small utility to easily extract all the required information about you
 
 See more in [IGCIT Wiki](https://github.com/IGCIT/Intel-GPU-Community-Issue-Tracker-IGCIT/wiki/IGCIT-Helper).
 
-Download latest release [here](https://github.com/IGCIT/Intel-GPU-Community-Issue-Tracker-IGCIT/releases/latest).
+Download latest release [here](https://github.com/IGCIT/Intel-GPU-Community-Issue-Tracker-IGCIT/releases/tag/igcit-help2.0.0).
 
 ### IGCIT Driver Switch
 
@@ -52,7 +52,7 @@ Its aim is to help to identify regressions quickly and easily.
 
 See more in [IGCIT Wiki](https://github.com/IGCIT/Intel-GPU-Community-Issue-Tracker-IGCIT/wiki/igcit-driver-switch).
 
-Download latest release [here](https://github.com/IGCIT/Intel-GPU-Community-Issue-Tracker-IGCIT/releases/latest).
+Download latest release [here](https://github.com/IGCIT/Intel-GPU-Community-Issue-Tracker-IGCIT/releases/tag/drv-switch-v4).
 
 ---
 
