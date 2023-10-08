@@ -38,8 +38,9 @@ else()
     )
 endif()
 
-target_include_directories(IGCITHelper PRIVATE bit7z/include)
-target_link_libraries(IGCITHelper PRIVATE Qt${QT_VERSION_MAJOR}::Widgets ${CMAKE_SOURCE_DIR}/bit7z/lib/x64/${CMAKE_BUILD_TYPE}/bit7z.lib oleaut32)
+add_subdirectory(external/bit7z)
+
+target_link_libraries(IGCITHelper PRIVATE Qt${QT_VERSION_MAJOR}::Widgets bit7z)
 
 set_target_properties(IGCITHelper PROPERTIES
     WIN32_EXECUTABLE TRUE

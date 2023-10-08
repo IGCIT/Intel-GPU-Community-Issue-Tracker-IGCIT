@@ -41,8 +41,9 @@ else()
     )
 endif()
 
-target_include_directories(IGCITDriverSwitch PRIVATE bit7z/include)
-target_link_libraries(IGCITDriverSwitch PRIVATE Qt${QT_VERSION_MAJOR}::Widgets ${CMAKE_SOURCE_DIR}/bit7z/lib/x64/${CMAKE_BUILD_TYPE}/bit7z.lib)
+add_subdirectory(external/bit7z)
+
+target_link_libraries(IGCITDriverSwitch PRIVATE Qt${QT_VERSION_MAJOR}::Widgets bit7z)
 
 set_target_properties(IGCITDriverSwitch PROPERTIES
     WIN32_EXECUTABLE TRUE
