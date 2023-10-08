@@ -348,9 +348,7 @@
     <addaction name="menuDwnlSrc"/>
     <addaction name="separator"/>
     <addaction name="actionStable_Arc_and_Xe"/>
-    <addaction name="actionBeta_drivers_8Arc_and_Xe"/>
     <addaction name="separator"/>
-    <addaction name="actionStable_drivers_7th_10th_gen"/>
    </widget>
    <widget class="QMenu" name="menuHelp">
     <property name="title">
@@ -385,7 +383,7 @@
   </action>
   <action name="actionStable_drivers_7th_10th_gen">
    <property name="text">
-    <string>Stable drivers (7th-10th gen)</string>
+    <string>Intel drivers (7th-10th gen)</string>
    </property>
   </action>
   <action name="actionBeta_drivers_7th_10th_gen">
@@ -395,7 +393,7 @@
   </action>
   <action name="actionStable_Arc_and_Xe">
    <property name="text">
-    <string>Stable (Arc and Xe)</string>
+    <string>Intel drivers</string>
    </property>
   </action>
   <action name="actionBeta_drivers_8Arc_and_Xe">

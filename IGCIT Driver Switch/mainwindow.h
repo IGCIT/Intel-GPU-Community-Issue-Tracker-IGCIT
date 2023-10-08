@@ -53,8 +53,6 @@ private:
 private slots:
 	void onMenuDwnlSrcTriggered();
 	void onMenuDwnlStableArcXeTriggered();
-	void onMenuDwnlBetaArcXeTriggered();
-	void onMenuDwnlStable7_10Triggered();
 	void onMenuHelpWikiTriggered();
 	void onMenuHelpAboutTriggered();
 	void onDirectoryChanged(const QString &path);

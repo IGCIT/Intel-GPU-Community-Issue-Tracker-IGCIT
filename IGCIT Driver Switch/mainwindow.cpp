@@ -22,16 +22,12 @@ MainWindow::MainWindow(QWidget *parent): QMainWindow(parent), ui(new Ui::MainWin
 	QList<QAction *> helpMenu = ui->menuHelp->actions();
 	QPointer<QAction> menuDwnlSrc = downloadMenu.at(0);
 	QPointer<QAction> menuDwnlStableArcXe = downloadMenu.at(2);
-	QPointer<QAction> menuDwnlBetaArcXe = downloadMenu.at(3);
-	QPointer<QAction> menuDwnlStable7_10 = downloadMenu.at(5);
 	QPointer<QAction> menuHelpWiki = helpMenu.at(0);
 	QPointer<QAction> menuHelpAbout = helpMenu.at(1);
 	QString driverVer;
 
 	QObject::connect(menuDwnlSrc, &QAction::triggered, this, &MainWindow::onMenuDwnlSrcTriggered);
 	QObject::connect(menuDwnlStableArcXe, &QAction::triggered, this, &MainWindow::onMenuDwnlStableArcXeTriggered);
-	QObject::connect(menuDwnlBetaArcXe, &QAction::triggered, this, &MainWindow::onMenuDwnlBetaArcXeTriggered);
-	QObject::connect(menuDwnlStable7_10, &QAction::triggered, this, &MainWindow::onMenuDwnlStable7_10Triggered);
 	QObject::connect(menuHelpWiki, &QAction::triggered, this, &MainWindow::onMenuHelpWikiTriggered);
 	QObject::connect(menuHelpAbout, &QAction::triggered, this, &MainWindow::onMenuHelpAboutTriggered);
 	QObject::connect(ui->driversListCombo, &QComboBox::currentIndexChanged, this, &MainWindow::onDriverComboIndexChanged);
@@ -318,15 +314,7 @@ void MainWindow::onMenuDwnlSrcTriggered() {
 }
 
 void MainWindow::onMenuDwnlStableArcXeTriggered() {
-	QDesktopServices::openUrl(QUrl("https://www.intel.it/content/www/it/it/download/726609/intel-arc-graphics-windows-dch-driver.html"));
-}
-
-void MainWindow::onMenuDwnlBetaArcXeTriggered() {
-	QDesktopServices::openUrl(QUrl("https://www.intel.it/content/www/it/it/download/729157/intel-arc-iris-xe-graphics-beta-windows.html"));
-}
-
-void MainWindow::onMenuDwnlStable7_10Triggered() {
-	QDesktopServices::openUrl(QUrl("https://www.intel.it/content/www/it/it/download/776137/intel-7th-10th-gen-processor-graphics-windows.html"));
+	QDesktopServices::openUrl(QUrl("https://www.intel.com/content/www/us/en/download/785597/intel-arc-iris-xe-graphics-windows.html"));
 }
 
 void MainWindow::onMenuHelpWikiTriggered() {
@@ -334,7 +322,7 @@ void MainWindow::onMenuHelpWikiTriggered() {
 }
 
 void MainWindow::onMenuHelpAboutTriggered() {
-	QMessageBox::information(this, "IGCIT Driver Switch", "v4.0, Author IGCIT - GPLv3", QMessageBox::Ok);
+	QMessageBox::information(this, "IGCIT Driver Switch", "v4.0.1, Author IGCIT - GPLv3", QMessageBox::Ok);
 }
 
 void MainWindow::onDirectoryChanged(const QString &path) {
