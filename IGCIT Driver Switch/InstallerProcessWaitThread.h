@@ -17,7 +17,7 @@ public:
         hproc = handle;
     }
 
-    void run() override {        
+    void run() override {
         DWORD ret = WaitForSingleObject(hproc, 900000); // 15 minutes
 
         CloseHandle(hproc);

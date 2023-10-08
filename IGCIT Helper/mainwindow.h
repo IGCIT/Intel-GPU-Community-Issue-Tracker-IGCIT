@@ -36,10 +36,10 @@ private:
 		QRegularExpression {R"((\s+Machine\sId:.*$))", QRegularExpression::CaseInsensitiveOption | QRegularExpression::MultilineOption},
 		QRegularExpression {R"((\s+Network\sName:\".*\"))", QRegularExpression::CaseInsensitiveOption | QRegularExpression::MultilineOption},
 		QRegularExpression {R"((\s+Profile:\".*\"))", QRegularExpression::CaseInsensitiveOption | QRegularExpression::MultilineOption},
-        QRegularExpression {R"((\s+Net\sConnection\sID:\".*\"))", QRegularExpression::CaseInsensitiveOption | QRegularExpression::MultilineOption}
+		QRegularExpression {R"((\s+Net\sConnection\sID:\".*\"))", QRegularExpression::CaseInsensitiveOption | QRegularExpression::MultilineOption}
 	};
 	QPointer<ExtractDumpsCompressThread> extractDumpsCompressThd;
-    Ui::MainWindow *ui;
+	Ui::MainWindow *ui;
 
 	[[nodiscard]]
 	QString getFormattedMemorySize(DWORDLONG bytes) const;

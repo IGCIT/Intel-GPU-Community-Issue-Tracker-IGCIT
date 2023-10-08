@@ -15,10 +15,10 @@ private:
 public:
 	explicit ExtractDriverForInstallthread(QObject *parent = nullptr): QThread(parent) {}
 
-    void setPaths(const QString &filePath, const QString &extractDirPath) {
-        exePath = filePath;
-        extractPath = extractDirPath;
-    }
+	void setPaths(const QString &filePath, const QString &extractDirPath) {
+		exePath = filePath;
+		extractPath = extractDirPath;
+	}
 
 	void run() override {
         try {
@@ -52,6 +52,6 @@ public:
 
 signals:
 	void resultReady(bool res);
-    void logMessageWritten(const QString &msg, const QColor &color);
-    void progressUpdated(int progress);
+	void logMessageWritten(const QString &msg, const QColor &color);
+	void progressUpdated(int progress);
 };

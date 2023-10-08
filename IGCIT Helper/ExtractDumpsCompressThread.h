@@ -25,26 +25,24 @@ public:
 	void setOutputPath(const QString &path) { outPath = path; }
 
 	void run() override {
-        try {
-            bit7z::Bit7zLibrary lib {"7z.dll"};
-            bit7z::BitArchiveWriter bwriter {lib, bit7z::BitFormat::SevenZip};
-            uint64_t totalSz = 1;
+		try {
+			bit7z::Bit7zLibrary lib {"7z.dll"};
+			bit7z::BitArchiveWriter bwriter {lib, bit7z::BitFormat::SevenZip};
+			uint64_t totalSz = 1;
 
 			bwriter.setTotalCallback([&totalSz](uint64_t total_size) {
-                    totalSz = total_size;
-                }
-            );
+				totalSz = total_size;
+			});
 
 			bwriter.setProgressCallback([this, &totalSz](uint64_t processed_size) {
-					if (this->isInterruptionRequested()) {
-						cancelled = true;
-						return false;
-					}
+				if (this->isInterruptionRequested()) {
+					cancelled = true;
+					return false;
+				}
 
-                    emit progressUpdated(static_cast<int>((100.f * processed_size) / totalSz));
-                    return true;
-                }
-            );
+				emit progressUpdated(static_cast<int>((100.f * processed_size) / totalSz));
+				return true;
+			});
 
 			if (QDir(R"(C:\AppCrashDumps)").exists())
 				bwriter.addDirectory(R"(C:\AppCrashDumps)");
@@ -58,18 +56,18 @@ public:
 			bwriter.setCompressionLevel(bit7z::BitCompressionLevel::Max);
 			bwriter.compressTo(outPath.toStdString());
 
-            emit resultReady(true, outPath);
-            return;
+			emit resultReady(true, outPath);
+			return;
 
-        } catch (const bit7z::BitException &e) {
-            emit logMessageWritten(e.what());
+		} catch (const bit7z::BitException &e) {
+			emit logMessageWritten(e.what());
         }
 
-        emit resultReady(false, outPath);
+		emit resultReady(false, outPath);
 	}
 
 signals:
 	void resultReady(bool res, const QString &path);
-    void logMessageWritten(const QString &msg);
-    void progressUpdated(int progress);
+	void logMessageWritten(const QString &msg);
+	void progressUpdated(int progress);
 };

@@ -15,7 +15,7 @@
 #include "./ui_mainwindow.h"
 
 MainWindow::MainWindow(QWidget *parent): QMainWindow(parent), ui(new Ui::MainWindow) {
-    ui->setupUi(this);
+	ui->setupUi(this);
 	setWindowIcon(QIcon(":/IGCITDriverSwitch/IGCIT-logo-dswitch.ico"));
 
 	QList<QAction *> downloadMenu = ui->menuDownloads->actions();
@@ -68,7 +68,7 @@ MainWindow::MainWindow(QWidget *parent): QMainWindow(parent), ui(new Ui::MainWin
 }
 
 MainWindow::~MainWindow() {
-    delete ui;
+	delete ui;
 }
 
 QString MainWindow::getCurrentDriverVersion() const {
