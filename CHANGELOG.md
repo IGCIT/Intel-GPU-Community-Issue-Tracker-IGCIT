@@ -1,5 +1,5 @@
 #### IGCIT Helper v2.0.1
-* Remove _Net Device ID_ from logs (closes [552](https://github.com/IGCIT/Intel-GPU-Community-Issue-Tracker-IGCIT/issues/552))
+* Remove _Net Connection ID_ from logs (closes [552](https://github.com/IGCIT/Intel-GPU-Community-Issue-Tracker-IGCIT/issues/552))
 * Update bit7z to latest
 
 #### IGCIT Helper v2.0.0
