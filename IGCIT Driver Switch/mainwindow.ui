@@ -348,7 +348,6 @@
     <addaction name="menuDwnlSrc"/>
     <addaction name="separator"/>
     <addaction name="actionStable_Arc_and_Xe"/>
-    <addaction name="separator"/>
    </widget>
    <widget class="QMenu" name="menuHelp">
     <property name="title">
@@ -365,40 +364,9 @@
     <string>IGCIT Driver Switch sources</string>
    </property>
   </action>
-  <action name="actionStable_drivers_Arc_Xe">
-   <property name="text">
-    <string>Stable drivers (Arc and Xe)</string>
-   </property>
-   <property name="iconText">
-    <string>Stable drivers (Arc and Xe)</string>
-   </property>
-   <property name="toolTip">
-    <string>Stable drivers (Arc and Xe)</string>
-   </property>
-  </action>
-  <action name="actionBeta_drivers_Arc_Xe">
-   <property name="text">
-    <string>Beta drivers (Arc and Xe)</string>
-   </property>
-  </action>
-  <action name="actionStable_drivers_7th_10th_gen">
-   <property name="text">
-    <string>Intel drivers (7th-10th gen)</string>
-   </property>
-  </action>
-  <action name="actionBeta_drivers_7th_10th_gen">
-   <property name="text">
-    <string>Beta drivers (7th-10th gen)</string>
-   </property>
-  </action>
   <action name="actionStable_Arc_and_Xe">
    <property name="text">
     <string>Intel drivers</string>
-   </property>
-  </action>
-  <action name="actionBeta_drivers_8Arc_and_Xe">
-   <property name="text">
-    <string>Beta drivers (Arc and Xe)</string>
    </property>
   </action>
   <action name="actionWiki">
