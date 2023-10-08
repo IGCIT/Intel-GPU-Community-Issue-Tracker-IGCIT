@@ -1,3 +1,7 @@
+#### IGCIT Helper v2.0.1
+* Remove _Net Device ID_ from logs (closes [552](https://github.com/IGCIT/Intel-GPU-Community-Issue-Tracker-IGCIT/issues/552))
+* Update bit7z to latest
+
 #### IGCIT Helper v2.0.0
 * Fix crash dumps enable option when some keys are missing
 * Improve SSU anonimyze option, also apply Pokechu22 suggestions
@@ -39,6 +43,10 @@
 * More robust code
 
 ---
+
+#### IGCIT Driver Switch v4.0.1
+* Update bit7z to latest
+* Update drivers link
 
 #### IGCIT Driver Switch v4.0.0
 * Add support for new drivers package (exe)
