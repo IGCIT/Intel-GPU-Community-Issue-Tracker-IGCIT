@@ -41,12 +41,13 @@ body:
   - type: markdown
     attributes:
       value: '---'
-  - type: checkboxes
+  - type: dropdown
     attributes:
       label: GPU Driver Version [Required]
       options:
-        - label: '31.0.101.2125'
-        - label: '31.0.101.2121'
+        - 31.0.101.2125
+        - 31.0.101.2121
+      default: 0
     validations:
       required: true
   - type: markdown

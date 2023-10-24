@@ -45,6 +45,7 @@ body:
         - label: Epic Games
         - label: Rockstar Games Launcher
         - label: EA app
+        - label: Amazon Games app
         - label: Other (please specify)
   - type: input
     attributes:
@@ -66,30 +67,32 @@ body:
   - type: markdown
     attributes:
       value: '---'
-  - type: checkboxes
+  - type: dropdown
     attributes:
       label: GPU Driver Version [Required]
       options:
-        - label: '31.0.101.4887'
-        - label: '31.0.101.4885'
-        - label: '31.0.101.4826'
-        - label: '31.0.101.4824'
-        - label: '31.0.101.4676'
-        - label: '31.0.101.4672'
-        - label: '31.0.101.4669'
-        - label: '31.0.101.4644'
-        - label: '31.0.101.4578'
-        - label: '31.0.101.4577'
-        - label: '31.0.101.4576'
-        - label: '31.0.101.4575'
-        - label: '31.0.101.4514'
-        - label: '31.0.101.4502'
-        - label: '31.0.101.4499'
-        - label: '31.0.101.4382'
-        - label: '31.0.101.4369'
-        - label: '31.0.101.4335'
-        - label: '31.0.101.4314'
-        - label: '31.0.101.4311'
+        - 31.0.101.4900
+        - 31.0.101.4887
+        - 31.0.101.4885
+        - 31.0.101.4826
+        - 31.0.101.4824
+        - 31.0.101.4676
+        - 31.0.101.4672
+        - 31.0.101.4669
+        - 31.0.101.4644
+        - 31.0.101.4578
+        - 31.0.101.4577
+        - 31.0.101.4576
+        - 31.0.101.4575
+        - 31.0.101.4514
+        - 31.0.101.4502
+        - 31.0.101.4499
+        - 31.0.101.4382
+        - 31.0.101.4369
+        - 31.0.101.4335
+        - 31.0.101.4314
+        - 31.0.101.4311
+      default: 0
     validations:
       required: true
   - type: markdown
