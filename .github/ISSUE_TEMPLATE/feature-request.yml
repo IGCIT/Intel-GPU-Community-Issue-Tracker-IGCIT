@@ -1,7 +1,7 @@
 name: Feature request
 description: Request a feature.
 labels: 'Type: Feature Request'
-assignees: 'Bryce-7995'
+assignees: 'Arturo-Intel'
 body:
   - type: input
     attributes:
