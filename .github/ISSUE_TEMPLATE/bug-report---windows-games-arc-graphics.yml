@@ -1,7 +1,7 @@
 name: Bug Report - Windows Games - Intel Arc & Iris Xe Graphics
 description: Report glitches, crashes or any other issue in your Windows games with Intel ARC Graphics & Iris Xe drivers.
 labels: 'Info: Needs Replication'
-assignees: 'Arturo-Intel'
+assignees: 'Felipe-Intel'
 body:
   - type: markdown
     attributes:
