@@ -1,5 +1,5 @@
-name: Bug Report - Windows Games - Intel Integrated Graphics ( 7th - 10th Gen )
-description: Report glitches, crashes or any other issue in your Windows games with Intel Graphics drivers.
+name: Bug Report - Windows Games - Intel® Integrated Graphics ( 7th - 10th Gen )
+description: Report glitches, crashes or other issues in Windows games with Intel® Graphics drivers.
 labels: 'Info: Needs Replication'
 assignees: 'Felipe-Intel'
 body:
@@ -26,8 +26,8 @@ body:
       value: '---'
   - type: input
     attributes:
-      label: Game / Application [Required]
-      description: "Full name of the game or application"
+      label: Game [Required]
+      description: "Full name of the game"
     validations:
       required: true
   - type: markdown

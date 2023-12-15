@@ -1,5 +1,5 @@
-name: Bug Report - Windows Applications - Intel® Arc™ & Iris® Xe Graphics
-description: Report issues in your non-game applications, or Windows itself, with Intel® Arc™ & Iris® Xe Graphics drivers.
+name: Bug Report - Windows Games -  Intel® Core™ Ultra with Intel® Arc™ Graphics
+description: Report glitches, crashes or other issues in Windows games with Intel® Core™ Ultra with Intel® Arc™ Graphics drivers.
 labels: 'Info: Needs Replication'
 assignees: 'Felipe-Intel'
 body:
@@ -19,17 +19,38 @@ body:
           required: true
         - label: Device is using the [latest drivers](https://github.com/IGCIT/Intel-GPU-Community-Issue-Tracker-IGCIT/wiki/Intel-driver-updates-and-changelogs)
           required: true
-        - label: Application is not cracked, modded and use the latest patch
+        - label: Game is not cracked, modded and use the latest patch
           required: true
   - type: markdown
     attributes:
       value: '---'
   - type: input
     attributes:
-      label:  Application [Required]
-      description: "Full name of the application"
+      label: Game [Required]
+      description: "Full name of the game"
     validations:
       required: true
+  - type: markdown
+    attributes:
+      value: '---'
+  - type: checkboxes
+    attributes:
+      label: Game Platform [Required]
+      options:
+        - label: Steam
+        - label: Microsoft Store
+        - label: GOG Galaxy
+        - label: Ubisoft Connect
+        - label: Battle.net
+        - label: Epic Games
+        - label: Rockstar Games Launcher
+        - label: EA app
+        - label: Amazon Games app
+        - label: Other (please specify)
+  - type: input
+    attributes:
+      label: Other game platform
+      description: "Specify your game platform if not present on the list"
   - type: markdown
     attributes:
       value: '---'
@@ -50,27 +71,7 @@ body:
     attributes:
       label: GPU Driver Version [Required]
       options:
-        - 31.0.101.5081
-        - 31.0.101.5074
-        - 31.0.101.4972
-        - 31.0.101.4953
-        - 31.0.101.4952
-        - 31.0.101.4900
-        - 31.0.101.4887
-        - 31.0.101.4885
-        - 31.0.101.4826
-        - 31.0.101.4824
-        - 31.0.101.4676
-        - 31.0.101.4672
-        - 31.0.101.4669
-        - 31.0.101.4644
-        - 31.0.101.4578
-        - 31.0.101.4577
-        - 31.0.101.4576
-        - 31.0.101.4575
-        - 31.0.101.4514
-        - 31.0.101.4502
-        - 31.0.101.4499
+        - 31.0.101.5122
       default: 0
     validations:
       required: true
@@ -87,7 +88,6 @@ body:
         - label: DirectX11
         - label: DirectX10
         - label: DirectX9
-        - label: Not applicable
     validations:
       required: true
   - type: markdown
@@ -131,8 +131,25 @@ body:
       description: |
         Make sure you describe the issue and steps to reproduce accurately.
         
-        In addition, if possible, please attach a video showing the issue.
+        In addition, if possible, please attach a video showing the following:
+        
+        * The start of the game from Windows
+        * Your game settings
+        * The issue you encountered
       placeholder: "Tip: You can attach images, .mp4 videos, or files, by clicking this area to highlight it and then dragging files in."
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: '---'
+  - type: checkboxes
+    attributes:
+      label: Game graphic quality [Required]
+      options:
+        - label: Low
+        - label: Medium
+        - label: High
+        - label: Ultra
     validations:
       required: true
   - type: markdown
@@ -140,14 +157,59 @@ body:
       value: '---'
   - type: input
     attributes:
-      label: Device / Platform
+      label: Game resolution [Required]
+      description: "Specify your game resolution (1280x720, 1920x1080, ...)"
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: '---'
+  - type: dropdown
+    attributes:
+      label: Game VSync [Required]
+      options:
+        - "On"
+        - "Off"
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: '---'
+  - type: checkboxes
+    attributes:
+      label: Game display mode [Required]
+      options:
+        - label: Fullscreen
+        - label: Windowed
+        - label: Borderless Windowed
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: '---'
+  - type: textarea
+    attributes:
+      label: Detailed game settings [Required]
+      description: |
+         Please, share your game settings.
+
+         You can attach some screenshots of your game settings page.
+      placeholder: "Tip: You can attach images or files by clicking this area to highlight it and then dragging files in."
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: '---'
+  - type: input
+    attributes:
+      label: Device / Platform name
       description: "Share your device / platform name. It could be there is a specific constructor issue. [Recommended]"
   - type: markdown
     attributes:
       value: '---'
   - type: textarea
     attributes:
-      label: Crash dumps [Required, if applicable]               
+      label: Crash dumps [Required, if applicable]
       description: "For more help see: [How to obtain crash dumps - IGCIT Wiki](https://github.com/IGCIT/Intel-GPU-Community-Issue-Tracker-IGCIT/wiki/How-to-obtain-crash-dumps)"
       placeholder: |
         Tip: You can attach files by clicking this area to highlight it and then dragging files in.
@@ -158,9 +220,9 @@ body:
       value: '---'
   - type: textarea
     attributes:
-      label: Application / Windows logs
-      description: "if available, could help solve the issue faster. [Optional]"
+      label: Save game
+      description: "if possible, could help solve the issue faster. [Optional]"
       placeholder: |
         Tip: You can attach files by clicking this area to highlight it and then dragging files in.
-
-        Attach your compressed (*.zip*) logs here.
+        
+        Attach your compressed (.zip) save here.

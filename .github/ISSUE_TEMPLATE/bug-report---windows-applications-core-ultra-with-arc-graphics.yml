@@ -1,5 +1,5 @@
-name: Bug Report - Windows Applications - Intel® Arc™ & Iris® Xe Graphics
-description: Report issues in your non-game applications, or Windows itself, with Intel® Arc™ & Iris® Xe Graphics drivers.
+name: Bug Report - Windows Applications - Intel® Core™ Ultra with Intel® Arc™ Graphics
+description: Report issues in your non-game applications, or Windows itself, with Intel® Core™ Ultra with Intel® Arc™ Graphics drivers.
 labels: 'Info: Needs Replication'
 assignees: 'Felipe-Intel'
 body:
@@ -50,27 +50,7 @@ body:
     attributes:
       label: GPU Driver Version [Required]
       options:
-        - 31.0.101.5081
-        - 31.0.101.5074
-        - 31.0.101.4972
-        - 31.0.101.4953
-        - 31.0.101.4952
-        - 31.0.101.4900
-        - 31.0.101.4887
-        - 31.0.101.4885
-        - 31.0.101.4826
-        - 31.0.101.4824
-        - 31.0.101.4676
-        - 31.0.101.4672
-        - 31.0.101.4669
-        - 31.0.101.4644
-        - 31.0.101.4578
-        - 31.0.101.4577
-        - 31.0.101.4576
-        - 31.0.101.4575
-        - 31.0.101.4514
-        - 31.0.101.4502
-        - 31.0.101.4499
+        - 31.0.101.5122
       default: 0
     validations:
       required: true
