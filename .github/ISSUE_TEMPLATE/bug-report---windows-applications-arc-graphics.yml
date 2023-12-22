@@ -50,6 +50,7 @@ body:
     attributes:
       label: GPU Driver Version [Required]
       options:
+        - 31.0.101.5084
         - 31.0.101.5081
         - 31.0.101.5074
         - 31.0.101.4972
