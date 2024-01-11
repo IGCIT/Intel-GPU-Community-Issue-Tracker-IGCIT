@@ -1,5 +1,5 @@
-name: Bug Report - Windows Games -  Intel® Core™ Ultra with Intel® Arc™ Graphics
-description: Report glitches, crashes or other issues in Windows games with Intel® Core™ Ultra with Intel® Arc™ Graphics drivers.
+name: [Bug Report] Windows Game - Intel® Core™ Ultra with Intel® Arc™ Graphics
+description: Report issues in Windows games for Intel® Core™ Ultra Processors with Intel® Arc™ Graphics.
 labels: 'Info: Needs Replication'
 assignees: 'Felipe-Intel'
 body:
