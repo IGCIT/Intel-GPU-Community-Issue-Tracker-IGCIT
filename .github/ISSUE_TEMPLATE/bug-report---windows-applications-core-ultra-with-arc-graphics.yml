@@ -51,9 +51,14 @@ body:
       label: GPU Driver Version [Required]
       options:
         - 31.0.101.5122
+        - Other (Please specify)
       default: 0
     validations:
       required: true
+  - type: input
+    attributes:
+      label: Other GPU Driver version
+      description: "Specify your GPU driver version, if not present on the list"
   - type: markdown
     attributes:
       value: '---'
