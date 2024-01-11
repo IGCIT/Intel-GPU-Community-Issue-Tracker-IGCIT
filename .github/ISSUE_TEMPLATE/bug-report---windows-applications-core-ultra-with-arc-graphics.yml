@@ -1,5 +1,5 @@
-name: [Bug Report] Windows Application - Intel® Core™ Ultra with Intel® Arc™ Graphics
-description: Report issues in your applications, or Windows itself, for Intel® Core™ Ultra Processors with Intel® Arc™ Graphics.
+name: "[Bug Report] Windows Application - Intel® Core™ Ultra with Intel® Arc™ Graphics"
+description: "Report issues in your applications, or Windows itself, for Intel® Core™ Ultra Processors with Intel® Arc™ Graphics."
 labels: 'Info: Needs Replication'
 assignees: 'Felipe-Intel'
 body:

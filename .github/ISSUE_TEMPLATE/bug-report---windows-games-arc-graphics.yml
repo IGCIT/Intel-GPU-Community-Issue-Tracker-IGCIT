@@ -1,5 +1,5 @@
-name: [Bug Report] Windows Game - Intel® Arc™ & Iris® Xe Graphics
-description: Report issues in Windows games for Intel® Arc™ A-Series Graphics and Intel® Iris® Xe Graphics.
+name: "[Bug Report] Windows Game - Intel® Arc™ & Iris® Xe Graphics"
+description: "Report issues in Windows games for Intel® Arc™ A-Series Graphics and Intel® Iris® Xe Graphics."
 labels: 'Info: Needs Replication'
 assignees: 'Felipe-Intel'
 body:
