@@ -50,6 +50,7 @@ body:
     attributes:
       label: GPU Driver Version [Required]
       options:
+        - 31.0.101.5762
         - 31.0.101.5594
         - 31.0.101.5593
         - 31.0.101.5592
@@ -94,21 +95,21 @@ body:
   - type: markdown
     attributes:
       value: '---'
-  - type: checkboxes
+  - type: dropdown
     attributes:
-      label: Windows Build Number [Required]
+      label: Windows Build [Required]
       options:
-        - label: Windows 11 23H2
-        - label: Windows 11 22H2
-        - label: Windows 11 21H2
-        - label: Windows 10 22H2
-        - label: Windows 10 21H2
-        - label: Other (Please specify)
-    validations:
-      required: true
+        - Windows 11 24H2
+        - Windows 11 23H2
+        - Windows 11 22H2
+        - Windows 11 21H2
+        - Windows 10 22H2
+        - Windows 10 21H2
+        - Other (Please specify)
+      default: 0
   - type: input
     attributes:
-      label: Other Windows build number
+      label: Other Windows build
       description: "Specify your Windows build number if not present on the list"
   - type: markdown
     attributes:
