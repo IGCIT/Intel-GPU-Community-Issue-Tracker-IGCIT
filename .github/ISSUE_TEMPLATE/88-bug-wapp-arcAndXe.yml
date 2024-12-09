@@ -50,6 +50,7 @@ body:
     attributes:
       label: GPU Driver Version [Required]
       options:
+        - 32.0.101.6319
         - 32.0.101.6314
         - 32.0.101.6299
         - 32.0.101.6297
@@ -69,9 +70,6 @@ body:
         - 31.0.101.5594
         - 31.0.101.5593
         - 31.0.101.5592
-        - 31.0.101.5590
-        - 31.0.101.5534
-        - 31.0.101.5522
         - Other (Please specify)
       default: 0
     validations:
