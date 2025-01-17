@@ -83,16 +83,19 @@ body:
   - type: markdown
     attributes:
       value: '---'
-  - type: checkboxes
+  - type: dropdown
     attributes:
       label: Rendering API [Required]
       options:
-        - label: Vulkan
-        - label: OpenGL
-        - label: DirectX12
-        - label: DirectX11
-        - label: DirectX10
-        - label: DirectX9
+        - Vulkan
+        - OpenGL
+        - DirectX12
+        - DirectX11
+        - DirectX10
+        - DirectX9
+        - DirectX8
+        - Not applicable
+      default: 0
     validations:
       required: true
   - type: markdown
@@ -135,9 +138,9 @@ body:
       label: Description and steps to reproduce [Required]
       description: |
         Make sure you describe the issue and steps to reproduce accurately.
-        
+
         In addition, if possible, please attach a video showing the following:
-        
+
         * The start of the game from Windows
         * Your game settings
         * The issue you encountered
@@ -196,9 +199,9 @@ body:
     attributes:
       label: Detailed game settings [Required]
       description: |
-         Please, share your game settings.
+        Please, share your game settings.
 
-         You can attach some screenshots of your game settings page.
+        You can attach screenshots of the game setting screens or list them.
       placeholder: "Tip: You can attach images or files by clicking this area to highlight it and then dragging files in."
     validations:
       required: true
@@ -229,5 +232,5 @@ body:
       description: "if possible, could help solve the issue faster. [Optional]"
       placeholder: |
         Tip: You can attach files by clicking this area to highlight it and then dragging files in.
-        
+
         Attach your compressed (.zip) save here.

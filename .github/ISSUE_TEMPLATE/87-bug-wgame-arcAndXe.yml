@@ -1,5 +1,5 @@
 name: "[Bug Report] Windows Game - Intel® Arc™ & Iris® Xe Graphics"
-description: "Intel® Arc™ A-Series Graphics, Intel® Iris® Xe Graphics, and Intel® Core™ Ultra Processors with Intel® Arc™ Graphics."
+description: "Intel® Arc™ A-Series, Arc™ B-Series, Iris® Xe Graphics and Intel® Core™ Ultra Processors with Intel® Arc™ Graphics."
 labels: 'Info: Needs Replication'
 assignees: 'Felipe-Intel'
 body:
@@ -15,8 +15,6 @@ body:
       label: Checklist [README]
       description: "Please take a moment to review this checklist before completing the form."
       options:
-        - label: Device is not undervolted nor overclocked
-          required: true
         - label: Device is using the [latest drivers](https://github.com/IGCIT/Intel-GPU-Community-Issue-Tracker-IGCIT/wiki/Intel-driver-updates-and-changelogs)
           required: true
         - label: Game is not cracked, modded and use the latest patch
@@ -71,6 +69,7 @@ body:
     attributes:
       label: GPU Driver Version [Required]
       options:
+        - 32.0.101.6458_101.6257
         - 32.0.101.6449_101.6256
         - 32.0.101.6332_101.6253
         - 32.0.101.6325_101.6253
@@ -84,8 +83,6 @@ body:
         - 32.0.101.6127_101.6044
         - 32.0.101.6078_101.5736
         - 32.0.101.6078
-        - 32.0.101.5972
-        - 32.0.101.5768
         - Other (Please specify)
       default: 0
     validations:
@@ -97,16 +94,19 @@ body:
   - type: markdown
     attributes:
       value: '---'
-  - type: checkboxes
+  - type: dropdown
     attributes:
       label: Rendering API [Required]
       options:
-        - label: Vulkan
-        - label: OpenGL
-        - label: DirectX12
-        - label: DirectX11
-        - label: DirectX10
-        - label: DirectX9
+        - Vulkan
+        - OpenGL
+        - DirectX12
+        - DirectX11
+        - DirectX10
+        - DirectX9
+        - DirectX8
+        - Not applicable
+      default: 0
     validations:
       required: true
   - type: markdown
@@ -149,9 +149,9 @@ body:
       label: Description and steps to reproduce [Required]
       description: |
         Make sure you describe the issue and steps to reproduce accurately.
-        
+
         In addition, if possible, please attach a video showing the following:
-        
+
         * The start of the game from Windows
         * Your game settings
         * The issue you encountered
@@ -210,9 +210,9 @@ body:
     attributes:
       label: Detailed game settings [Required]
       description: |
-         Please, share your game settings.
+        Please, share your game settings.
 
-         You can attach some screenshots of your game settings page.
+        You can attach screenshots of the game setting screens or list them.
       placeholder: "Tip: You can attach images or files by clicking this area to highlight it and then dragging files in."
     validations:
       required: true
@@ -243,5 +243,5 @@ body:
       description: "if possible, could help solve the issue faster. [Optional]"
       placeholder: |
         Tip: You can attach files by clicking this area to highlight it and then dragging files in.
-        
+
         Attach your compressed (.zip) save here.
