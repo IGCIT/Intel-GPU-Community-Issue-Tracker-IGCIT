@@ -48,6 +48,7 @@ body:
     attributes:
       label: GPU Driver Version [Required]
       options:
+        - 32.0.101.6732
         - 32.0.101.6653
         - 32.0.101.6651
         - 32.0.101.6647
