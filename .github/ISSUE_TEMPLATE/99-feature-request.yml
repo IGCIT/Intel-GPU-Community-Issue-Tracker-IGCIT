@@ -3,9 +3,14 @@ description: Request a feature.
 labels: 'Type: Feature Request'
 assignees: 'Felipe-Intel'
 body:
+  - type: markdown
+    attributes:
+      value: |
+        > [!IMPORTANT]
+        > Fields marked with asterisk (*) are required.
   - type: input
     attributes:
-      label:  Application [Required]
+      label:  Application
       description: "Full name of the application that requires the feature"
     validations:
       required: true
@@ -19,7 +24,7 @@ body:
       required: true
   - type: input
     attributes:
-      label: Graphic Card [Required]
+      label: Graphic Card
     validations:
       required: true
   - type: markdown
@@ -27,14 +32,14 @@ body:
       value: '---'
   - type: checkboxes
     attributes:
-      label: Rendering API [Required]
+      label: Rendering API
       options:
         - label: Vulkan
         - label: OpenGL
-        - label: DirectX12
-        - label: DirectX11
-        - label: DirectX10
-        - label: DirectX9
+        - label: DirectX 12
+        - label: DirectX 11
+        - label: DirectX 10
+        - label: DirectX 9
         - label: Not applicable
     validations:
       required: true
@@ -43,7 +48,7 @@ body:
       value: '---'
   - type: dropdown
     attributes:
-      label: Windows Build [Required]
+      label: Windows Build
       options:
         - Windows 11 24H2
         - Windows 11 23H2
@@ -53,6 +58,8 @@ body:
         - Windows 10 21H2
         - Other (Please specify)
       default: 0
+    validations:
+      required: true
   - type: input
     attributes:
       label: Other Windows build
@@ -62,8 +69,7 @@ body:
       value: '---'
   - type: textarea
     attributes:
-      label: Describe the feature [Required]
-      placeholder: "Tip: You can attach images, .mp4 videos, or files, by clicking this area to highlight it and then dragging files in."
+      label: Describe the feature
     validations:
       required: true
   - type: markdown
@@ -72,4 +78,3 @@ body:
   - type: textarea
     attributes:
       label: Additional notes
-      placeholder: "Tip: You can attach images, .mp4 videos, or files, by clicking this area to highlight it and then dragging files in."

@@ -6,17 +6,16 @@ body:
   - type: markdown
     attributes:
       value: |
-        **Note: Once submitted, you can edit some of its fields, like checkboxes, directly, ie you don't need to use the Edit button**
+        > [!IMPORTANT]
+        > Fields marked with asterisk (*) are required.
   - type: markdown
     attributes:
       value: '---'
   - type: checkboxes
     attributes:
-      label: Checklist [README]
+      label: Requirements
       description: "Please take a moment to review this checklist before completing the form."
       options:
-        - label: Device is not undervolted nor overclocked
-          required: true
         - label: Device is using the [latest drivers](https://github.com/IGCIT/Intel-GPU-Community-Issue-Tracker-IGCIT/wiki/Intel-driver-updates-and-changelogs)
           required: true
         - label: Application is not cracked
@@ -26,7 +25,7 @@ body:
       value: '---'
   - type: input
     attributes:
-      label:  Application [Required]
+      label:  Application
       description: "Full name of the application"
     validations:
       required: true
@@ -35,7 +34,7 @@ body:
       value: '---'
   - type: input
     attributes:
-      label: Processor / Processor Number [Required]
+      label: Processor / Processor Number
     validations:
       required: true
   - type: markdown
@@ -43,7 +42,7 @@ body:
       value: '---'
   - type: dropdown
     attributes:
-      label: GPU Driver Version [Required]
+      label: GPU Driver Version
       options:
         - 31.0.101.2135
         - 31.0.101.2134
@@ -65,15 +64,16 @@ body:
       value: '---'
   - type: dropdown
     attributes:
-      label: Rendering API [Required]
+      label: Rendering API
       options:
         - Vulkan
         - OpenGL
-        - DirectX12
-        - DirectX11
-        - DirectX10
-        - DirectX9
-        - DirectX8
+        - DirectX 12
+        - DirectX 11
+        - DirectX 10
+        - DirectX 9
+        - DirectX 8
+        - Older (DirectX 7 and lower)
         - Not applicable
       default: 0
     validations:
@@ -83,7 +83,7 @@ body:
       value: '---'
   - type: dropdown
     attributes:
-      label: Windows Build [Required]
+      label: Windows Build
       options:
         - Windows 11 24H2
         - Windows 11 23H2
@@ -93,6 +93,8 @@ body:
         - Windows 10 21H2
         - Other (Please specify)
       default: 0
+    validations:
+      required: true
   - type: input
     attributes:
       label: Other Windows build
@@ -107,7 +109,6 @@ body:
         Please generate and attach the output of Intel® System Support Utility here.
 
         See: [How to generate Intel System Support Utility report - IGCIT Wiki](https://github.com/IGCIT/Intel-GPU-Community-Issue-Tracker-IGCIT/wiki/How-to-generate-Intel-System-Support-Utility-report)
-      placeholder: "Tip: You can attach images, .mp4 videos, or files, by clicking this area to highlight it and then dragging files in."
     validations:
       required: true
   - type: markdown
@@ -115,12 +116,11 @@ body:
       value: '---'
   - type: textarea
     attributes:
-      label: Description and steps to reproduce [Required]
+      label: Description and steps to reproduce
       description: |
         Make sure you describe the issue and steps to reproduce accurately.
 
         In addition, if possible, please attach a video showing the issue.
-      placeholder: "Tip: You can attach images, .mp4 videos, or files, by clicking this area to highlight it and then dragging files in."
     validations:
       required: true
   - type: markdown
@@ -135,20 +135,12 @@ body:
       value: '---'
   - type: textarea
     attributes:
-      label: Crash dumps [Required, if applicable]
+      label: Crash dumps
       description: "For more help see: [How to obtain crash dumps - IGCIT Wiki](https://github.com/IGCIT/Intel-GPU-Community-Issue-Tracker-IGCIT/wiki/How-to-obtain-crash-dumps)"
-      placeholder: |
-        Tip: You can attach files by clicking this area to highlight it and then dragging files in.
-
-        Attach your compressed (*.zip*) dump here.
   - type: markdown
     attributes:
       value: '---'
   - type: textarea
     attributes:
       label: Application / Windows logs
-      description: "if available, could help solve the issue faster. [Optional]"
-      placeholder: |
-        Tip: You can attach files by clicking this area to highlight it and then dragging files in.
-
-        Attach your compressed (*.zip*) logs here.
+      description: "If available, can help Intel engineers to identify and fix the issue faster"
