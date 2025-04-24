@@ -40,7 +40,7 @@ body:
       value: '---'
   - type: checkboxes
     attributes:
-      label: Game Platform <code style="color:red">*</code>
+      label: Game Platform *
       options:
         - label: Steam
         - label: Microsoft Store / Gamepass
@@ -159,7 +159,7 @@ body:
       value: '---'
   - type: checkboxes
     attributes:
-      label: Game graphic quality <code style="color:red">*</code>
+      label: Game graphic quality *
       options:
         - label: Low
         - label: Medium
