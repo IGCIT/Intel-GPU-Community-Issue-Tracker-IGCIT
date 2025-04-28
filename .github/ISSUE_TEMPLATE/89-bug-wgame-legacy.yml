@@ -14,7 +14,6 @@ body:
   - type: checkboxes
     attributes:
       label: Requirements
-      description: "Please take a moment to review this checklist before completing the form."
       options:
         - label: Device is using the [latest drivers](https://github.com/IGCIT/Intel-GPU-Community-Issue-Tracker-IGCIT/wiki/Intel-driver-updates-and-changelogs)
           required: true
@@ -38,20 +37,23 @@ body:
   - type: markdown
     attributes:
       value: '---'
-  - type: checkboxes
+  - type: dropdown
     attributes:
-      label: Game Platform *
+      label: Game Platform
       options:
-        - label: Steam
-        - label: Microsoft Store / Gamepass
-        - label: GOG Galaxy
-        - label: Ubisoft Connect
-        - label: Battle.net
-        - label: Epic Games
-        - label: Rockstar Games Launcher
-        - label: EA app
-        - label: Amazon Games app
-        - label: Other (please specify)
+        - Steam
+        - Microsoft Store / Gamepass
+        - GOG Galaxy
+        - Ubisoft Connect
+        - Battle.net
+        - Epic Games
+        - Rockstar Games Launcher
+        - EA app
+        - Amazon Games app
+        - Other (please specify)
+      default: 0
+    validations:
+      required: true
   - type: input
     attributes:
       label: Other game platform

@@ -14,7 +14,6 @@ body:
   - type: checkboxes
     attributes:
       label: Requirements
-      description: "Please take a moment to review this checklist before completing the form."
       options:
         - label: Device is using the [latest drivers](https://github.com/IGCIT/Intel-GPU-Community-Issue-Tracker-IGCIT/wiki/Intel-driver-updates-and-changelogs)
           required: true

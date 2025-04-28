@@ -14,7 +14,6 @@ body:
   - type: checkboxes
     attributes:
       label: Requirements
-      description: "Please take a moment to review this checklist before completing the form."
       options:
         - label: Device is using the [latest drivers](https://github.com/IGCIT/Intel-GPU-Community-Issue-Tracker-IGCIT/wiki/Intel-driver-updates-and-changelogs)
           required: true
@@ -49,6 +48,7 @@ body:
     attributes:
       label: GPU Driver Version
       options:
+        - 32.0.101.6739
         - 32.0.101.6737
         - 32.0.101.6734
         - 32.0.101.6732
@@ -60,9 +60,6 @@ body:
         - 32.0.101.6557_101.6262
         - 32.0.101.6460_101.6259
         - 32.0.101.6458_101.6257
-        - 32.0.101.6449_101.6256
-        - 32.0.101.6332_101.6253
-        - 32.0.101.6325_101.6253
         - Other (Please specify)
       default: 0
     validations:
