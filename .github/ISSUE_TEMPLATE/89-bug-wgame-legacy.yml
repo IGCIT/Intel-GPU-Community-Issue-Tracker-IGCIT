@@ -15,7 +15,7 @@ body:
     attributes:
       label: Requirements
       options:
-        - label: Device is using the [latest drivers](https://github.com/IGCIT/Intel-GPU-Community-Issue-Tracker-IGCIT/wiki/Intel-driver-updates-and-changelogs)
+        - label: Device is using the [latest drivers](https://github.com/IGCIT/Intel-GPU-Community-Issue-Tracker-IGCIT/wiki/Intel-driver-updates)
           required: true
         - label: Game is not cracked, modded and use the latest patch
           required: true
