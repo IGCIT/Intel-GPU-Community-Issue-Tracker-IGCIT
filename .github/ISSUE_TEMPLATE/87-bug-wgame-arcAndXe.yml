@@ -78,6 +78,7 @@ body:
     attributes:
       label: GPU Driver Version
       options:
+        - 32.0.101.6790
         - 32.0.101.6739
         - 32.0.101.6737
         - 32.0.101.6734
@@ -89,7 +90,6 @@ body:
         - 32.0.101.6559
         - 32.0.101.6557_101.6262
         - 32.0.101.6460_101.6259
-        - 32.0.101.6458_101.6257
         - Other (Please specify)
       default: 0
     validations:
