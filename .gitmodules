@@ -1,6 +1,0 @@
-[submodule "IGCIT Helper/external/bit7z"]
-	path = IGCIT Helper/external/bit7z
-	url = https://github.com/rikyoz/bit7z
-[submodule "IGCIT Driver Switch/external/bit7z"]
-	path = IGCIT Driver Switch/external/bit7z
-	url = https://github.com/rikyoz/bit7z

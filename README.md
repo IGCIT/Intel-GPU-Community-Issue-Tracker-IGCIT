@@ -1,17 +1,17 @@
 ## Intel GPU Community Issue Tracker (IGCIT)
 
-![](img/IGCIT-logo-256.png)
+![igcit-logo.png](igcit-logo.png)
 
-**IGCIT** is a Community-driven issue tracker for Intel GPUs.
+Official community issue tracker for Intel GPUs.
 
-All the issues here will be reported directly to Intel.
+**Windows Intel drivers only**, for Linux Intel mesa drivers, go to [mesa gitlab](https://gitlab.freedesktop.org/mesa/mesa/-/issues).
 
-Please, do **not** ping Intel employees in your issues.
+---
 
-We collect issues for **Windows only**, everything else, like Linux, must be reported to the respective developers.
-We also collect issues from **emulator developers**, if you find a bug in Intel **Windows drivers**, you can report it here.
+### Rules
 
-You can report Mesa issues [here](https://gitlab.freedesktop.org/mesa/mesa).
+* Avoid offending comments to users/Intel employees
+* Be patient, some fixes may take some time, depending on the amount of work required
 
 ---
 
@@ -33,26 +33,11 @@ To get access to our issue forms, please follow these steps in this exact order:
 
 ---
 
-## IGCIT Tools
+## IGCIT Helper
 
+[IGCIT Helper Wiki](https://github.com/IGCIT/Intel-GPU-Community-Issue-Tracker-IGCIT/wiki/IGCIT-Helper).
 
-### IGCIT Helper
-
-This is a small utility to easily extract all the required information about your device.
-
-See more in [IGCIT Wiki](https://github.com/IGCIT/Intel-GPU-Community-Issue-Tracker-IGCIT/wiki/IGCIT-Helper).
-
-Download latest release [here](https://github.com/IGCIT/Intel-GPU-Community-Issue-Tracker-IGCIT/releases/tag/igcit-help2.0.0).
-
-### IGCIT Driver Switch
-
-A tool to switch your _**Intel GPU driver**_ on the fly, based on Ciphray switch_driver.bat.
-
-Its aim is to help to identify regressions quickly and easily.
-
-See more in [IGCIT Wiki](https://github.com/IGCIT/Intel-GPU-Community-Issue-Tracker-IGCIT/wiki/igcit-driver-switch).
-
-Download latest release [here](https://github.com/IGCIT/Intel-GPU-Community-Issue-Tracker-IGCIT/releases/tag/drv-switch-v4).
+Download latest release from [here](https://github.com/IGCIT/IGCIT-Helper/releases).
 
 ---
 
@@ -68,8 +53,6 @@ Download latest release [here](https://github.com/IGCIT/Intel-GPU-Community-Issu
 
 ---
 
-
 ## Credits
 
-* A big thanks to _**BenjaminLSR**_ for reporting issues to Intel!
-* Ciphray: switch_driver.bat code.
+* A big thanks to _**BenjaminLSR**_, who made this possible
