@@ -1,3 +1,34 @@
+
+<div align="right">
+  <details>
+    <summary >🌐 Language</summary>
+    <div>
+      <div align="center">
+        <a href="https://openaitx.github.io/view.html?user=IGCIT&project=Intel-GPU-Community-Issue-Tracker-IGCIT&lang=en">English</a>
+        | <a href="https://openaitx.github.io/view.html?user=IGCIT&project=Intel-GPU-Community-Issue-Tracker-IGCIT&lang=zh-CN">简体中文</a>
+        | <a href="https://openaitx.github.io/view.html?user=IGCIT&project=Intel-GPU-Community-Issue-Tracker-IGCIT&lang=zh-TW">繁體中文</a>
+        | <a href="https://openaitx.github.io/view.html?user=IGCIT&project=Intel-GPU-Community-Issue-Tracker-IGCIT&lang=ja">日本語</a>
+        | <a href="https://openaitx.github.io/view.html?user=IGCIT&project=Intel-GPU-Community-Issue-Tracker-IGCIT&lang=ko">한국어</a>
+        | <a href="https://openaitx.github.io/view.html?user=IGCIT&project=Intel-GPU-Community-Issue-Tracker-IGCIT&lang=hi">हिन्दी</a>
+        | <a href="https://openaitx.github.io/view.html?user=IGCIT&project=Intel-GPU-Community-Issue-Tracker-IGCIT&lang=th">ไทย</a>
+        | <a href="https://openaitx.github.io/view.html?user=IGCIT&project=Intel-GPU-Community-Issue-Tracker-IGCIT&lang=fr">Français</a>
+        | <a href="https://openaitx.github.io/view.html?user=IGCIT&project=Intel-GPU-Community-Issue-Tracker-IGCIT&lang=de">Deutsch</a>
+        | <a href="https://openaitx.github.io/view.html?user=IGCIT&project=Intel-GPU-Community-Issue-Tracker-IGCIT&lang=es">Español</a>
+        | <a href="https://openaitx.github.io/view.html?user=IGCIT&project=Intel-GPU-Community-Issue-Tracker-IGCIT&lang=it">Italiano</a>
+        | <a href="https://openaitx.github.io/view.html?user=IGCIT&project=Intel-GPU-Community-Issue-Tracker-IGCIT&lang=ru">Русский</a>
+        | <a href="https://openaitx.github.io/view.html?user=IGCIT&project=Intel-GPU-Community-Issue-Tracker-IGCIT&lang=pt">Português</a>
+        | <a href="https://openaitx.github.io/view.html?user=IGCIT&project=Intel-GPU-Community-Issue-Tracker-IGCIT&lang=nl">Nederlands</a>
+        | <a href="https://openaitx.github.io/view.html?user=IGCIT&project=Intel-GPU-Community-Issue-Tracker-IGCIT&lang=pl">Polski</a>
+        | <a href="https://openaitx.github.io/view.html?user=IGCIT&project=Intel-GPU-Community-Issue-Tracker-IGCIT&lang=ar">العربية</a>
+        | <a href="https://openaitx.github.io/view.html?user=IGCIT&project=Intel-GPU-Community-Issue-Tracker-IGCIT&lang=fa">فارسی</a>
+        | <a href="https://openaitx.github.io/view.html?user=IGCIT&project=Intel-GPU-Community-Issue-Tracker-IGCIT&lang=tr">Türkçe</a>
+        | <a href="https://openaitx.github.io/view.html?user=IGCIT&project=Intel-GPU-Community-Issue-Tracker-IGCIT&lang=vi">Tiếng Việt</a>
+        | <a href="https://openaitx.github.io/view.html?user=IGCIT&project=Intel-GPU-Community-Issue-Tracker-IGCIT&lang=id">Bahasa Indonesia</a>
+      </div>
+    </div>
+  </details>
+</div>
+
 ## Intel GPU Community Issue Tracker (IGCIT)
 
 ![igcit-logo.png](igcit-logo.png)
