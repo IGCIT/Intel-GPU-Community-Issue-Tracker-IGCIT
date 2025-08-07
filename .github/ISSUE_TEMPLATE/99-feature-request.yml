@@ -1,7 +1,7 @@
 name: Feature request
 description: Request a feature.
 labels: 'Type: Feature Request'
-assignees: 'Felipe-Intel'
+assignees: 'Arturo-Intel'
 body:
   - type: markdown
     attributes:
@@ -30,17 +30,16 @@ body:
   - type: markdown
     attributes:
       value: '---'
-  - type: checkboxes
+  - type: dropdown
     attributes:
       label: Rendering API
       options:
-        - label: Vulkan
-        - label: OpenGL
-        - label: DirectX 12
-        - label: DirectX 11
-        - label: DirectX 10
-        - label: DirectX 9
-        - label: Not applicable
+        - Vulkan
+        - OpenGL
+        - DirectX 12
+        - DirectX 11
+        - Not applicable
+      default: 0
     validations:
       required: true
   - type: markdown

@@ -1,7 +1,7 @@
 name: "[Bug Report] Windows Application - Intel® Integrated Graphics ( 7th - 10th Gen )"
 description: "Report issues in your applications, or Windows itself, for 7th-10th Gen Intel® Core™ Processor Graphics, and related Intel Atom®, Pentium®, and Celeron® processors."
 labels: 'Info: Needs Replication'
-assignees: 'Felipe-Intel'
+assignees: 'Arturo-Intel'
 body:
   - type: markdown
     attributes:

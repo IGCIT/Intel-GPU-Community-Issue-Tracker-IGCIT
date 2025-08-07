@@ -1,7 +1,7 @@
 name: "[Bug Report] Windows Application - Intel® Arc™ & Iris® Xe Graphics"
 description: "Intel® Arc™ A-Series, Arc™ B-Series, Iris® Xe Graphics and Intel® Core™ Ultra Processors with Intel® Arc™ Graphics."
 labels: 'Info: Needs Replication'
-assignees: 'Felipe-Intel'
+assignees: 'Arturo-Intel'
 body:
   - type: markdown
     attributes:
