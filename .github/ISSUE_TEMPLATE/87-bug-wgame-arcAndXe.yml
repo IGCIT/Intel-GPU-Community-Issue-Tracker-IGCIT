@@ -78,6 +78,7 @@ body:
     attributes:
       label: GPU Driver Version
       options:
+        - 32.0.101.7029
         - 32.0.101.7028
         - 32.0.101.7026
         - 32.0.101.6989
@@ -88,8 +89,6 @@ body:
         - 32.0.101.6877
         - 32.0.101.6876
         - 32.0.101.6874
-        - 32.0.101.6795
-        - 32.0.101.6793
         - 32.0.101.6790
         - Other (Please specify)
       default: 0
@@ -125,6 +124,7 @@ body:
     attributes:
       label: Windows Build
       options:
+        - Windows 11 25H2
         - Windows 11 24H2
         - Windows 11 23H2
         - Windows 11 22H2
@@ -170,14 +170,16 @@ body:
   - type: markdown
     attributes:
       value: '---'
-  - type: checkboxes
+  - type: dropdown
     attributes:
-      label: Game graphic quality *
+      label: Game graphic quality
       options:
-        - label: Low
-        - label: Medium
-        - label: High
-        - label: Ultra
+        - Low
+        - Medium
+        - High
+        - Ultra
+    validations:
+      required: true
   - type: markdown
     attributes:
       value: '---'
