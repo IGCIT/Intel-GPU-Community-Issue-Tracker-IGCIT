@@ -1,5 +1,5 @@
-name: "[Bug Report] Windows Game - Intel® Arc™ & Iris® Xe Graphics"
-description: "Intel® Arc™ A-Series, Arc™ B-Series, Iris® Xe Graphics and Intel® Core™ Ultra Processors with Intel® Arc™ Graphics."
+name: "[Bug Report] Windows Application - 11th-14th Gen Intel® Core™ Processor Graphics"
+description: "11th - 14th Gen Intel Processor Graphics and related Intel Atom®, Pentium®, and Celeron® processor graphics."
 labels: 'Info: Needs Replication'
 assignees: 'Arturo-Intel'
 body:
@@ -17,47 +17,17 @@ body:
       options:
         - label: Device is using the [latest drivers](https://github.com/IGCIT/Intel-GPU-Community-Issue-Tracker-IGCIT/wiki/Intel-driver-updates)
           required: true
-        - label: Game is not cracked, modded and use the latest patch
+        - label: Application is not cracked
           required: true
   - type: markdown
     attributes:
       value: '---'
   - type: input
     attributes:
-      label: Game
-      description: "Full name of the game"
+      label:  Application
+      description: "Full name of the application"
     validations:
       required: true
-  - type: input
-    attributes:
-      label: Game acquisition link
-      description: "Store page or official site where it is possible to acquire the game"
-    validations:
-      required: true
-  - type: markdown
-    attributes:
-      value: '---'
-  - type: dropdown
-    attributes:
-      label: Game Platform
-      options:
-        - Steam
-        - Microsoft Store / Gamepass
-        - GOG Galaxy
-        - Ubisoft Connect
-        - Battle.net
-        - Epic Games
-        - Rockstar Games Launcher
-        - EA app
-        - Amazon Games app
-        - Other (please specify)
-      default: 0
-    validations:
-      required: true
-  - type: input
-    attributes:
-      label: Other game platform
-      description: "Specify your game platform if not present on the list"
   - type: markdown
     attributes:
       value: '---'
@@ -78,18 +48,7 @@ body:
     attributes:
       label: GPU Driver Version
       options:
-        - 32.0.101.8132
-        - 32.0.101.7029
-        - 32.0.101.7028
-        - 32.0.101.7026
-        - 32.0.101.6989
-        - 32.0.101.6987
-        - 32.0.101.6972
-        - 32.0.101.6913
-        - 32.0.101.6881
-        - 32.0.101.6877
-        - 32.0.101.6876
-        - 32.0.101.6874
+        - 32.0.101.7076
         - Other (Please specify)
       default: 0
     validations:
@@ -138,7 +97,7 @@ body:
   - type: input
     attributes:
       label: Other Windows build
-      description: "Specify your Windows build number if not present on the list"
+      description: "Specify your Windows build number, if not present on the list"
   - type: markdown
     attributes:
       value: '---'
@@ -160,24 +119,7 @@ body:
       description: |
         Make sure you describe the issue and steps to reproduce accurately.
 
-        In addition, if possible, please attach a video showing the following:
-
-        * The start of the game from Windows
-        * Your game settings
-        * The issue you encountered
-    validations:
-      required: true
-  - type: markdown
-    attributes:
-      value: '---'
-  - type: dropdown
-    attributes:
-      label: Game graphic quality
-      options:
-        - Low
-        - Medium
-        - High
-        - Ultra
+        In addition, if possible, please attach a video showing the issue.
     validations:
       required: true
   - type: markdown
@@ -185,52 +127,7 @@ body:
       value: '---'
   - type: input
     attributes:
-      label: Game resolution
-      description: "Specify your game resolution (1280x720, 1920x1080, ...)"
-    validations:
-      required: true
-  - type: markdown
-    attributes:
-      value: '---'
-  - type: dropdown
-    attributes:
-      label: Game VSync
-      options:
-        - "On"
-        - "Off"
-    validations:
-      required: true
-  - type: markdown
-    attributes:
-      value: '---'
-  - type: dropdown
-    attributes:
-      label: Game display mode
-      options:
-        - Fullscreen
-        - Windowed
-        - Borderless Windowed
-      default: 0
-    validations:
-      required: true
-  - type: markdown
-    attributes:
-      value: '---'
-  - type: textarea
-    attributes:
-      label: Detailed game settings
-      description: |
-        Please, share your game settings.
-
-        You can attach screenshots of the game setting screens or list them.
-    validations:
-      required: true
-  - type: markdown
-    attributes:
-      value: '---'
-  - type: input
-    attributes:
-      label: Device / Platform name
+      label: Device / Platform
       description: "Share your device / platform name. It could be there is a specific constructor issue. [Recommended]"
   - type: markdown
     attributes:
@@ -244,5 +141,5 @@ body:
       value: '---'
   - type: textarea
     attributes:
-      label: Save game files
-      description: "If available, can help Intel engineers to reproduce and fix the issue faster."
+      label: Application / Windows logs
+      description: "If available, can help Intel engineers to identify and fix the issue faster"

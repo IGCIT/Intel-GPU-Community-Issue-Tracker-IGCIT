@@ -1,0 +1,237 @@
+name: "[Bug Report] Windows Game - 11th-14th Gen Intel® Core™ Processor Graphics"
+description: "11th - 14th Gen Intel Processor Graphics and related Intel Atom®, Pentium®, and Celeron® processor graphics."
+labels: 'Info: Needs Replication'
+assignees: 'Arturo-Intel'
+body:
+  - type: markdown
+    attributes:
+      value: |
+        > [!IMPORTANT]
+        > Fields marked with asterisk (*) are required.
+  - type: markdown
+    attributes:
+      value: '---'
+  - type: checkboxes
+    attributes:
+      label: Requirements
+      options:
+        - label: Device is using the [latest drivers](https://github.com/IGCIT/Intel-GPU-Community-Issue-Tracker-IGCIT/wiki/Intel-driver-updates)
+          required: true
+        - label: Game is not cracked, modded and use the latest patch
+          required: true
+  - type: markdown
+    attributes:
+      value: '---'
+  - type: input
+    attributes:
+      label: Game
+      description: "Full name of the game"
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Game acquisition link
+      description: "Store page or official site where it is possible to acquire the game"
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: '---'
+  - type: dropdown
+    attributes:
+      label: Game Platform
+      options:
+        - Steam
+        - Microsoft Store / Gamepass
+        - GOG Galaxy
+        - Ubisoft Connect
+        - Battle.net
+        - Epic Games
+        - Rockstar Games Launcher
+        - EA app
+        - Amazon Games app
+        - Other (please specify)
+      default: 0
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Other game platform
+      description: "Specify your game platform if not present on the list"
+  - type: markdown
+    attributes:
+      value: '---'
+  - type: input
+    attributes:
+      label: Processor / Processor Number
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Graphic Card
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: '---'
+  - type: dropdown
+    attributes:
+      label: GPU Driver Version
+      options:
+        - 32.0.101.7076
+        - Other (Please specify)
+      default: 0
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Other GPU Driver version
+      description: "Specify your GPU driver version, if not present on the list"
+  - type: markdown
+    attributes:
+      value: '---'
+  - type: dropdown
+    attributes:
+      label: Rendering API
+      options:
+        - Vulkan
+        - OpenGL
+        - DirectX 12
+        - DirectX 11
+        - DirectX 10
+        - DirectX 9
+        - DirectX 8
+        - Older (DirectX 7 and lower)
+        - Not applicable
+      default: 0
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: '---'
+  - type: dropdown
+    attributes:
+      label: Windows Build
+      options:
+        - Windows 11 25H2
+        - Windows 11 24H2
+        - Windows 11 23H2
+        - Windows 11 22H2
+        - Windows 11 21H2
+        - Windows 10 22H2
+        - Windows 10 21H2
+        - Other (Please specify)
+      default: 0
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Other Windows build
+      description: "Specify your Windows build number if not present on the list"
+  - type: markdown
+    attributes:
+      value: '---'
+  - type: textarea
+    attributes:
+      label: Intel System Support Utility report
+      description: |
+        Please generate and attach the output of Intel® System Support Utility here.
+
+        See: [How to generate Intel System Support Utility report - IGCIT Wiki](https://github.com/IGCIT/Intel-GPU-Community-Issue-Tracker-IGCIT/wiki/How-to-generate-Intel-System-Support-Utility-report)
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: '---'
+  - type: textarea
+    attributes:
+      label: Description and steps to reproduce
+      description: |
+        Make sure you describe the issue and steps to reproduce accurately.
+
+        In addition, if possible, please attach a video showing the following:
+
+        * The start of the game from Windows
+        * Your game settings
+        * The issue you encountered
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: '---'
+  - type: dropdown
+    attributes:
+      label: Game graphic quality
+      options:
+        - Low
+        - Medium
+        - High
+        - Ultra
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: '---'
+  - type: input
+    attributes:
+      label: Game resolution
+      description: "Specify your game resolution (1280x720, 1920x1080, ...)"
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: '---'
+  - type: dropdown
+    attributes:
+      label: Game VSync
+      options:
+        - "On"
+        - "Off"
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: '---'
+  - type: dropdown
+    attributes:
+      label: Game display mode
+      options:
+        - Fullscreen
+        - Windowed
+        - Borderless Windowed
+      default: 0
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: '---'
+  - type: textarea
+    attributes:
+      label: Detailed game settings
+      description: |
+        Please, share your game settings.
+
+        You can attach screenshots of the game setting screens or list them.
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: '---'
+  - type: input
+    attributes:
+      label: Device / Platform name
+      description: "Share your device / platform name. It could be there is a specific constructor issue. [Recommended]"
+  - type: markdown
+    attributes:
+      value: '---'
+  - type: textarea
+    attributes:
+      label: Crash dumps
+      description: "For more help see: [How to obtain crash dumps - IGCIT Wiki](https://github.com/IGCIT/Intel-GPU-Community-Issue-Tracker-IGCIT/wiki/How-to-obtain-crash-dumps)"
+  - type: markdown
+    attributes:
+      value: '---'
+  - type: textarea
+    attributes:
+      label: Save game files
+      description: "If available, can help Intel engineers to reproduce and fix the issue faster."
