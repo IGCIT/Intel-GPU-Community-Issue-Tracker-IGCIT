@@ -78,6 +78,7 @@ body:
     attributes:
       label: GPU Driver Version
       options:
+        - 32.0.101.8136
         - 32.0.101.8135
         - 32.0.101.8132
         - 32.0.101.7029
