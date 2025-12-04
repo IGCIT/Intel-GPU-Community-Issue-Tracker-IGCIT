@@ -1,6 +1,6 @@
 name: "[Bug Report] Windows Application - 11th-14th Gen Intel® Core™ Processor Graphics"
 description: "11th - 14th Gen Intel Processor Graphics and related Intel Atom®, Pentium®, and Celeron® processor graphics."
-labels: 'Info: Needs Replication'
+labels: 'Info: NEW'
 assignees: 'Arturo-Intel'
 body:
   - type: markdown

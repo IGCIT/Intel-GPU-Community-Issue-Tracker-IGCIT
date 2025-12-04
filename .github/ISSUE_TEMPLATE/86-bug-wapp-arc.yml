@@ -1,6 +1,6 @@
 name: "[Bug Report] Windows Application - Intel® Arc™ Graphics"
 description: "Intel® Arc™ B-Series, Intel® Arc™ A-Series, and Intel® Core™ Ultra Processors with Intel® Arc™ Graphics."
-labels: 'Info: Needs Replication'
+labels: 'Info: NEW'
 assignees: 'Arturo-Intel'
 body:
   - type: markdown

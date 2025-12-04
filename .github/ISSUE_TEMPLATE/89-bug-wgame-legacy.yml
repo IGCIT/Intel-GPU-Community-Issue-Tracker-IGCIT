@@ -1,6 +1,6 @@
 name: "[Bug Report] Windows Game - Intel® Integrated Graphics ( 7th - 10th Gen )"
 description: "Report issues in Windows games for 7th-10th Gen Intel® Core™ Processor Graphics, and related Intel Atom®, Pentium®, and Celeron® processors."
-labels: 'Info: Needs Replication'
+labels: 'Info: NEW'
 assignees: 'Arturo-Intel'
 body:
   - type: markdown
