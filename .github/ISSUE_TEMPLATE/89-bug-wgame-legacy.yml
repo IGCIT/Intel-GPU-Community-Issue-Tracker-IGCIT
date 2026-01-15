@@ -1,8 +1,14 @@
 name: "[Bug Report] Windows Game - Intel® Integrated Graphics ( 7th - 10th Gen )"
 description: "Report issues in Windows games for 7th-10th Gen Intel® Core™ Processor Graphics, and related Intel Atom®, Pentium®, and Celeron® processors."
-labels: 'Info: NEW'
+labels: ['Legacy', 'Info: NEW']
 assignees: 'Arturo-Intel'
 body:
+  - type: markdown
+    attributes:
+      value: |
+        > [!WARNING]
+        > Your GPU has been moved to a [_legacy software support model_](https://www.intel.com/content/www/us/en/support/articles/000091662/graphics.html).
+        > Support is provided for critical fixes and security vulnerabilities only.
   - type: markdown
     attributes:
       value: |
