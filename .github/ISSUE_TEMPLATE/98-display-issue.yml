@@ -101,13 +101,13 @@ body:
       description: |
         For each monitor, please share:
 
-        Brand:
-        Model number:
-        Monitor maximum resolution:
-        Connection type (HDMI, DP, Adapter HDMI->DP or viceversa, etc..):
-        Resolution being set in Windows:
-        Windows display mode (duplicate, extend, etc..):
-        Orientation:
+        - Brand:
+        - Model number:
+        - Monitor maximum resolution:
+        - Connection type (HDMI, DP, Adapter HDMI->DP or viceversa, etc..):
+        - Resolution being set in Windows:
+        - Windows display mode (duplicate, extend, etc..):
+        - Orientation:
     validations:
       required: true
   - type: markdown
