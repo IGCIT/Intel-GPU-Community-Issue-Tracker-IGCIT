@@ -78,6 +78,7 @@ body:
     attributes:
       label: GPU Driver Version
       options:
+        - 32.0.101.8531
         - 32.0.101.8509
         - 32.0.101.8425_101.8362
         - 32.0.101.8331
@@ -225,8 +226,8 @@ body:
       value: '---'
   - type: input
     attributes:
-      label: Device / Platform name
-      description: "Share your device / platform name. It could be there is a specific constructor issue. [Recommended]"
+      label: Device
+      description: "Share your device name."
   - type: markdown
     attributes:
       value: '---'

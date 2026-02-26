@@ -1,6 +1,6 @@
-name: "[Bug Report] Windows Application - Intel® Arc™ Graphics"
-description: "Intel® Arc™ B-Series, Intel® Arc™ A-Series, and Intel® Core™ Ultra Processors with Intel® Arc™ Graphics."
-labels: 'Info: NEW'
+name: "[Bug Report] Display issue"
+description: "Single and multi-monitor setup issues, such as undetected monitors, wrong orientation, wrong refresh rate, black screens and similar issues."
+labels: ['Type: Display', 'Info: NEW']
 assignees: 'Arturo-Intel'
 body:
   - type: markdown
@@ -17,21 +17,6 @@ body:
       options:
         - label: Device is using the [latest drivers](https://github.com/IGCIT/Intel-GPU-Community-Issue-Tracker-IGCIT/wiki/Intel-driver-updates)
           required: true
-        - label: Application is not cracked
-          required: true
-  - type: markdown
-    attributes:
-      value: '---'
-  - type: input
-    attributes:
-      label: Application
-      description: "Full name of the application"
-    validations:
-      required: true
-  - type: input
-    attributes:
-      label: Application Link
-      description: "Home page or repository"
   - type: markdown
     attributes:
       value: '---'
@@ -43,6 +28,11 @@ body:
   - type: input
     attributes:
       label: Graphic Card
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Number of connected monitors
     validations:
       required: true
   - type: markdown
@@ -68,25 +58,6 @@ body:
     attributes:
       label: Other GPU Driver version
       description: "Specify your GPU driver version, if not present on the list"
-  - type: markdown
-    attributes:
-      value: '---'
-  - type: dropdown
-    attributes:
-      label: Rendering API
-      options:
-        - Vulkan
-        - OpenGL
-        - DirectX 12
-        - DirectX 11
-        - DirectX 10
-        - DirectX 9
-        - DirectX 8
-        - Older (DirectX 7 and lower)
-        - Not applicable
-      default: 0
-    validations:
-      required: true
   - type: markdown
     attributes:
       value: '---'
@@ -126,6 +97,24 @@ body:
       value: '---'
   - type: textarea
     attributes:
+      label: Monitors description
+      description: |
+        For each monitor, please share:
+
+        Brand:
+        Model number:
+        Monitor maximum resolution:
+        Connection type (HDMI, DP, Adapter HDMI->DP or viceversa, etc..):
+        Resolution being set in Windows:
+        Windows display mode (duplicate, extend, etc..):
+        Orientation:
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: '---'
+  - type: textarea
+    attributes:
       label: Description and steps to reproduce
       description: |
         Make sure you describe the issue and steps to reproduce accurately.
@@ -140,17 +129,3 @@ body:
     attributes:
       label: Device
       description: "Share your device name."
-  - type: markdown
-    attributes:
-      value: '---'
-  - type: textarea
-    attributes:
-      label: Crash dumps
-      description: "For more help see: [How to obtain crash dumps - IGCIT Wiki](https://github.com/IGCIT/Intel-GPU-Community-Issue-Tracker-IGCIT/wiki/How-to-obtain-crash-dumps)"
-  - type: markdown
-    attributes:
-      value: '---'
-  - type: textarea
-    attributes:
-      label: Application / Windows logs
-      description: "If available, can help Intel engineers to identify and fix the issue faster"
