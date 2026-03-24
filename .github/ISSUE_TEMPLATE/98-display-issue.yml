@@ -1,7 +1,6 @@
 name: "[Bug Report] Display issue"
 description: "Single and multi-monitor setup issues, such as undetected monitors, wrong orientation, wrong refresh rate, black screens and similar issues."
 labels: ['Type: Display', 'Info: NEW']
-assignees: 'Arturo-Intel'
 body:
   - type: markdown
     attributes:
