@@ -1,6 +1,5 @@
 name: "[Bug Report] Windows Game - Intel® Arc™ Graphics"
 description: "Intel® Arc™ B-Series, Intel® Arc™ A-Series, and Intel® Core™ Ultra Processors with Intel® Arc™ Graphics."
-labels: 'Info: NEW'
 body:
   - type: markdown
     attributes:

@@ -1,6 +1,5 @@
 name: "[Bug Report] Windows Game - 11th-14th Gen Intel® Core™ Processor Graphics"
 description: "11th - 14th Gen Intel Processor Graphics and related Intel Atom®, Pentium®, and Celeron® processor graphics."
-labels: ['Legacy', 'Info: NEW']
 body:
   - type: markdown
     attributes:

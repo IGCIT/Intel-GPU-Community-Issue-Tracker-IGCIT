@@ -1,6 +1,6 @@
-name: "[Bug Report] Display issue"
-description: "Single and multi-monitor setup issues, such as undetected monitors, wrong orientation, wrong refresh rate, black screens and similar issues."
-labels: ['Type: Display', 'Info: NEW']
+name: "[Bug Report] Display/Audio issue"
+description: "Single and multi-monitor setup issues: resolution, refresh rate, VRR, display interfaces and display audio."
+labels: 'Bug Type: Display/Audio'
 body:
   - type: markdown
     attributes:
@@ -41,6 +41,7 @@ body:
     attributes:
       label: GPU Driver Version
       options:
+        - 32.0.101.8626
         - 32.0.101.8531
         - 32.0.101.8509
         - 32.0.101.8425_101.8362
