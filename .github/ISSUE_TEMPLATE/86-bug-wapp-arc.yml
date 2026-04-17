@@ -50,6 +50,7 @@ body:
     attributes:
       label: GPU Driver Version
       options:
+        - 32.0.101.8724
         - 32.0.101.8629
         - 32.0.101.8626
         - 32.0.101.8531
