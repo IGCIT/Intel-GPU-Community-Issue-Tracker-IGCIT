@@ -54,7 +54,6 @@ body:
         - Windows 11 22H2
         - Windows 11 21H2
         - Windows 10 22H2
-        - Windows 10 21H2
         - Other (Please specify)
       default: 0
     validations:
