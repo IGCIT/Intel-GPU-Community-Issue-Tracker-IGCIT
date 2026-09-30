@@ -57,8 +57,6 @@ body:
         - 32.0.101.8991
         - 32.0.101.8974
         - 32.0.101.8864
-        - 32.0.101.8861
-        - 32.0.101.8860
         - Other (Please specify)
       default: 0
     validations:
@@ -93,6 +91,7 @@ body:
     attributes:
       label: Windows Build
       options:
+        - Windows 11 26H2
         - Windows 11 25H2
         - Windows 11 24H2
         - Windows 11 23H2

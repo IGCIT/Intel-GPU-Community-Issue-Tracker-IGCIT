@@ -82,6 +82,7 @@ body:
     attributes:
       label: GPU Driver Version
       options:
+        - 32.0.101.7092
         - 32.0.101.7088
         - 32.0.101.7085
         - 32.0.101.7084
@@ -122,6 +123,7 @@ body:
     attributes:
       label: Windows Build
       options:
+        - Windows 11 26H2
         - Windows 11 25H2
         - Windows 11 24H2
         - Windows 11 23H2
