@@ -1,5 +1,5 @@
 name: "[Bug Report] Windows Game - Intel® Integrated Graphics ( 7th - 10th Gen )"
-description: "Report issues in Windows games for 7th-10th Gen Intel® Core™ Processor Graphics, and related Intel Atom®, Pentium®, and Celeron® processors."
+description: "7th-10th Gen Intel® Core™ Processor Graphics, and related Intel Atom®, Pentium®, and Celeron® processors."
 body:
   - type: markdown
     attributes:
